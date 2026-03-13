@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  font-size: 1.8rem;
+  color: #2d3748;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border: 1px solid #edf2f7;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #718096;
+  text-transform: uppercase;
+}
+
+.number {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #2b6cb0;
+}
