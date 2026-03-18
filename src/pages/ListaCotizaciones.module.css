@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap');
+
+.page {
+  padding: 28px;
+  min-height: 100vh;
+  background: #f4f5f7;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+/* ── Top bar ── */
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #1A1A1A;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.titulo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 4px;
+}
+
+.adminBadge {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  color: #DB0100;
+  letter-spacing: 0.08em;
+}
+
+.btnNueva {
+  background: #DB0100;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.btnNueva:hover { background: #b30100; }
+
+/* ── Indicadores ── */
+.indicadores {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.indicadorCard {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.indicadorValor {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.indicadorLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+/* ── Filtros ── */
+.filtros {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.inputFiltro {
+  flex: 1;
+  min-width: 200px;
+  padding: 9px 14px;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.92rem;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.18s;
+}
+.inputFiltro:focus { border-color: #DB0100; }
+
+.selectFiltro {
+  padding: 9px 14px;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.92rem;
+  background: #fff;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.18s;
+}
+.selectFiltro:focus { border-color: #DB0100; }
+
+.btnLimpiar {
+  background: none;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  padding: 9px 14px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.btnLimpiar:hover { border-color: #DB0100; color: #DB0100; }
+
+/* ── Tabla header ── */
+.tablaHeader {
+  display: grid;
+  grid-template-columns: 140px 1fr 110px 130px 90px 160px;
+  gap: 8px;
+  padding: 7px 16px;
+  background: #1A1A1A;
+  border-radius: 8px 8px 0 0;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.55);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Con columna admin */
+.tablaHeader:has(span:nth-child(7)) {
+  grid-template-columns: 140px 1fr 110px 130px 90px 160px 120px;
+}
+
+/* ── Filas ── */
+.lista { display: flex; flex-direction: column; }
+
+.fila {
+  display: grid;
+  grid-template-columns: 140px 1fr 110px 130px 90px 160px;
+  gap: 8px;
+  padding: 13px 16px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-top: none;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.fila:last-child { border-radius: 0 0 8px 8px; }
+.fila:hover { background: #f8fafc; border-color: #cbd5e0; }
+
+/* Con columna admin */
+.fila:has(.creadoPor) {
+  grid-template-columns: 140px 1fr 110px 130px 90px 160px 120px;
+}
+
+.nroCot {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.78rem;
+  color: #DB0100;
+  font-weight: 700;
+}
+
+.empresa {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #1A1A1A;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fecha {
+  font-size: 0.82rem;
+  color: #6b7280;
+}
+
+.valor {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1A1A1A;
+}
+
+.antiguedad {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.creadoPor {
+  font-size: 0.78rem;
+  color: #6b7280;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Badge ── */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* ── Selector de estado ── */
+.selectorWrap { position: relative; }
+
+.selectorBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.chevron {
+  font-size: 0.55rem;
+  color: #9ca3af;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  z-index: 100;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 150px;
+}
+
+.dropItem {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 6px;
+  text-align: left;
+  transition: background 0.12s;
+}
+.dropItem:hover { background: #f8fafc; }
+.dropItemActive { background: #f1f5f9; }
+
+/* ── Estados vacío / cargando ── */
+.loading, .empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: #9ca3af;
+  font-size: 1rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .indicadores { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .page { padding: 16px; }
+  .tablaHeader { display: none; }
+  .fila {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 6px;
+    border-radius: 8px !important;
+    margin-bottom: 8px;
+    border: 1px solid #e2e8f0 !important;
+  }
+  .nroCot   { grid-column: 1; grid-row: 1; }
+  .antiguedad { grid-column: 2; grid-row: 1; text-align: right; }
+  .empresa  { grid-column: 1 / -1; grid-row: 2; }
+  .valor    { grid-column: 1; grid-row: 3; }
+  .selectorWrap { grid-column: 2; grid-row: 3; justify-self: end; }
+  .fecha, .creadoPor { display: none; }
+}
+
+/* ── Tabs ── */
+.tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 0;
+}
+
+.tab {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  padding: 8px 18px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.tab:hover { color: #1A1A1A; }
+
+.tabActivo {
+  color: #DB0100 !important;
+  border-bottom-color: #DB0100 !important;
+}

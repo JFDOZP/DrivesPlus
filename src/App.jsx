@@ -1,29 +1,50 @@
 import { Routes, Route } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
-// --- IMPORTACIÓN REAL ---
-import Dashboard from './pages/Dashboard'; 
-import Home from "./pages/Inventario";
-import Reportes from "./pages/Reportes";
-import Configuracion from "./pages/Equipos";
+import Dashboard from './pages/Dashboard';
+import Reportes from './pages/Reportes';
+import Cotizaciones from './pages/Cotizaciones';
+import Equipos from './pages/Equipos';
+import Inventario from './pages/Inventario';
+import CotizacionPDF from './pages/CotizacionPDF';
+import CotizacionPDFPreview from './pages/CotizacionPDFPreview';
+import { AuthProvider } from './context/AuthContext';
+import ProtectedRoute from './components/ProtectedRoute';
+import Login from './pages/Login';
+import ListaCotizaciones from './pages/ListaCotizaciones';
+import DetalleCotizacion from './pages/DetalleCotizacion';
+
+
+
+
 
 function App() {
   return (
-    <Routes>
+    <AuthProvider>
+      <Routes>
 
-  <Route path="/" element={<MainLayout />}>
+        {/* Ruta pública */}
+        <Route path="/login" element={<Login />} />
 
-    <Route index element={<Dashboard />} />
+        {/* Rutas protegidas — requieren sesión */}
+        <Route path="/" element={
+          <ProtectedRoute>
+            <MainLayout />
+          </ProtectedRoute>
+        }>
+          <Route index                       element={<Dashboard />} />
+          <Route path="equipos"              element={<Equipos />} />
+          <Route path="inventario"           element={<Inventario />} />
 
-    <Route path='Home' element={<Home />} />
+          {/* Módulo cotizaciones */}
+          <Route path="cotizaciones"         element={<ListaCotizaciones />} />
+          <Route path="cotizaciones/nueva"   element={<Cotizaciones />} />
+          <Route path="cotizaciones/:id"     element={<DetalleCotizacion />} />
 
+          <Route path="reportes"             element={<Reportes />} />
+        </Route>
 
-    <Route path="reportes" element={<Reportes />} />
-
-    <Route path="configuracion" element={<Configuracion />} />
-
-  </Route>
-
-</Routes>
+      </Routes>
+    </AuthProvider>
   );
 }
 

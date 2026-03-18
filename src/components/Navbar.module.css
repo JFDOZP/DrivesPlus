@@ -1,25 +1,306 @@
-.navbar{
-  position:fixed;
-  bottom:0;
-  left:0;
-  width:100%;
-  height:60px;
+/* ============================================
+   NAVBAR — DrivesPlus VFD Manager
+   Desktop : Sidebar izquierdo vertical
+   Mobile  : Bottom bar horizontal
+   Paleta  : #DB0100 · #0D0D0D · #FFF
+   ============================================ */
 
-  display:flex;
-  justify-content:space-around;
-  align-items:center;
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap');
 
-  background:#ffffff;
-  border-top:1px solid #ddd;
+/* ══════════════════════════════════════════
+   DESKTOP — Sidebar izquierdo
+   ══════════════════════════════════════════ */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  background-color: #0D0D0D;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 40px,
+      rgba(255, 255, 255, 0.012) 40px,
+      rgba(255, 255, 255, 0.012) 41px
+    );
+
+  /* Borde derecho rojo — línea de tensión lateral */
+  border-right: 2px solid #DB0100;
+
+  box-shadow:
+    4px 0 32px rgba(219, 1, 0, 0.18),
+    1px 0 0 rgba(219, 1, 0, 0.5);
 }
 
-.navbar a{
-  text-decoration:none;
-  color:#555;
-  font-size:14px;
+/* ── Logo ── */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  flex-shrink: 0;
+  color: #FFFFFF;
 }
 
-.active{
-  color:#2563eb;
-  font-weight:600;
+.logo img {
+  width: 100%;
+  max-width: 130px;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(1) drop-shadow(0 0 8px rgba(219, 1, 0, 0.5));
+  transition: filter 0.3s ease;
+}
+
+.logo img:hover {
+  filter: brightness(1.2) drop-shadow(0 0 14px rgba(219, 1, 0, 0.9));
+}
+
+/* ── Links container ── */
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  flex: 1;
+  padding: 1rem 0;
+}
+
+/* ── Link base ── */
+.link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.5rem;
+
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  color: rgba(255, 255, 255, 0.45);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+
+  transition: color 0.2s ease, background-color 0.2s ease;
+  overflow: hidden;
+}
+
+/* Línea izquierda activa */
+.link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 15%;
+  height: 70%;
+  width: 3px;
+  background: #DB0100;
+  border-radius: 0 3px 3px 0;
+  box-shadow: 0 0 8px rgba(219, 1, 0, 0.8);
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Brillo de fondo */
+.link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(219, 1, 0, 0.08) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+/* ── Hover ── */
+.link:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.link:hover::before {
+  transform: scaleY(0.6);
+}
+
+.link:hover::after {
+  opacity: 1;
+}
+
+/* ── Active ── */
+.active {
+  color: #FFFFFF !important;
+}
+
+.active::before {
+  transform: scaleY(1) !important;
+}
+
+.active::after {
+  opacity: 1 !important;
+  background: linear-gradient(90deg, rgba(219, 1, 0, 0.14) 0%, transparent 70%) !important;
+}
+
+/* Número índice decorativo */
+.index {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.58rem;
+  color: #DB0100;
+  opacity: 0.65;
+  flex-shrink: 0;
+}
+
+/* Icono SVG */
+.icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.link:hover .icon,
+.active .icon {
+  opacity: 1;
+}
+
+/* ── Status dot — fondo del sidebar ── */
+.statusDot {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  flex-shrink: 0;
+
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.25);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.statusDot::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #DB0100;
+  box-shadow: 0 0 6px rgba(219, 1, 0, 0.9);
+  animation: pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1;   box-shadow: 0 0 6px rgba(219, 1, 0, 0.9); }
+  50%       { opacity: 0.4; box-shadow: 0 0 2px rgba(219, 1, 0, 0.3); }
+}
+
+
+/* ══════════════════════════════════════════
+   MOBILE ≤ 768px — Bottom bar
+   ══════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+
+    flex-direction: row;
+    align-items: stretch;
+
+    border-right: none;
+    border-top: 2px solid #DB0100;
+
+    box-shadow:
+      0 -4px 24px rgba(219, 1, 0, 0.2),
+      0 -1px 0 rgba(219, 1, 0, 0.5);
+
+    background-image:
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 40px,
+        rgba(255, 255, 255, 0.012) 40px,
+        rgba(255, 255, 255, 0.012) 41px
+      );
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .links {
+    flex-direction: row;
+    flex: 1;
+    padding: 0;
+    gap: 0;
+    height: 100%;
+  }
+
+  .link {
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.4rem 0.25rem 0.3rem;
+    border-bottom: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.04);
+    font-size: 0.58rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* En móvil: línea activa arriba */
+  .link::before {
+    top: 0;
+    left: 15%;
+    bottom: auto;
+    width: 70%;
+    height: 3px;
+    border-radius: 0 0 3px 3px;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .link:hover::before {
+    transform: scaleX(0.6);
+  }
+
+  .active::before {
+    transform: scaleX(1) !important;
+  }
+
+  .link::after {
+    background: linear-gradient(180deg, rgba(219, 1, 0, 0.1) 0%, transparent 100%);
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .index {
+    display: none;
+  }
+
+  .statusDot {
+    display: none;
+  }
 }

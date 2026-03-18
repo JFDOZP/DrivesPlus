@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap');
+
+.page {
+  padding: 24px 28px;
+  min-height: 100vh;
+  background: #f4f5f7;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+/* ── Top bar ── */
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #1A1A1A;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btnVolver {
+  background: none;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #4a5568;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.btnVolver:hover { border-color: #1A1A1A; color: #1A1A1A; }
+
+.topCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.nroCot {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.1rem;
+  color: #DB0100;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.fechaCot {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.topActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.estadoGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.estadoLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  white-space: nowrap;
+}
+
+.estadoSelect {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border-width: 1px;
+  border-style: solid;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.15s;
+}
+
+.btnPDF {
+  background: #1A1A1A;
+  color: #fff;
+  border: none;
+  padding: 9px 18px;
+  border-radius: 8px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.btnPDF:hover:not(:disabled)  { background: #DB0100; }
+.btnPDF:disabled               { opacity: 0.5; cursor: not-allowed; }
+
+/* ── Resumen ── */
+.resumen {
+  display: flex;
+  gap: 0;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.resumenItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 20px;
+  border-right: 1px solid #f1f5f9;
+}
+.resumenItem:last-child { border-right: none; }
+
+.resumenLabel {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.resumenValor {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1A1A1A;
+}
+
+.resumenTotal {
+  font-family: 'Share Tech Mono', monospace;
+  color: #DB0100;
+  font-size: 1.05rem;
+}
+
+/* ── PDF Viewer ── */
+.pdfViewer {
+  background: #e5e7eb;
+  border-radius: 10px;
+  padding: 32px 20px;
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+}
+
+.pdfInner {
+  /* Sombra de hoja de papel */
+  box-shadow:
+    0 4px 6px rgba(0,0,0,0.07),
+    0 10px 40px rgba(0,0,0,0.12),
+    0 0 0 1px rgba(0,0,0,0.04);
+  border-radius: 2px;
+}
+
+/* ── Estados de carga/error ── */
+.loading, .errorPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  color: #6b7280;
+}
+
+.errorPage { color: #DB0100; font-weight: 600; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .page      { padding: 16px; }
+  .topBar    { flex-direction: column; align-items: flex-start; }
+  .topCenter { align-items: flex-start; }
+  .resumen   { flex-direction: column; }
+  .resumenItem { border-right: none; border-bottom: 1px solid #f1f5f9; }
+  .resumenItem:last-child { border-bottom: none; }
+}

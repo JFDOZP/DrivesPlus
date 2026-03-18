@@ -1,0 +1,99 @@
+/* Contenedor principal del formulario */
+.formContainer {
+  max-width: 800px;
+  margin: 20px auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* Sombra suave "luz" */
+  border: 1px solid #e2e8f0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+  gap: 20px;
+}
+
+/* Título que ocupa todo el ancho */
+.formContainer h2 {
+  grid-column: 1 / -1;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #f1f1f1;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Grupos de etiqueta + input */
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Forzar que ciertos campos o el botón ocupen todo el ancho si es necesario */
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4a5568;
+  text-transform: uppercase;
+}
+
+/* Estilos para inputs y selects */
+.group input, 
+.group select {
+  padding: 12px 15px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #2d3748;
+  background-color: #f8fafc;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+}
+
+/* Efecto Focus (Rojo Danfoss suave) */
+.group input:focus, 
+.group select:focus {
+  border-color: #DB0100;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(219, 1, 0, 0.1);
+}
+
+/* Botón de envío */
+.btnEnviar {
+  grid-column: 1 / -1; /* Botón a todo lo ancho */
+  background-color: #DB0100;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, transform 0.1s active;
+  margin-top: 10px;
+}
+
+.btnEnviar:hover {
+  background-color: #b30100;
+  box-shadow: 0 4px 12px rgba(219, 1, 0, 0.2);
+}
+
+.btnEnviar:active {
+  transform: scale(0.98);
+}
+
+/* --- RESPONSIVIDAD (Móvil) --- */
+@media (max-width: 600px) {
+  .formContainer {
+    grid-template-columns: 1fr; /* Una sola columna en móviles */
+    padding: 20px;
+    margin: 10px;
+  }
+}

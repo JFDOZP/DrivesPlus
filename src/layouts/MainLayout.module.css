@@ -1,11 +1,33 @@
-.layoutContainer{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
+/* ============================================
+   MAIN LAYOUT — DrivesPlus VFD Manager
+   El navbar es fixed, así que el contenido
+   necesita márgenes manuales para no quedar
+   oculto detrás del sidebar / bottom bar.
+   ============================================ */
+
+.layoutContainer {
+  min-height: 100vh;
 }
 
-.content{
-  flex:1;
-  padding:20px;
-  padding-bottom:80px;
+/* ── Contenido principal ── */
+.content {
+  /* Móvil: el bottom bar mide 60px */
+  margin-bottom: 60px;
+  padding: 24px 20px;
+  min-height: 100vh;
+  background-color: #f9fafb;
+  box-sizing: border-box;
+}
+
+/* ── Desktop ── */
+@media (min-width: 769px) {
+  .content {
+    /* El sidebar mide 220px + 2px de borde = 222px */
+    margin-left: 222px;
+    margin-bottom: 0;
+
+    padding: 32px 28px;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
 }

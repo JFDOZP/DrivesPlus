@@ -1,0 +1,147 @@
+/* ============================================================
+   RemisionPDF.module.css
+   Estilos específicos de remisiones — complementa CotizacionPDF.module.css
+   ============================================================ */
+
+/* ── Observaciones con líneas vacías ── */
+.observacionesBox {
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  padding: 10px 12px;
+  min-height: 80px;
+  background: #fafafa;
+}
+
+.lineasVacias {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 4px 0;
+}
+
+.lineaVacia {
+  height: 1px;
+  background: #d0d0d0;
+  width: 100%;
+}
+
+/* ── Condiciones de servicio ── */
+.condicionesLista {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.condicion {
+  font-size: 10px;
+  color: #444;
+  line-height: 1.5;
+  margin: 0;
+  padding-left: 4px;
+}
+
+/* ── Bloque de firmas — dos columnas ── */
+.firmasGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 32px;
+  margin-bottom: 8px;
+}
+
+.firmaBloque {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Espacio en blanco para la firma física */
+.firmaEspacio {
+  height: 50px;
+  width: 100%;
+}
+
+.firmaLinea {
+  height: 1.5px;
+  background: #111;
+  width: 100%;
+  margin-bottom: 6px;
+}
+
+.firmaTitulo {
+  font-size: 11px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 2px;
+  text-align: center;
+}
+
+.firmaDetalle {
+  font-size: 9.5px;
+  color: #555;
+  margin: 0 0 1px;
+  text-align: center;
+}
+
+/* ── Referencias (cotización / informe) ── */
+.referencias {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 8px 14px;
+  margin-top: 10px;
+}
+
+.refItem {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.refLabel {
+  font-size: 9px;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.refValor {
+  font-size: 10px;
+  font-weight: 700;
+  color: #DB0100;
+  font-family: 'Courier New', monospace;
+}
+
+/* ── Garantía ── */
+.garantiaBox {
+  border: 1.5px solid #1A1A1A;
+  border-radius: 4px;
+  padding: 10px 14px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.garantiaValor {
+  font-size: 13px;
+  font-weight: 900;
+  color: #166534;
+  white-space: nowrap;
+  flex-shrink: 0;
+  background: #f0fdf4;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid #86efac;
+}
+
+.garantiaNota {
+  font-size: 9px;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0;
+}

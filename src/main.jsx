@@ -2,8 +2,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import './index.css'; // Estilos de reset básicos
 import { BrowserRouter } from 'react-router-dom';
+// src/main.jsx
+import './index.css'  // ← agregar esta línea
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

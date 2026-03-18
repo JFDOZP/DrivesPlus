@@ -1,38 +1,321 @@
-.container {
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap');
+
+.page {
+  padding: 28px;
+  min-height: 100vh;
+  background: #f4f5f7;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+/* ── Loading ── */
+.loading {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  color: #9ca3af;
 }
 
-.title {
-  font-size: 1.8rem;
-  color: #2d3748;
+/* ── Top bar ── */
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #1A1A1A;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
-.statsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+.titulo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 2px;
 }
 
-.card {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-  border: 1px solid #edf2f7;
-}
-
-.card h3 {
-  margin: 0;
-  font-size: 0.9rem;
-  color: #718096;
+.subtitulo {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  color: #9ca3af;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.number {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-top: 10px;
-  color: #2b6cb0;
+/* ── Filtro mes ── */
+.filtroMes {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.filtroLabel {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.selectMes {
+  padding: 8px 14px;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  background: #fff;
+  color: #1A1A1A;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.selectMes:focus { border-color: #DB0100; }
+
+/* ── Títulos de sección ── */
+.seccionTitulo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0 16px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+
+.seccionLinea {
+  flex: 1;
+  height: 1px;
+  background: #e2e8f0;
+}
+
+/* ── KPI Grid ── */
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.kpiCard {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.kpiValor {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.kpiLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.kpiSub {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.68rem;
+  color: #9ca3af;
+  margin-top: 2px;
+}
+
+/* ── Barra de proporción ── */
+.proporcionWrap {
+  margin-bottom: 16px;
+}
+
+.barraProp {
+  display: flex;
+  height: 10px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #f1f5f9;
+  gap: 1px;
+}
+
+.barraSegmento {
+  transition: width 0.5s ease;
+  min-width: 2px;
+}
+
+.leyenda {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.leyendaItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+.leyendaDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* ── Alerta cotizaciones antiguas ── */
+.alertaAntiguas {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #fff8e1;
+  border: 1px solid #fbbf24;
+  border-left: 4px solid #f59e0b;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  font-size: 0.88rem;
+  color: #78350f;
+}
+
+.alertaIcon {
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.alertaValor {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.82rem;
+}
+
+/* ── Tabla equipos ── */
+.tablaCard {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.tablaCardTitulo {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+  padding: 14px 18px;
+  border-bottom: 1px solid #f1f5f9;
+  background: #fafbfc;
+}
+
+.tablaHeader {
+  display: grid;
+  grid-template-columns: 130px 1fr 1fr 160px 60px;
+  gap: 8px;
+  padding: 7px 18px;
+  background: #1A1A1A;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.tablaFila {
+  display: grid;
+  grid-template-columns: 130px 1fr 1fr 160px 60px;
+  gap: 8px;
+  padding: 11px 18px;
+  border-bottom: 1px solid #f8fafc;
+  align-items: center;
+  transition: background 0.12s;
+}
+.tablaFila:last-child { border-bottom: none; }
+.tablaFila:hover { background: #f8fafc; }
+
+.serial {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.78rem;
+  color: #DB0100;
+  font-weight: 700;
+}
+
+.empresa {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #1A1A1A;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.modelo {
+  font-size: 0.78rem;
+  color: #6b7280;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.estadoBadge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.dias {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #6b7280;
+  text-align: right;
+}
+
+.diasAlerta {
+  color: #DB0100 !important;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .kpiGrid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .page { padding: 16px; }
+  .kpiGrid { grid-template-columns: repeat(2, 1fr); }
+  .tablaHeader { display: none; }
+  .tablaFila {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 4px;
+    padding: 10px 14px;
+  }
+  .serial  { grid-column: 1; }
+  .dias    { grid-column: 2; text-align: right; }
+  .empresa { grid-column: 1 / -1; }
+  .modelo  { grid-column: 1; font-size: 0.72rem; }
+  .tablaFila > span:nth-child(4) { grid-column: 2; justify-self: end; }
 }

@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap');
+
+.page {
+  font-family: 'Rajdhani', sans-serif;
+  padding-top: 4px;
+}
+
+/* ── Filtro fechas ── */
+.filtroFechas {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  padding: 12px 16px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+.filtroLabel {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.inputFecha {
+  padding: 7px 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.9rem;
+  color: #1A1A1A;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.inputFecha:focus { border-color: #DB0100; }
+
+.filtroSep {
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+.filtroCotizaciones {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.72rem;
+  color: #9ca3af;
+  margin-left: auto;
+}
+
+/* ── Empty ── */
+.empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: #9ca3af;
+  font-size: 1rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+/* ── Grid principal ── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 20px 22px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.cardFullRow {
+  grid-column: 1 / -1;
+}
+
+.cardTitle {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── Indicadores ── */
+.indicadores {
+  display: flex;
+  gap: 0;
+}
+
+.indicadorItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 8px 16px;
+  border-right: 1px solid #f1f5f9;
+}
+.indicadorItem:last-child { border-right: none; }
+
+.indicadorValor {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.indicadorLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+/* ── Ranking ── */
+.ranking {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-height: 480px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.rankingItem {
+  border-bottom: 1px solid #f8fafc;
+  padding-bottom: 12px;
+}
+.rankingItem:last-child { border-bottom: none; padding-bottom: 0; }
+
+.rankingTop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 3px;
+}
+
+.rankingPos {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  color: #d1d5db;
+  font-weight: 700;
+  min-width: 22px;
+}
+
+.rankingCod {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #DB0100;
+}
+
+.rankingBadges {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.badgeAprobado {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #166534;
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  padding: 1px 6px;
+  border-radius: 10px;
+}
+
+.badgeNoAprobado {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #991b1b;
+  background: #fff5f5;
+  border: 1px solid #fca5a5;
+  padding: 1px 6px;
+  border-radius: 10px;
+}
+
+.rankingDesc {
+  font-size: 0.78rem;
+  color: #6b7280;
+  margin: 0 0 6px;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Barras horizontales ── */
+.barras {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 480px;
+  overflow-y: auto;
+}
+
+.barraRow {
+  display: grid;
+  grid-template-columns: 160px 1fr 42px auto;
+  gap: 8px;
+  align-items: center;
+}
+
+.barraLabel {
+  font-size: 0.75rem;
+  color: #374151;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 600;
+}
+
+.barraTrack {
+  background: #f1f5f9;
+  border-radius: 4px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.barraFill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.4s ease;
+  min-width: 4px;
+}
+
+.barraValor {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  text-align: right;
+}
+
+.barraSub {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  color: #9ca3af;
+  white-space: nowrap;
+}
+
+/* ── Evolución mensual (barras verticales) ── */
+.mensualGrid {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  padding: 8px 0 12px;
+  overflow-x: auto;
+  min-height: 140px;
+}
+
+.mesCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 52px;
+}
+
+.mesBarras {
+  display: flex;
+  gap: 4px;
+  align-items: flex-end;
+  height: 100px;
+}
+
+.mesBarraWrap {
+  position: relative;
+  width: 32px;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.mesBarraBg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #f1f5f9;
+  border-radius: 4px 4px 0 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.mesBarraTotal {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #e2e8f0;
+  border-radius: 4px 4px 0 0;
+  transition: height 0.4s ease;
+}
+
+.mesBarraAprobado {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #166534;
+  border-radius: 4px 4px 0 0;
+  transition: height 0.4s ease;
+  opacity: 0.85;
+}
+
+.mesValor {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #1A1A1A;
+}
+
+.mesLabel {
+  font-size: 0.68rem;
+  color: #9ca3af;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* ── Leyenda ── */
+.leyenda {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.leyendaItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  color: #6b7280;
+}
+
+.leyendaDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.sinDatos {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  text-align: center;
+  padding: 20px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; }
+  .indicadores { flex-wrap: wrap; }
+  .indicadorItem { min-width: 45%; border-bottom: 1px solid #f1f5f9; }
+  .barraRow { grid-template-columns: 100px 1fr 36px; }
+  .barraSub { display: none; }
+}

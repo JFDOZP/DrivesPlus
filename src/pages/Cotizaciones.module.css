@@ -1,0 +1,649 @@
+/* ============================================================
+   COTIZACIONES — DrivesPlus VFD Manager
+   Estética: Formulario técnico / industrial — fondo claro
+   Paleta: #DB0100 · #1A1A1A · #F9FAFB · #E2E8F0
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap');
+
+/* ── Página ── */
+.page {
+  padding: 28px;
+  min-height: 100vh;
+  background-color: #f4f5f7;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+/* ── Top bar ── */
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #1A1A1A;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.topLeft { display: flex; flex-direction: column; gap: 4px; }
+
+.titulo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.nroCot {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.9rem;
+  color: #DB0100;
+  letter-spacing: 0.1em;
+}
+
+.topRight {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.topField {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.topField label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.trmNote {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: #fff8e1;
+  border: 1px solid #fbbf24;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  color: #92400e;
+  font-weight: 600;
+}
+
+/* ── Mensaje ── */
+.mensajeBox {
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.mensajeOk    { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+.mensajeError { background: #fff5f5; color: #991b1b; border: 1px solid #fecaca; }
+
+/* ── Grid 2 columnas top ── */
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* ── Cards ── */
+.card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 22px 24px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.cardFullWidth {
+  margin-bottom: 20px;
+}
+
+.cardTitle {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #1A1A1A;
+  margin: 0 0 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cardTitleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.cardTitleRow .cardTitle { margin: 0; }
+
+.cardNum {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.7rem;
+  color: #DB0100;
+  background: #fff5f5;
+  border: 1px solid #fecaca;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+/* ── Form internos ── */
+.formGrid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.group label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #4a5568;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+/* ── Inputs base ── */
+.inputBase, .selectBase, .textareaBase {
+  padding: 9px 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 0.92rem;
+  font-family: 'Rajdhani', sans-serif;
+  color: #1A1A1A;
+  background: #f8fafc;
+  transition: border-color 0.18s, box-shadow 0.18s;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.inputBase:focus, .selectBase:focus, .textareaBase:focus {
+  border-color: #DB0100;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(219, 1, 0, 0.08);
+}
+
+.textareaBase { resize: vertical; }
+
+/* ── Botón agregar ítem ── */
+.btnAgregar {
+  background: #1A1A1A;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background 0.2s;
+}
+
+.btnAgregar:hover { background: #DB0100; }
+
+/* ── Tabla de ítems ── */
+.tableHeader {
+  display: grid;
+  grid-template-columns: 130px 1fr 65px 130px 80px 130px 32px;
+  gap: 8px;
+  padding: 6px 8px;
+  background: #f1f5f9;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.itemsList { display: flex; flex-direction: column; gap: 6px; }
+
+.itemRow {
+  display: grid;
+  grid-template-columns: 130px 1fr 65px 130px 80px 130px 32px;
+  gap: 8px;
+  padding: 10px 8px;
+  background: #fafbfc;
+  border: 1px solid #e8edf3;
+  border-radius: 8px;
+  align-items: start;
+  transition: border-color 0.2s;
+}
+
+.itemRow:hover { border-color: #cbd5e0; }
+
+/* Tipo toggle */
+.itemTipo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tipoBtn {
+  padding: 4px 6px;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  font-size: 0.68rem;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  background: #f8fafc;
+  color: #6b7280;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.15s;
+}
+
+.tipoBtnActive {
+  background: #1A1A1A;
+  color: #fff;
+  border-color: #1A1A1A;
+}
+
+/* Código */
+.codigoGroup {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.btnCatalogo {
+  background: #DB0100;
+  color: #fff;
+  border: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+
+.btnCatalogo:hover { background: #b30100; }
+
+.servicioTag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #6b7280;
+  font-family: 'Share Tech Mono', monospace;
+  padding: 4px 0;
+}
+
+/* Inputs pequeños dentro de la tabla */
+.inputSmall {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #cbd5e0;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  font-family: 'Rajdhani', sans-serif;
+  background: #fff;
+  color: #1A1A1A;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+
+.inputSmall:focus { border-color: #DB0100; }
+
+.textareaSmall {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #cbd5e0;
+  border-radius: 5px;
+  font-size: 0.82rem;
+  font-family: 'Rajdhani', sans-serif;
+  background: #fff;
+  color: #1A1A1A;
+  outline: none;
+  resize: vertical;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+
+.textareaSmall:focus { border-color: #DB0100; }
+
+.monedaTag {
+  font-size: 0.68rem;
+  color: #9ca3af;
+  font-family: 'Share Tech Mono', monospace;
+  white-space: nowrap;
+}
+
+/* Precio con moneda */
+.itemPrecio, .itemDesc2 {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.itemTotal {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  padding-top: 6px;
+  text-align: right;
+}
+
+.btnEliminar {
+  background: none;
+  border: none;
+  color: #d1d5db;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 4px;
+  transition: color 0.15s;
+  margin-top: 4px;
+}
+
+.btnEliminar:hover { color: #DB0100; }
+
+.emptyItems {
+  text-align: center;
+  padding: 32px;
+  color: #9ca3af;
+  font-size: 0.9rem;
+  border: 2px dashed #e2e8f0;
+  border-radius: 8px;
+}
+
+/* ── Bottom grid ── */
+.bottomGrid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 20px;
+}
+
+/* ── Panel totales ── */
+.totalesCard { display: flex; flex-direction: column; }
+
+.totalesRows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.totalesRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.92rem;
+  color: #4a5568;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.totalesFinal {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  border-bottom: 2px solid #1A1A1A;
+  padding-bottom: 12px;
+}
+
+.totalMonto {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.1rem;
+  color: #DB0100;
+  font-weight: 700;
+}
+
+.descuentoInput {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.inputSmallTotal {
+  width: 60px;
+  padding: 4px 8px;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  font-size: 0.88rem;
+  font-family: 'Rajdhani', sans-serif;
+  text-align: center;
+  outline: none;
+}
+
+.inputSmallTotal:focus { border-color: #DB0100; }
+
+.descuentoMonto {
+  font-size: 0.8rem;
+  color: #DB0100;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.trmAviso {
+  font-size: 0.75rem;
+  color: #92400e;
+  background: #fff8e1;
+  border: 1px solid #fbbf24;
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+/* ── Botón guardar ── */
+.btnGuardar {
+  width: 100%;
+  background: #DB0100;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btnGuardar:hover:not(:disabled)  { background: #b30100; }
+.btnGuardar:active:not(:disabled) { transform: scale(0.98); }
+.btnGuardar:disabled               { opacity: 0.6; cursor: not-allowed; }
+
+/* ── Modal catálogo ── */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modalBox {
+  background: #fff;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 680px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e2e8f0;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #1A1A1A;
+}
+
+.modalClose {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #9ca3af;
+  padding: 4px 8px;
+  transition: color 0.15s;
+}
+
+.modalClose:hover { color: #DB0100; }
+
+.modalSearch {
+  padding: 14px 20px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.modalInput {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: 'Rajdhani', sans-serif;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.modalInput:focus { border-color: #DB0100; }
+
+.modalResultados {
+  overflow-y: auto;
+  flex: 1;
+  padding: 8px 0;
+}
+
+.modalHint {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.88rem;
+  padding: 24px;
+}
+
+.modalItem {
+  display: grid;
+  grid-template-columns: 110px 1fr 90px;
+  gap: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.12s;
+  align-items: start;
+  border-bottom: 1px solid #f8f9fa;
+}
+
+.modalItem:hover { background: #f8fafc; }
+
+.modalCodigo {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.78rem;
+  color: #DB0100;
+  font-weight: 700;
+}
+
+.modalDesc {
+  font-size: 0.83rem;
+  color: #374151;
+  line-height: 1.35;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.modalPrecio {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.78rem;
+  color: #1A1A1A;
+  font-weight: 700;
+  text-align: right;
+}
+
+/* ── Columnas tabla ── */
+.colTipo   { }
+.colCodigo { }
+.colDesc   { }
+.colCant   { text-align: center; }
+.colPrecio { }
+.colDesc2  { }
+.colTotal  { text-align: right; }
+.colDel    { }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .mainGrid    { grid-template-columns: 1fr; }
+  .bottomGrid  { grid-template-columns: 1fr; }
+  .formGrid2   { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .page { padding: 16px; }
+
+  .tableHeader { display: none; }
+
+  .itemRow {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .itemTipo   { grid-column: 1; grid-row: 1; }
+  .itemCodigo { grid-column: 2; grid-row: 1; }
+  .itemDesc   { grid-column: 1 / -1; grid-row: 2; }
+  .itemCant   { grid-column: 1; grid-row: 3; }
+  .itemPrecio { grid-column: 2; grid-row: 3; }
+  .itemDesc2  { grid-column: 1; grid-row: 4; }
+  .itemTotal  { grid-column: 2; grid-row: 4; text-align: right; }
+  .btnEliminar{ grid-column: 1 / -1; grid-row: 5; justify-self: end; }
+}
+
+/* ── Botón descargar PDF ── */
+.btnPDF {
+  width: 100%;
+  background: #1A1A1A;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+
+.btnPDF:hover:not(:disabled)  { background: #DB0100; }
+.btnPDF:disabled               { opacity: 0.6; cursor: not-allowed; }

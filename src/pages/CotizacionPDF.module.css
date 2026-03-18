@@ -1,0 +1,350 @@
+/* ===================================================
+   COTIZACIÓN PDF — Plantilla de impresión A4
+   FIX: .marcaAgua usa position:absolute (no fixed)
+        para que html2canvas la capture correctamente
+   =================================================== */
+
+.pagina {
+  position: relative;   /* necesario para que marcaAgua se posicione bien */
+  width: 210mm;
+  min-height: 297mm;
+  box-sizing: border-box;
+  background: white;
+  color: #111;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  padding: 14mm 14mm 20mm;
+  overflow: hidden;
+}
+
+/* ── Marca de agua ── */
+/* FIX CRÍTICO: position absolute (no fixed) */
+.marcaAgua {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.06;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.marcaAgua img {
+  width: 420px;
+  height: auto;
+}
+
+/* Todo el contenido sobre la marca de agua */
+.header,
+.lineaRoja,
+.seccion,
+.totalesZona,
+.firma,
+.footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Header ── */
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1.2fr auto;
+  align-items: end;
+  gap: 10px;
+  padding-bottom: 6px;
+}
+
+.cotFecha {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cotNro {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cotLabel {
+  font-weight: 700;
+  font-size: 8px;
+  color: #888;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.cotValor {
+  font-weight: 900;
+  font-size: 13px;
+  color: #DB0100;
+}
+
+.cotFecha .cotValor {
+  font-size: 11px;
+  color: #111;
+}
+
+.empresaDatos {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  gap: 1px;
+}
+
+.nombreEmpresa {
+  font-size: 10px;
+  font-weight: 900;
+  color: #111;
+}
+
+.datoEmpresa {
+  font-size: 8px;
+  color: #555;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ── Línea roja ── */
+.lineaRoja {
+  height: 3px;
+  background: #DB0100;
+  margin: 8px 0 14px;
+  border-radius: 1px;
+}
+
+/* ── Secciones ── */
+.seccion {
+  margin-bottom: 14px;
+}
+
+.seccionTitulo {
+  font-weight: 700;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: #DB0100;
+  border-left: 3px solid #DB0100;
+  padding-left: 7px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+/* ── Cliente ── */
+.clienteGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.clienteRow {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  border-bottom: 1px solid #ececec;
+  padding: 3px 0;
+}
+
+.clienteLabel {
+  font-weight: 600;
+  font-size: 10px;
+  color: #555;
+}
+
+.clienteValor {
+  font-size: 10px;
+  color: #111;
+}
+
+/* ── Tabla ── */
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10px;
+  background: white;
+  border: 1.5px solid #222;
+}
+
+.tablaHeader {
+  background: #1a1a1a;
+  color: white;
+}
+
+.tablaHeader th {
+  padding: 7px 6px;
+  text-align: left;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: 2px solid #DB0100;
+}
+
+.thItem   { width: 24px; text-align: center !important; }
+.thCodigo { width: 80px; }
+.thDesc   { }
+.thCant   { width: 38px; text-align: center !important; }
+.thPrecio { width: 90px; text-align: right !important; }
+.thTotal  { width: 90px; text-align: right !important; }
+
+.tabla td {
+  padding: 6px;
+  border-bottom: 1px solid #e0e0e0;
+  vertical-align: top;
+  line-height: 1.4;
+}
+
+.trPar   td { background: #ffffff; }
+.trImpar td { background: #f7f7f7; }
+
+.tdItem   { text-align: center; font-size: 9px; color: #888; vertical-align: middle !important; }
+.tdCodigo { vertical-align: middle !important; }
+.tdDesc   { font-size: 10px; color: #222; white-space: pre-wrap; word-break: break-word; }
+.tdCant   { text-align: center; font-weight: 700; vertical-align: middle !important; }
+.tdPrecio { text-align: right; vertical-align: middle !important; }
+.tdTotal  { text-align: right; font-weight: 700; font-family: 'Courier New', monospace; vertical-align: middle !important; }
+
+.codigoTag {
+  background: #DB0100;
+  color: white;
+  padding: 2px 5px;
+  font-size: 9px;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+  white-space: nowrap;
+}
+
+.sinCodigo {
+  color: #bbb;
+  font-size: 10px;
+}
+
+/* ── Totales ── */
+.totalesZona {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+  margin-bottom: 14px;
+}
+
+.totalesBloque {
+  width: 240px;
+  border: 1.5px solid #222;
+}
+
+.totalesRow {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  padding: 5px 10px;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 10px;
+  color: #444;
+}
+
+.totalesRowFinal {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  padding: 7px 10px;
+  background: #1a1a1a;
+  color: white;
+  font-weight: 700;
+  font-size: 11px;
+  border-top: 2px solid #DB0100;
+}
+
+.totalValor {
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  color: #DB0100;
+  font-weight: 900;
+}
+
+.trmNota {
+  font-size: 8.5px;
+  color: #777;
+  padding: 5px 10px;
+  margin: 0;
+  background: #fffde7;
+  line-height: 1.4;
+}
+
+/* ── Condiciones ── */
+.condicionesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px 20px;
+}
+
+.condicionRow {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  border-bottom: 1px solid #ececec;
+  padding: 3px 0;
+}
+
+.condicionLabel {
+  font-weight: 600;
+  font-size: 9px;
+  color: #555;
+}
+
+.condicionValor {
+  font-size: 9px;
+  color: #111;
+}
+
+/* ── Observaciones ── */
+.observacionesTexto {
+  font-size: 10px;
+  line-height: 1.5;
+  color: #333;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* ── Firma ── */
+.firma {
+  margin-top: 28px;
+  text-align: center;
+}
+
+.firmaLinea {
+  height: 1.5px;
+  width: 200px;
+  background: #111;
+  margin: 0 auto 6px;
+}
+
+.firmaNombre {
+  font-weight: 700;
+  font-size: 11px;
+  margin: 0 0 2px;
+}
+
+.firmaCargo {
+  font-size: 9.5px;
+  color: #555;
+  margin: 0 0 1px;
+}
+
+.firmaContacto {
+  font-size: 9px;
+  color: #888;
+  margin: 0;
+}
+
+/* ── Footer ── */
+.footer {
+  position: absolute;
+  bottom: 10mm;
+  left: 14mm;
+  right: 14mm;
+  display: flex;
+  justify-content: space-between;
+  font-size: 8px;
+  color: #aaa;
+  border-top: 1px solid #DB0100;
+  padding-top: 5px;
+}
