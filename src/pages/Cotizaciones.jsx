@@ -7,6 +7,8 @@ import { usePDF } from '../hooks/usePDF';
 import styles from './Cotizaciones.module.css';
 import { useSearchParams } from 'react-router-dom';
 // ─── Constantes ───────────────────────────────────────────────────────────────
+
+
 const MONEDAS = ['COP', 'USD', 'EUR'];
 
 const CONDICIONES = {
@@ -17,13 +19,17 @@ const CONDICIONES = {
   impuestos: ['IVA 19% incluido', 'IVA 19% a incluir', 'No aplica IVA'],
 };
 
-const generarNroCotizacion = () => {
+const generarNroCotizacion = (email = '') => {
   const now = new Date();
+  const prefijo = email
+    ? email.split('@')[0].split('.').map(p => p[0]).join('').toUpperCase().slice(0, 4)
+    : 'CSA';
   const yy = String(now.getFullYear()).slice(2);
   const mm = String(now.getMonth() + 1).padStart(2, '0');
   const dd = String(now.getDate()).padStart(2, '0');
-  const rand = String(Math.floor(Math.random() * 99) + 1).padStart(2, '0');
-  return `CSA${yy}${mm}${dd}${rand}`;
+
+  const min = String(now.getMinutes()).padStart(2, '0');
+  return `${prefijo}${yy}${mm}${dd}${min}`;
 };
 
 // FIX: ID siempre único con crypto.randomUUID()
@@ -132,7 +138,7 @@ const FilaItem = ({ item, moneda, onChange, onEliminar }) => {
     setShowCatalogo(false);
   };
 
- 
+
 
 
   return (
@@ -228,6 +234,17 @@ const FilaItem = ({ item, moneda, onChange, onEliminar }) => {
 // ─── COMPONENTE PRINCIPAL ─────────────────────────────────────────────────────
 const Cotizaciones = () => {
   const { currentUser, userProfile } = useAuth();
+
+  // Actualiza el número de cotización con el email del usuario al montar
+  useEffect(() => {
+    if (currentUser?.email) {
+      setForm(prev => ({
+        ...prev,
+        nroCotizacion: generarNroCotizacion(currentUser.email),
+      }));
+    }
+  }, [currentUser?.email]);
+
   const [searchParams] = useSearchParams();
   const [form, setForm] = useState(FORM_INICIAL);
   const [enviando, setEnviando] = useState(false);
@@ -237,20 +254,20 @@ const Cotizaciones = () => {
 
   useEffect(() => {
 
-  const serial = searchParams.get('serial');
-  const empresa = searchParams.get('empresa');
-  const contacto = searchParams.get('contacto');
+    const serial = searchParams.get('serial');
+    const empresa = searchParams.get('empresa');
+    const contacto = searchParams.get('contacto');
 
-  if (serial || empresa || contacto) {
-    setForm(prev => ({
-      ...prev,
-      serialEquipo: serial ?? prev.serialEquipo,
-      empresa: empresa ?? prev.empresa,
-      contacto: contacto ?? prev.contacto,
-    }));
-  }
+    if (serial || empresa || contacto) {
+      setForm(prev => ({
+        ...prev,
+        serialEquipo: serial ?? prev.serialEquipo,
+        empresa: empresa ?? prev.empresa,
+        contacto: contacto ?? prev.contacto,
+      }));
+    }
 
-}, [searchParams]);
+  }, [searchParams]);
   const set = (campo, valor) => setForm(prev => ({ ...prev, [campo]: valor }));
 
   const subtotal = form.items.reduce((acc, i) => acc + i.cantidad * i.precioUnit * (1 - i.descuento / 100), 0);
@@ -285,12 +302,18 @@ const Cotizaciones = () => {
         // NUEVO: identificación del creador
         uid: currentUser?.uid ?? '',
         creadoPor: userProfile?.nombre ?? currentUser?.email ?? '',
+        firmante: {
+          nombre: userProfile?.nombre ?? '',
+          cargo: userProfile?.cargo ?? '',
+          telefono: userProfile?.telefono ?? '',
+          email: userProfile?.email ?? currentUser?.email ?? '',
+        },
       };
       await guardarCotizacion(datosCompletos);
       // Guardamos con IDs para que el PDF pueda renderizar la lista
       setCotizacionGuardada({ ...datosCompletos, items: form.items });
       setMensaje({ tipo: 'ok', texto: `Cotización ${form.nroCotizacion} guardada con éxito.` });
-      setForm({ ...FORM_INICIAL, nroCotizacion: generarNroCotizacion() });
+      setForm({ ...FORM_INICIAL, nroCotizacion: generarNroCotizacion(currentUser?.email ?? '') });
     } catch (err) {
       console.error(err);
       setMensaje({ tipo: 'error', texto: 'Error al guardar en Firebase.' });

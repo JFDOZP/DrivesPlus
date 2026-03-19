@@ -24,6 +24,8 @@ function App() {
 
         {/* Ruta pública */}
         <Route path="/login" element={<Login />} />
+        <Route path="/pdf-preview" element={<CotizacionPDFPreview />} />
+        <Route path="/pdf" element={<CotizacionPDF />} />
 
         {/* Rutas protegidas — requieren sesión */}
         <Route path="/" element={
@@ -39,7 +41,7 @@ function App() {
           <Route path="cotizaciones"         element={<ListaCotizaciones />} />
           <Route path="cotizaciones/nueva"   element={<Cotizaciones />} />
           <Route path="cotizaciones/:id"     element={<DetalleCotizacion />} />
-
+          
           <Route path="reportes"             element={<Reportes />} />
         </Route>
 

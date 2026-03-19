@@ -36,35 +36,35 @@ export const registrarIngresoEquipo = async (datos) => {
 
       // 1. Crear o actualizar la identidad del equipo (datos estáticos)
       transaction.set(equipoRef, {
-        serial:               datos.serial,
-        modelo:               datos.modelo,
-        familia:              datos.familia,
-        empresa:              datos.empresa,
-        contacto:             datos.contacto,
-        comercial:            datos.comercial,
-        codigo:               datos.codigo,
-        ultimaActualizacion:  serverTimestamp(),
+        serial: datos.serial,
+        modelo: datos.modelo,
+        familia: datos.familia,
+        empresa: datos.empresa,
+        contacto: datos.contacto,
+        comercial: datos.comercial,
+        codigo: datos.codigo,
+        ultimaActualizacion: serverTimestamp(),
       }, { merge: true });
 
       // 2. Crear el documento de servicio (la visita actual)
       //    FIX: usamos transaction.set() con ref generada fuera
       transaction.set(nuevoServicioRef, {
-        equipoId:     datos.serial,
-        empresa:      datos.empresa,   // desnormalizado para queries rápidas
-        modelo:       datos.modelo,
-        familia:      datos.familia,
-        contacto:     datos.contacto,
-        comercial:    datos.comercial,
-        codigo:       datos.codigo,
-        motivo:       datos.motivo,
+        equipoId: datos.serial,
+        empresa: datos.empresa,   // desnormalizado para queries rápidas
+        modelo: datos.modelo,
+        familia: datos.familia,
+        contacto: datos.contacto,
+        comercial: datos.comercial,
+        codigo: datos.codigo,
+        motivo: datos.motivo,
         estadoActual: "Ingresado",
         fechaIngreso: serverTimestamp(),
         // FIX: Timestamp.now() en lugar de serverTimestamp() dentro del array
         historial: [
           {
             estado: "Ingresado",
-            fecha:  Timestamp.now(),
-            nota:   "Ingreso inicial al sistema",
+            fecha: Timestamp.now(),
+            nota: "Ingreso inicial al sistema",
           },
         ],
       });
@@ -122,8 +122,8 @@ export const actualizarEstadoServicio = async (servicioId, nuevoEstado, nota) =>
       // arrayUnion añade al historial sin borrar entradas anteriores
       historial: arrayUnion({
         estado: nuevoEstado,
-        fecha:  Timestamp.now(),
-        nota:   nota || `Cambio de estado a ${nuevoEstado}`,
+        fecha: Timestamp.now(),
+        nota: nota || `Cambio de estado a ${nuevoEstado}`,
       }),
     });
 
@@ -161,41 +161,47 @@ export const guardarCotizacion = async (datos) => {
     const cotRef = doc(db, 'cotizaciones', datos.nroCotizacion);
 
     await setDoc(cotRef, {
-      nroCotizacion:   datos.nroCotizacion,
-      fecha:           datos.fecha,
-      moneda:          datos.moneda,
+      nroCotizacion: datos.nroCotizacion,
+      fecha: datos.fecha,
+      moneda: datos.moneda,
 
       // ── NUEVO: identificación del creador ──
-      uid:             datos.uid        || '',
-      creadoPor:       datos.creadoPor  || '',   // nombre o email del usuario
+      uid: datos.uid || '',
+      creadoPor: datos.creadoPor || '',   // nombre o email del usuario
 
+      firmante: {
+        nombre: datos.firmante?.nombre ?? '',
+        cargo: datos.firmante?.cargo ?? '',
+        telefono: datos.firmante?.telefono ?? '',
+        email: datos.firmante?.email ?? '',
+      },
       // Cliente
-      empresa:         datos.empresa,
-      contacto:        datos.contacto,
-      email:           datos.email     || '',
-      telefono:        datos.telefono  || '',
-      ciudad:          datos.ciudad    || '',
+      empresa: datos.empresa,
+      contacto: datos.contacto,
+      email: datos.email || '',
+      telefono: datos.telefono || '',
+      ciudad: datos.ciudad || '',
 
-      serialEquipo:    datos.serialEquipo || null,
+      serialEquipo: datos.serialEquipo || null,
 
       items: datos.items.map(({ id, ...rest }) => rest),
 
-      subtotal:         datos.subtotal,
-      descuentoGlobal:  datos.descuentoGlobal,
-      descuentoMonto:   datos.descuentoMonto,
-      totalFinal:       datos.totalFinal,
+      subtotal: datos.subtotal,
+      descuentoGlobal: datos.descuentoGlobal,
+      descuentoMonto: datos.descuentoMonto,
+      totalFinal: datos.totalFinal,
 
-      garantia:         datos.garantia,
-      formaPago:        datos.formaPago,
-      validez:          datos.validez,
-      tiempoEntrega:    datos.tiempoEntrega,
-      impuestos:        datos.impuestos,
-      observaciones:    datos.observaciones || '',
+      garantia: datos.garantia,
+      formaPago: datos.formaPago,
+      validez: datos.validez,
+      tiempoEntrega: datos.tiempoEntrega,
+      impuestos: datos.impuestos,
+      observaciones: datos.observaciones || '',
 
-      estado:           'En espera',   // En espera | Aprobada | No aprobada
+      estado: 'En espera',   // En espera | Aprobada | No aprobada
 
-      fechaCreacion:          serverTimestamp(),
-      ultimaActualizacion:    serverTimestamp(),
+      fechaCreacion: serverTimestamp(),
+      ultimaActualizacion: serverTimestamp(),
     });
 
     return { success: true };
@@ -245,8 +251,8 @@ export const actualizarEstadoCotizacion = async (nroCotizacion, nuevoEstado) => 
   try {
     const ref = doc(db, 'cotizaciones', nroCotizacion);
     await updateDoc(ref, {
-      estado:               nuevoEstado,
-      ultimaActualizacion:  serverTimestamp(),
+      estado: nuevoEstado,
+      ultimaActualizacion: serverTimestamp(),
     });
     return { success: true };
   } catch (error) {
@@ -323,7 +329,7 @@ export const actualizarNroReporte = async (servicioId, nroReporte) => {
   try {
     const ref = doc(db, 'servicios', servicioId);
     await updateDoc(ref, {
-      nroReporte:          nroReporte,
+      nroReporte: nroReporte,
       ultimaActualizacion: serverTimestamp(),
     });
     return { success: true };
