@@ -5,8 +5,13 @@ import Reportes from './pages/Reportes';
 import Cotizaciones from './pages/Cotizaciones';
 import Equipos from './pages/Equipos';
 import Inventario from './pages/Inventario';
-import CotizacionPDF from './pages/CotizacionPDF';
+
 import CotizacionPDFPreview from './pages/CotizacionPDFPreview';
+import StickerPreview from './pages/StickerPreview';
+import RemisionEntregaPreview from './pages/RemisionEntregaPreview';        
+import RemisionRecepcionPreview from './pages/RemisionRecepcionPreview';
+        
+
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import Login from './pages/Login';
@@ -24,8 +29,11 @@ function App() {
 
         {/* Ruta pública */}
         <Route path="/login" element={<Login />} />
+        {/* Rutas de preview — solo para desarrollo, eliminar en producción */}
         <Route path="/pdf-preview" element={<CotizacionPDFPreview />} />
-        <Route path="/pdf" element={<CotizacionPDF />} />
+        <Route path="/sticker-preview" element={<StickerPreview />} />
+        <Route path="/remision-recepcion" element={<RemisionRecepcionPreview />} />
+        <Route path="/remision-entrega" element={<RemisionEntregaPreview />} />
 
         {/* Rutas protegidas — requieren sesión */}
         <Route path="/" element={
@@ -33,16 +41,16 @@ function App() {
             <MainLayout />
           </ProtectedRoute>
         }>
-          <Route index                       element={<Dashboard />} />
-          <Route path="equipos"              element={<Equipos />} />
-          <Route path="inventario"           element={<Inventario />} />
+          <Route index element={<Dashboard />} />
+          <Route path="equipos" element={<Equipos />} />
+          <Route path="inventario" element={<Inventario />} />
 
           {/* Módulo cotizaciones */}
-          <Route path="cotizaciones"         element={<ListaCotizaciones />} />
-          <Route path="cotizaciones/nueva"   element={<Cotizaciones />} />
-          <Route path="cotizaciones/:id"     element={<DetalleCotizacion />} />
-          
-          <Route path="reportes"             element={<Reportes />} />
+          <Route path="cotizaciones" element={<ListaCotizaciones />} />
+          <Route path="cotizaciones/nueva" element={<Cotizaciones />} />
+          <Route path="cotizaciones/:id" element={<DetalleCotizacion />} />
+
+          <Route path="reportes" element={<Reportes />} />
         </Route>
 
       </Routes>

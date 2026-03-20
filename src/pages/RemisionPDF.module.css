@@ -2,146 +2,260 @@
    RemisionPDF.module.css
    Estilos específicos de remisiones — complementa CotizacionPDF.module.css
    ============================================================ */
-
-/* ── Observaciones con líneas vacías ── */
-.observacionesBox {
-  border: 1px solid #d0d0d0;
-  border-radius: 4px;
-  padding: 10px 12px;
-  min-height: 80px;
-  background: #fafafa;
-}
-
-.lineasVacias {
+.pagina {
+  width: 210mm;
+  height: 297mm;
+  padding: 40px;
+  background: white;
+  color: #111;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  padding: 4px 0;
+  box-sizing: border-box;
 }
 
-.lineaVacia {
-  height: 1px;
-  background: #d0d0d0;
-  width: 100%;
+.cuerpoContenido {
+  flex: 0 0 auto;
+  /* ahora sí, ocupa el espacio principal */
 }
 
-/* ── Condiciones de servicio ── */
-.condicionesLista {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.condicion {
-  font-size: 10px;
-  color: #444;
-  line-height: 1.5;
-  margin: 0;
-  padding-left: 4px;
-}
-
-/* ── Bloque de firmas — dos columnas ── */
-.firmasGrid {
+/* HEADER (Mantenemos tu grid de 4 columnas) */
+/* BLOQUE FECHA / NUMERO */
+.header {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  margin-top: 32px;
-  margin-bottom: 8px;
+  margin: 25px 5px 5px 5px;
+  align-items: flex-end;
 }
 
-.firmaBloque {
+.cotLabel {
+  display: block;
+  font-size: 9px;
+  font-weight: 800;
+  color: #999;
+  letter-spacing: 1px;
+}
+
+.cotValor {
+  font-size: 16px;
+  font-weight: 900;
+  color: #DB0100;
+  /* Rojo Danfoss */
+}
+
+/* EMPRESA / ENCABEZADO SUPERIOR */
+.empresaDatos {
+  text-align: right;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.containerEmpresa {
+  display: flex;
+  flex-direction: column;
+}
+
+.nombreEmpresa {
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.datoEmpresa {
+  font-size: 10px;
+  color: #666;
+}
+
+.logo {
+  width: 140px;
+  height: auto;
+  margin-top: 5px;
+  align-self: flex-end;
+}
+
+.lineaRoja {
+  height: 3px;
+  background: #DB0100;
+  margin: 10px 1px 50px 1px;
+}
+
+/*REMISION ENTREGA*/
+.referencias {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2px 20px 2px;
+}
+
+.refItem {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Espacio en blanco para la firma física */
-.firmaEspacio {
-  height: 50px;
-  width: 100%;
-}
-
-.firmaLinea {
-  height: 1.5px;
-  background: #111;
-  width: 100%;
-  margin-bottom: 6px;
-}
-
-.firmaTitulo {
-  font-size: 11px;
-  font-weight: 700;
-  color: #111;
-  margin: 0 0 2px;
-  text-align: center;
-}
-
-.firmaDetalle {
-  font-size: 9.5px;
-  color: #555;
-  margin: 0 0 1px;
-  text-align: center;
-}
-
-/* ── Referencias (cotización / informe) ── */
-.referencias {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 6px;
-  padding: 8px 14px;
-  margin-top: 10px;
-}
-
-.refItem {
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
-}
-
 .refLabel {
-  font-size: 9px;
-  font-weight: 700;
-  color: #6b7280;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  white-space: nowrap;
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  color: #999;
+  letter-spacing: 1px;
 }
 
 .refValor {
-  font-size: 10px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 900;
   color: #DB0100;
-  font-family: 'Courier New', monospace;
 }
 
-/* ── Garantía ── */
-.garantiaBox {
-  border: 1.5px solid #1A1A1A;
-  border-radius: 4px;
-  padding: 10px 14px;
+
+/* SECCION CLIENTE */
+.seccion {
   display: flex;
-  gap: 14px;
-  align-items: flex-start;
+  flex-direction: column;
+  margin: 0 0 25px 0;
+}
+
+.seccionTitulo {
+  font-size: 10px;
+  font-weight: 800;
+  color: #111;
+  border-left: 4px solid #DB0100;
+  padding-left: 8px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.clienteGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.clienteRow {
+  display: contents;
+  font-size: 11px;
+}
+
+.clienteLabel {
+  text-align: left;
+  font-weight: 700;
+  color: #444;
+  margin-right: 5px;
+}
+
+.clienteValor {
+  text-align: left;
+}
+
+/* TABLA EQUIPO */
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+  margin-top: 10px;
+
+}
+
+.tablaHeader th {
+  background: #1A1A1A;
+  color: white;
+  padding: 10px;
+  text-align: left;
+  border-bottom: 3px solid #c00000;
+}
+
+.tabla td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.codigoTag {
+  background: #DB0100;
+  color: white;
+  padding: 2px 6px;
+  font-size: 9px;
+  font-weight: bold;
+  border-radius: 2px;
+}
+
+/* OBSERVACIONES */
+.observacionesBox {
+  background: #fff8f8;
+  border: 1px solid #f9ecec;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+.observacionesTexto {
+  font-size: 10.5px;
+  line-height: 1.4;
+  color: #333;
+  margin: 0;
 }
 
 .garantiaValor {
-  font-size: 13px;
-  font-weight: 900;
-  color: #166534;
-  white-space: nowrap;
-  flex-shrink: 0;
-  background: #f0fdf4;
-  padding: 4px 10px;
-  border-radius: 4px;
-  border: 1px solid #86efac;
+  font-size: 10.5px;
+  line-height: 1.4;
+  color: #333;
+  margin: 0;
 }
 
-.garantiaNota {
-  font-size: 9px;
-  color: #6b7280;
-  line-height: 1.5;
+/* CONDICIONES */
+.condicionesLista {
+  font-size: 10.5px;
+  line-height: 1.4;
+  color: #333;
   margin: 0;
+}
+
+
+/* FIRMAS */
+/* Contenedor final */
+.seccionFinal {
+  margin-top: auto;
+  /* empuja firmas+footer al fondo */
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  /* espacio entre firmas y footer */
+}
+
+/* Firmas */
+.firmasGrid {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.firmaBloque {
+  flex: 1;
+  text-align: center;
+  padding: 0 40px;
+}
+
+.firmaTitulo {
+  border-top: 2px solid #DB0100;
+
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.firmaDetalle {
+  font-size: 10px;
+  color: #444;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid #DB0100;
+  padding-top: 10px;
+  font-size: 10px;
+  color: #888;
+  gap: 20px;
 }

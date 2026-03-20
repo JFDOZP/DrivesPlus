@@ -47,7 +47,8 @@ const StickerEquipo = React.forwardRef(({ equipo, servicio }, ref) => {
 
       {/* Franja superior roja con logo */}
       <div className={styles.header}>
-        <span className={styles.logoText}>DrivesPlus</span>
+        <img className={styles.logo2} src="logo2.png" alt="logo " />
+        <span className={styles.logoText}></span>
         <span className={styles.headerSub}>Centro de Servicio</span>
       </div>
 
