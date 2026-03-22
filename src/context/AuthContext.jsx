@@ -21,22 +21,25 @@ export const AuthProvider = ({ children }) => {
       return;
     }
     try {
-      const ref  = doc(db, 'users', user.uid);
+      const ref = doc(db, 'users', user.uid);
       const snap = await getDoc(ref);
 
       if (snap.exists()) {
         setUserProfile(snap.data());
       } else {
         // Primera vez — crea el perfil con rol 'usuario' por defecto
-        const perfil = {
-          uid:       user.uid,
-          email:     user.email,
-          nombre:    user.displayName || user.email.split('@')[0],
-          rol:       'usuario',          // 'usuario' | 'admin'
-          creadoEn:  serverTimestamp(),
-        };
-        await setDoc(ref, perfil);
-        setUserProfile(perfil);
+       const ahora = new Date();
+const perfilFirestore = {
+  uid: user.uid,
+  email: user.email,
+  nombre: user.displayName || user.email.split('@')[0].split('.').map(p => p.charAt(0).toUpperCase() + p.slice(1)).join(' '),
+  rol: 'usuario',
+  creadoEn: serverTimestamp(),  // solo para Firestore
+};
+const perfilLocal = { ...perfilFirestore, creadoEn: ahora };  // Date real para el cliente
+
+await setDoc(ref, perfilFirestore);
+setUserProfile(perfilLocal);
       }
     } catch (err) {
       console.error('Error cargando perfil:', err);

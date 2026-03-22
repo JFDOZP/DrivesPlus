@@ -172,6 +172,9 @@ const TimelineView = ({ resultado, onVolver, onActualizar }) => {
   });
   const [nuevoRepuesto, setNuevoRepuesto] = useState({ codigo: '', descripcion: '', cantidad: 1 });
 
+  useEffect(() => {
+  setNroReporte(servicioActivo?.nroReporte ?? '');
+}, [servicioActivo?.id]);
   // ── Cargar cotizaciones vinculadas al serial ──
   useEffect(() => {
     if (!equipo?.serial) return;
@@ -412,7 +415,7 @@ const TimelineView = ({ resultado, onVolver, onActualizar }) => {
             <div className={styles.repuestosGrid}>
               {cotizaciones.flatMap(cot =>
                 (cot.items ?? [])
-                  .filter(item => item.codigo)
+                  .filter(item => item.tipo === 'repuesto' && item.codigo)
                   .map((item, i) => ({
                     ...item,
                     _cotEstado: cot.estado,

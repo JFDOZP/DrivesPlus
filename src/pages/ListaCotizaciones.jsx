@@ -2,15 +2,15 @@ import { useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { obtenerCotizaciones, actualizarEstadoCotizacion } from '../Firebase/firebaseLogic';
-import EstadisticasRepuestos from './EstadisticasRepuestos';
+import EstadisticasServicio from './EstadisticasServicio';
 import styles from './ListaCotizaciones.module.css';
 
 // ─── Configuración de estados ─────────────────────────────────────────────────
 const ESTADOS = ['En espera', 'Aprobada', 'No aprobada'];
 
 const ESTADO_CONFIG = {
-  'En espera':   { color: '#b45309', bg: '#fff8e1', border: '#fbbf24' },
-  'Aprobada':    { color: '#166534', bg: '#f0fdf4', border: '#86efac' },
+  'En espera': { color: '#b45309', bg: '#fff8e1', border: '#fbbf24' },
+  'Aprobada': { color: '#166534', bg: '#f0fdf4', border: '#86efac' },
   'No aprobada': { color: '#991b1b', bg: '#fff5f5', border: '#fca5a5' },
 };
 
@@ -38,6 +38,13 @@ const fmtFecha = (ms) => {
   });
 };
 
+const fmtFechaHora = (ms) => {
+  if (!ms) return '—';
+  return new Date(ms).toLocaleString('es-CO', {
+    day: '2-digit', month: 'short', year: 'numeric',
+    hour: '2-digit', minute: '2-digit',
+  });
+};
 // ─── Badge de estado ──────────────────────────────────────────────────────────
 const EstadoBadge = ({ estado }) => {
   const cfg = ESTADO_CONFIG[estado] ?? ESTADO_CONFIG['En espera'];
@@ -104,10 +111,10 @@ const ListaCotizaciones = () => {
   const navigate = useNavigate();
 
   const [cotizaciones, setCotizaciones] = useState([]);
-  const [cargando, setCargando]         = useState(true);
+  const [cargando, setCargando] = useState(true);
   const [filtroEmpresa, setFiltroEmpresa] = useState('');
-  const [filtroEstado, setFiltroEstado]   = useState('Todos');
-  const [tabActivo, setTabActivo]         = useState('lista'); // 'lista' | 'estadisticas'
+  const [filtroEstado, setFiltroEstado] = useState('Todos');
+  const [tabActivo, setTabActivo] = useState('lista'); // 'lista' | 'estadisticas'
 
   useEffect(() => {
     const cargar = async () => {
@@ -136,16 +143,16 @@ const ListaCotizaciones = () => {
   const filtradas = useMemo(() => {
     return cotizaciones.filter(c => {
       const matchEmpresa = c.empresa?.toLowerCase().includes(filtroEmpresa.toLowerCase());
-      const matchEstado  = filtroEstado === 'Todos' || c.estado === filtroEstado;
+      const matchEstado = filtroEstado === 'Todos' || c.estado === filtroEstado;
       return matchEmpresa && matchEstado;
     });
   }, [cotizaciones, filtroEmpresa, filtroEstado]);
 
   // Indicadores resumen
   const resumen = useMemo(() => ({
-    total:       cotizaciones.length,
-    enEspera:    cotizaciones.filter(c => c.estado === 'En espera').length,
-    aprobadas:   cotizaciones.filter(c => c.estado === 'Aprobada').length,
+    total: cotizaciones.length,
+    enEspera: cotizaciones.filter(c => c.estado === 'En espera').length,
+    aprobadas: cotizaciones.filter(c => c.estado === 'Aprobada').length,
     noAprobadas: cotizaciones.filter(c => c.estado === 'No aprobada').length,
   }), [cotizaciones]);
 
@@ -180,112 +187,114 @@ const ListaCotizaciones = () => {
           className={`${styles.tab} ${tabActivo === 'estadisticas' ? styles.tabActivo : ''}`}
           onClick={() => setTabActivo('estadisticas')}
         >
-          Estadísticas de repuestos
+          Estadísticas
         </button>
       </div>
 
       {tabActivo === 'estadisticas' ? (
-        <EstadisticasRepuestos cotizaciones={cotizaciones} />
+        <EstadisticasServicio cotizaciones={cotizaciones} />
       ) : (<>
 
-      {/* ── INDICADORES ── */}
-      <div className={styles.indicadores}>
-        {[
-          { label: 'Total',        valor: resumen.total,       color: '#1A1A1A' },
-          { label: 'En espera',    valor: resumen.enEspera,    color: '#b45309' },
-          { label: 'Aprobadas',    valor: resumen.aprobadas,   color: '#166534' },
-          { label: 'No aprobadas', valor: resumen.noAprobadas, color: '#991b1b' },
-        ].map(({ label, valor, color }) => (
-          <div key={label} className={styles.indicadorCard}>
-            <span className={styles.indicadorValor} style={{ color }}>{valor}</span>
-            <span className={styles.indicadorLabel}>{label}</span>
-          </div>
-        ))}
-      </div>
-
-      {/* ── FILTROS ── */}
-      <div className={styles.filtros}>
-        <input
-          type="text"
-          placeholder="Buscar por empresa..."
-          value={filtroEmpresa}
-          onChange={e => setFiltroEmpresa(e.target.value)}
-          className={styles.inputFiltro}
-        />
-        <select
-          value={filtroEstado}
-          onChange={e => setFiltroEstado(e.target.value)}
-          className={styles.selectFiltro}
-        >
-          <option value="Todos">Todos los estados</option>
-          {ESTADOS.map(e => <option key={e}>{e}</option>)}
-        </select>
-        {(filtroEmpresa || filtroEstado !== 'Todos') && (
-          <button
-            className={styles.btnLimpiar}
-            onClick={() => { setFiltroEmpresa(''); setFiltroEstado('Todos'); }}
-          >
-            Limpiar filtros
-          </button>
-        )}
-      </div>
-
-      {/* ── TABLA HEADER ── */}
-      {!cargando && filtradas.length > 0 && (
-        <div className={styles.tablaHeader}>
-          <span>N° Cotización</span>
-          <span>Empresa</span>
-          <span>Fecha</span>
-          <span>Valor total</span>
-          <span>Antigüedad</span>
-          <span>Estado</span>
-          {isAdmin && <span>Creado por</span>}
-        </div>
-      )}
-
-      {/* ── LISTA ── */}
-      {cargando ? (
-        <div className={styles.loading}>Cargando cotizaciones...</div>
-      ) : filtradas.length === 0 ? (
-        <div className={styles.empty}>
-          {cotizaciones.length === 0
-            ? 'No hay cotizaciones aún. ¡Crea la primera!'
-            : 'Sin resultados para los filtros aplicados.'}
-        </div>
-      ) : (
-        <div className={styles.lista}>
-          {filtradas.map(cot => (
-            <div
-              key={cot.id}
-              className={styles.fila}
-              onClick={() => navigate(`/cotizaciones/${cot.id}`)}
-            >
-              <span className={styles.nroCot}>{cot.nroCotizacion}</span>
-              <span className={styles.empresa}>{cot.empresa}</span>
-              <span className={styles.fecha}>{fmtFecha(cot.fechaCreacionMs)}</span>
-              <span className={styles.valor}>{fmt(cot.totalFinal, cot.moneda)}</span>
-              <span className={styles.antiguedad}>{diasDesde(cot.fechaCreacionMs)}</span>
-
-              {/* Selector de estado — stopPropagation para no navegar al clic */}
-              <div onClick={e => e.stopPropagation()}>
-                <SelectorEstado
-                  cotizacionId={cot.id}
-                  estadoActual={cot.estado}
-                  onCambio={handleCambioEstado}
-                />
-              </div>
-
-              {isAdmin && (
-                <span className={styles.creadoPor}>{cot.creadoPor || cot.uid || '—'}</span>
-              )}
+        {/* ── INDICADORES ── */}
+        <div className={styles.indicadores}>
+          {[
+            { label: 'Total', valor: resumen.total, color: '#1A1A1A' },
+            { label: 'En espera', valor: resumen.enEspera, color: '#b45309' },
+            { label: 'Aprobadas', valor: resumen.aprobadas, color: '#166534' },
+            { label: 'No aprobadas', valor: resumen.noAprobadas, color: '#991b1b' },
+          ].map(({ label, valor, color }) => (
+            <div key={label} className={styles.indicadorCard}>
+              <span className={styles.indicadorValor} style={{ color }}>{valor}</span>
+              <span className={styles.indicadorLabel}>{label}</span>
             </div>
           ))}
         </div>
+
+        {/* ── FILTROS ── */}
+        <div className={styles.filtros}>
+          <input
+            type="text"
+            placeholder="Buscar por empresa..."
+            value={filtroEmpresa}
+            onChange={e => setFiltroEmpresa(e.target.value)}
+            className={styles.inputFiltro}
+          />
+          <select
+            value={filtroEstado}
+            onChange={e => setFiltroEstado(e.target.value)}
+            className={styles.selectFiltro}
+          >
+            <option value="Todos">Todos los estados</option>
+            {ESTADOS.map(e => <option key={e}>{e}</option>)}
+          </select>
+          {(filtroEmpresa || filtroEstado !== 'Todos') && (
+            <button
+              className={styles.btnLimpiar}
+              onClick={() => { setFiltroEmpresa(''); setFiltroEstado('Todos'); }}
+            >
+              Limpiar filtros
+            </button>
+          )}
+        </div>
+
+        {/* ── TABLA HEADER ── */}
+        {!cargando && filtradas.length > 0 && (
+          <div className={styles.tablaHeader}>
+            <span>N° Cotización</span>
+            <span>Empresa</span>
+            <span>Fecha</span>
+            <span>Valor total</span>
+            <span>Antigüedad</span>
+            <span>Estado</span>
+            {isAdmin && <span>Creado por</span>}
+          </div>
+        )}
+
+        {/* ── LISTA ── */}
+        {cargando ? (
+          <div className={styles.loading}>Cargando cotizaciones...</div>
+        ) : filtradas.length === 0 ? (
+          <div className={styles.empty}>
+            {cotizaciones.length === 0
+              ? 'No hay cotizaciones aún. ¡Crea la primera!'
+              : 'Sin resultados para los filtros aplicados.'}
+          </div>
+        ) : (
+          <div className={styles.lista}>
+            {filtradas.map(cot => (
+              <div
+                key={cot.id}
+                className={styles.fila}
+                onClick={() => navigate(`/cotizaciones/${cot.id}`)}
+              >
+                <span className={styles.nroCot}>{cot.nroCotizacion}</span>
+                <span className={styles.empresa}>{cot.empresa}</span>
+                <span className={styles.fecha}>{fmtFecha(cot.fechaCreacionMs)}</span>
+                <span className={styles.valor}>{fmt(cot.totalFinal, cot.moneda)}</span>
+                <span className={styles.antiguedad}>{diasDesde(cot.fechaCreacionMs)}</span>
+                {/* Selector de estado — stopPropagation para no navegar al clic */}
+                <div onClick={e => e.stopPropagation()}>
+                  <SelectorEstado
+                    cotizacionId={cot.id}
+                    estadoActual={cot.estado}
+                    onCambio={handleCambioEstado}
+                  />
+                </div>
+
+                {isAdmin && (
+                  <div className={styles.creadoPorBloque}>
+                    <span className={styles.creadoPorNombre}>{cot.creadoPor || cot.uid || '—'}</span>
+
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
+      </>
       )}
-    </>
-      )}
-   
-      
+
+
     </div>
   );
 };

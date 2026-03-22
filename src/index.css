@@ -8,5 +8,12 @@
 body {
   font-family: 'Rajdhani', sans-serif;
   background-color: #f9fafb;
-  overflow-x: hidden;
+}
+
+/* En desktop ocultar scroll horizontal del body está bien.
+   En mobile NO — bloquea el scroll del PDF viewer. */
+@media (min-width: 769px) {
+  body {
+    overflow-x: hidden;
+  }
 }

@@ -799,3 +799,52 @@
   border-width: 1px;
   border-style: solid;
 }
+
+@media (max-width: 768px) {
+  .infoGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .detallTopBar {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.topAcciones {
+  width: 100%;
+}
+
+.topAcciones button {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.75rem;
+  padding: 8px 10px;
+}
+
+.formEntregaGrid {
+  grid-template-columns: 1fr;
+}
+
+.repuestosRow {
+  flex-direction: column;
+}
+
+.formInputSm,
+.formInputXs {
+  width: 100%;
+}
+.updatePanelRow {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.updateSelect {
+  flex: none;
+  width: 100%;
+}
+
+.updateBtn {
+  width: 100%;
+}
+}

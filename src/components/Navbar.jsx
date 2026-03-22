@@ -2,7 +2,6 @@ import { NavLink } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import { useAuth } from '../context/AuthContext';
 
-
 /* Iconos inline SVG — sin dependencias extra */
 const icons = {
   inicio: (
@@ -35,31 +34,42 @@ const icons = {
       <path d="M18 20V10M12 20V4M6 20v-6" />
     </svg>
   ),
+  // Icono salir — puerta con flecha
+  logout: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4" />
+      <polyline points="16 17 21 12 16 7" />
+      <line x1="21" y1="12" x2="9" y2="12" />
+    </svg>
+  ),
 };
 
 const navItems = [
-  { to: "/", label: "Inicio", index: "01", icon: icons.inicio },
-  { to: "/equipos", label: "Equipos", index: "02", icon: icons.equipos },
-  { to: "/inventario", label: "Inventario", index: "03", icon: icons.inventario },
+  { to: "/",             label: "Inicio",       index: "01", icon: icons.inicio       },
+  { to: "/equipos",      label: "Equipos",      index: "02", icon: icons.equipos      },
+  { to: "/inventario",   label: "Inventario",   index: "03", icon: icons.inventario   },
   { to: "/cotizaciones", label: "Cotizaciones", index: "04", icon: icons.cotizaciones },
-  { to: "/reportes", label: "Reportes", index: "05", icon: icons.reportes },
+  { to: "/reportes",     label: "Reportes",     index: "05", icon: icons.reportes     },
 ];
 
 function Navbar() {
+  const { logout, userProfile, currentUser } = useAuth();
 
-  const { logout, userProfile } = useAuth();
+  // Mostrar nombre del perfil o la parte antes del @ del email como fallback
+  const nombreMostrar = userProfile?.nombre
+    || currentUser?.email?.split('@')[0]
+    || 'Usuario';
 
   return (
-
-
     <nav className={styles.navbar}>
 
-      {/* Logo — visible solo en desktop */}
+      {/* Logo + usuario — visible solo en desktop */}
       <div className={styles.logo}>
         <img src="/logo.png" alt="Logo DrivesPlus" />
-        <span className={styles.user}>
-          {userProfile?.nombre}
-        </span>
+        <div className={styles.userBloque}>
+          <span className={styles.userLabel}>Usuario activo</span>
+          <span className={styles.userName}>{nombreMostrar}</span>
+        </div>
       </div>
 
       {/* Links de navegación */}
@@ -80,9 +90,14 @@ function Navbar() {
         ))}
       </div>
 
-      {/* Indicador de sistema activo — solo desktop */}
-      <span className={styles.statusDot}>SISTEMA ACTIVO</span>
-      <button onClick={logout}>Salir</button>
+      {/* Pie: status + logout */}
+      <div className={styles.pie}>
+        <span className={styles.statusDot}>SISTEMA ACTIVO</span>
+        <button className={styles.btnLogout} onClick={logout}>
+          {icons.logout}
+          Cerrar sesión
+        </button>
+      </div>
 
     </nav>
   );

@@ -184,7 +184,7 @@ export const guardarCotizacion = async (datos) => {
 
       serialEquipo: datos.serialEquipo || null,
 
-      items: datos.items.map(({ id, ...rest }) => rest),
+      items: datos.items,
 
       subtotal: datos.subtotal,
       descuentoGlobal: datos.descuentoGlobal,
@@ -277,10 +277,12 @@ export const obtenerServiciosActivos = async () => {
   try {
     // Query simple: solo orderBy, sin límite ni not-in
     // Evita necesitar índice compuesto en Firestore
-    const q = query(
-      collection(db, 'servicios'),
-      orderBy('fechaIngreso', 'desc')
-    );
+   const q = query(
+  collection(db, 'servicios'),
+  where('estadoActual', '!=', 'Entregado'),
+  orderBy('estadoActual'),
+  orderBy('fechaIngreso', 'desc')
+);
 
     const snap = await getDocs(q);
     return snap.docs.map(d => ({ id: d.id, ...d.data() }));
@@ -307,7 +309,11 @@ export const obtenerCotizacionesPorSerial = async (serial) => {
       fechaCreacionMs: d.data().fechaCreacion?.toMillis?.() ?? null,
     }));
   } catch (error) {
-    // Fallback sin orderBy si el índice no existe aún
+      if (error.code === 'failed-precondition') {
+    console.warn('Índice faltante para cotizacionesPorSerial — usando fallback sin orden');
+  } else {
+    console.error('Error inesperado:', error);
+  }
     try {
       const q2 = query(
         collection(db, 'cotizaciones'),

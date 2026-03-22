@@ -46,7 +46,7 @@ const diasEnTaller = (ts) => {
 
 const fmtFecha = (ts) => {
   if (!ts) return '—';
-  const ms = ts?.toMillis?.() ?? ts?.seconds * 1000 ?? null;
+  const ms = ts?.toMillis?.() ?? (ts?.seconds != null ? ts.seconds * 1000 : null);
   if (!ms) return '—';
   return new Date(ms).toLocaleDateString('es-CO', {
     day: '2-digit', month: 'short', year: 'numeric',
@@ -124,13 +124,18 @@ const Inventario = () => {
   const handleActualizar = async (servicioId, nuevoEstado, nota) => {
     await actualizarEstadoServicio(servicioId, nuevoEstado, nota);
     // Refresca el detalle y la lista
-    const serial = detalle?.equipo?.serial;
-    if (serial) {
-      const data = await obtenerHistorialEquipo(serial);
-      setDetalle(data);
-    }
-    cargarLista();
-  };
+    try {
+  const serial = detalle?.equipo?.serial;
+  if (serial) {
+    const data = await obtenerHistorialEquipo(serial);
+    setDetalle(data);
+  }
+} catch (e) {
+  console.error('Error refrescando detalle:', e);
+} finally {
+  cargarLista();
+}
+  }
 
   // ── Filtrado en memoria ──
   const serviciosFiltrados = useMemo(() => {

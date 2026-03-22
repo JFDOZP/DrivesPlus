@@ -154,7 +154,7 @@
 
 /* Con columna admin */
 .tablaHeader:has(span:nth-child(7)) {
-  grid-template-columns: 140px 1fr 110px 130px 90px 160px 120px;
+  grid-template-columns: 140px 1fr 110px 130px 90px 160px 160px;
 }
 
 /* ── Filas ── */
@@ -177,8 +177,8 @@
 .fila:hover { background: #f8fafc; border-color: #cbd5e0; }
 
 /* Con columna admin */
-.fila:has(.creadoPor) {
-  grid-template-columns: 140px 1fr 110px 130px 90px 160px 120px;
+.fila:has(.creadoPorBloque) {
+  grid-template-columns: 140px 1fr 110px 130px 90px 160px 160px;
 }
 
 .nroCot {
@@ -215,13 +215,28 @@
   font-family: 'Share Tech Mono', monospace;
 }
 
-.creadoPor {
-  font-size: 0.78rem;
-  color: #6b7280;
+.creadoPorBloque {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.creadoPorNombre {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1A1A1A;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.creadoPorFecha {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.68rem;
+  color: #9ca3af;
+  white-space: nowrap;
+}
+
 
 /* ── Badge ── */
 .badge {
@@ -312,7 +327,7 @@
   .empresa  { grid-column: 1 / -1; grid-row: 2; }
   .valor    { grid-column: 1; grid-row: 3; }
   .selectorWrap { grid-column: 2; grid-row: 3; justify-self: end; }
-  .fecha, .creadoPor { display: none; }
+  .fecha, .creadoPorBloque { display: none; }
 }
 
 /* ── Tabs ── */

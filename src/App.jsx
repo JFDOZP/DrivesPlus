@@ -6,10 +6,10 @@ import Cotizaciones from './pages/Cotizaciones';
 import Equipos from './pages/Equipos';
 import Inventario from './pages/Inventario';
 
-import CotizacionPDFPreview from './pages/CotizacionPDFPreview';
-import StickerPreview from './pages/StickerPreview';
-import RemisionEntregaPreview from './pages/RemisionEntregaPreview';        
-import RemisionRecepcionPreview from './pages/RemisionRecepcionPreview';
+// import CotizacionPDFPreview from './pages/CotizacionPDFPreview';
+// import StickerPreview from './pages/StickerPreview';
+// import RemisionEntregaPreview from './pages/RemisionEntregaPreview';        
+// import RemisionRecepcionPreview from './pages/RemisionRecepcionPreview';
         
 
 import { AuthProvider } from './context/AuthContext';
@@ -29,11 +29,11 @@ function App() {
 
         {/* Ruta pública */}
         <Route path="/login" element={<Login />} />
-        {/* Rutas de preview — solo para desarrollo, eliminar en producción */}
+        {/* Rutas de preview — solo para desarrollo, eliminar en producción 
         <Route path="/pdf-preview" element={<CotizacionPDFPreview />} />
         <Route path="/sticker-preview" element={<StickerPreview />} />
         <Route path="/remision-recepcion" element={<RemisionRecepcionPreview />} />
-        <Route path="/remision-entrega" element={<RemisionEntregaPreview />} />
+        <Route path="/remision-entrega" element={<RemisionEntregaPreview />} />*/}
 
         {/* Rutas protegidas — requieren sesión */}
         <Route path="/" element={

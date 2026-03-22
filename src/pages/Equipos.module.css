@@ -1,99 +1,183 @@
-/* Contenedor principal del formulario */
-.formContainer {
-  max-width: 800px;
-  margin: 20px auto;
-  background: #ffffff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* Sombra suave "luz" */
-  border: 1px solid #e2e8f0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Dos columnas */
-  gap: 20px;
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap');
+
+.page {
+  padding: 28px;
+  min-height: 100vh;
+  background-color: #f4f5f7;
+  font-family: 'Rajdhani', sans-serif;
 }
 
-/* Título que ocupa todo el ancho */
-.formContainer h2 {
-  grid-column: 1 / -1;
-  margin-top: 0;
-  margin-bottom: 10px;
-  font-size: 1.5rem;
-  border-bottom: 2px solid #f1f1f1;
-  padding-bottom: 10px;
+/* ── Top Bar ────────────────────────────────────────────────── */
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #1A1A1A;
+}
+
+.titulo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  margin: 0;
 }
 
-/* Grupos de etiqueta + input */
+.subtitulo {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.85rem;
+  color: #6b7280;
+  text-transform: uppercase;
+}
+
+/* ── Contenedor del Formulario ──────────────────────────────── */
+.mainContent {
+  display: flex;
+  justify-content: center;
+}
+
+.formCard {
+  width: 100%;
+  max-width: 900px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  padding: 0; /* Controlado por secciones internas */
+}
+
+.sectionHeader {
+  background: #1A1A1A;
+  padding: 12px 24px;
+}
+
+.sectionTitle {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  padding: 32px;
+}
+
+/* ── Elementos del Formulario ───────────────────────────────── */
 .group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-}
-
-/* Forzar que ciertos campos o el botón ocupen todo el ancho si es necesario */
-.fullWidth {
-  grid-column: 1 / -1;
+  gap: 6px;
 }
 
 .group label {
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: 0.8rem;
+  font-weight: 700;
   color: #4a5568;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-/* Estilos para inputs y selects */
 .group input, 
 .group select {
-  padding: 12px 15px;
+  padding: 12px 16px;
   border: 1px solid #cbd5e0;
-  border-radius: 6px;
+  background-color: #f9fafb;
+  font-family: 'Rajdhani', sans-serif;
   font-size: 1rem;
-  color: #2d3748;
-  background-color: #f8fafc;
-  transition: all 0.2s ease-in-out;
+  font-weight: 500;
+  color: #1a202c;
+  transition: all 0.2s;
   outline: none;
 }
 
-/* Efecto Focus (Rojo Danfoss suave) */
 .group input:focus, 
 .group select:focus {
   border-color: #DB0100;
-  background-color: #fff;
-  box-shadow: 0 0 0 3px rgba(219, 1, 0, 0.1);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 1px #DB0100;
 }
 
-/* Botón de envío */
-.btnEnviar {
-  grid-column: 1 / -1; /* Botón a todo lo ancho */
-  background-color: #DB0100;
-  color: white;
-  padding: 15px;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
+.monoInput {
+  font-family: 'Share Tech Mono', monospace !important;
+  letter-spacing: 1px;
+}
+
+.serialHighlight {
+  color: #DB0100 !important;
+  font-weight: 700 !important;
   text-transform: uppercase;
-  transition: background-color 0.3s ease, transform 0.1s active;
-  margin-top: 10px;
 }
 
-.btnEnviar:hover {
-  background-color: #b30100;
-  box-shadow: 0 4px 12px rgba(219, 1, 0, 0.2);
+/* ── Botón y Alertas ────────────────────────────────────────── */
+.formFooter {
+  padding: 0 32px 32px 32px;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.btnEnviar:active {
-  transform: scale(0.98);
+.btnEnviar {
+  background-color: #1A1A1A;
+  color: white;
+  border: none;
+  padding: 14px 40px;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-bottom: 4px solid #DB0100;
 }
 
-/* --- RESPONSIVIDAD (Móvil) --- */
-@media (max-width: 600px) {
-  .formContainer {
-    grid-template-columns: 1fr; /* Una sola columna en móviles */
+.btnEnviar:hover:not(:disabled) {
+  background-color: #DB0100;
+  border-bottom-color: #1A1A1A;
+}
+
+.btnEnviar:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.alerta {
+  margin: 0 32px 24px 32px;
+  padding: 12px 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.alertaOk {
+  background: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.alertaError {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+/* ── Responsivo ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .formGrid {
+    grid-template-columns: 1fr;
     padding: 20px;
-    margin: 10px;
   }
+  .formFooter {
+    padding: 0 20px 20px 20px;
+  }
+  .btnEnviar {
+    width: 100%;
+  }
+
+  .page { padding: 16px; }
+.topBar { margin-bottom: 20px; }
 }

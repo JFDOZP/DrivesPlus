@@ -1,1617 +1,380 @@
+// Catálogo Danfoss — Lista de precios 2023
+// 374 productos
+// Generado automáticamente desde Excel
+
 export const CATALOGO_PRODUCTOS = [
-  {
-    "codigo": "132F0001",
-    "descripcion": "VLT® MicroDrive FC51 0,18Kw/0,24HP 1 x 200 - 240 Vac IP20 RFI Class A1/b No Break Chopper Numeric Control Panel",
-    "precioUSD": 291
-  },
-  {
-    "codigo": "132F0002",
-    "descripcion": "VLT® MicroDrive FC51 0,37Kw/0,5HP 1 x 200 - 240 Vac IP20 RFI Class A1/b No Break Chopper Numeric Control Panel",
-    "precioUSD": 311
-  },
-  {
-    "codigo": "132F0003",
-    "descripcion": "VLT® MicroDrive FC51 0,75Kw/1HP 1 x 200 - 240 Vac Vac IP20 RFI Class A1/b No Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 357
-  },
-  {
-    "codigo": "132F0005",
-    "descripcion": "VLT® MicroDrive FC51 1,5Kw/2HP 1 x 200 - 240 Vac Vac IP20 RFI Class A1/b Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 483
-  },
-  {
-    "codigo": "132F0007",
-    "descripcion": "VLT® MicroDrive FC51 2,2Kw/3HP 1 x 200 - 240 Vac Vac IP20 RFI Class A1/b Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 602
-  },
-  {
-    "codigo": "132F0008",
-    "descripcion": "VLT® MicroDrive FC51 0,25Kw/0,34HP 3 x 200 - 240 Vac Vac IP20 RFI Class A1/b No Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 349
-  },
-  {
-    "codigo": "132F0009",
-    "descripcion": "VLT® MicroDrive FC51 0,37Kw/0,5HP 3 x 200 - 240 Vac Vac IP20 RFI Class A1/b No Break Chopper Numeric Control Panel Coated PCB",
-    "precioUSD": 366
-  },
-  {
-    "codigo": "132F0010",
-    "descripcion": "VLT® MicroDrive FC51 0,75Kw/1HP 3 x 200 - 240 Vac Vac IP20 RFI Class A1/b No Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 420
-  },
-  {
-    "codigo": "132F0012",
-    "descripcion": "VLT® MicroDrive FC51 1,5Kw/2HP 3 x 200 - 240 Vac Vac IP20 RFI Class A1/b Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 569
-  },
-  {
-    "codigo": "132F0014",
-    "descripcion": "VLT® MicroDrive FC51 2,2Kw/3HP 3 x 200 - 240 Vac Vac IP20 RFI Class A1/b Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 711
-  },
-  {
-    "codigo": "132F0016",
-    "descripcion": "VLT® MicroDrive FC51 3,7Kw/5HP 3 x 200 - 240 Vac Vac IP20 RFI Class A1/b Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 872
-  },
-  {
-    "codigo": "132F0017",
-    "descripcion": "VLT® MicroDrive FC51 0,37Kw/0,5HP 3 x 380 - 480 Vac IP20 RFI Class A1/b No Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 436
-  },
-  {
-    "codigo": "132F0018",
-    "descripcion": "VLT® MicroDrive FC51 0,75Kw/1HP 3 x 380 - 480 Vac IP20 RFI Class A1/b No Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 498
-  },
-  {
-    "codigo": "132F0020",
-    "descripcion": "VLT® MicroDrive FC51 1,5Kw/2HP 3 x 380 - 480 Vac IP20 RFI Class A1/b Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 674
-  },
-  {
-    "codigo": "132F0022",
-    "descripcion": "VLT® MicroDrive FC51 2,2Kw/3HP 3 x 380 - 480 Vac IP20 RFI Class A1/b Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 842
-  },
-  {
-    "codigo": "132F0024",
-    "descripcion": "VLT® MicroDrive FC51 3Kw/4HP 3 x 380 - 480 Vac IP20 RFI Class A1/b Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 955
-  },
-  {
-    "codigo": "132F0026",
-    "descripcion": "VLT® MicroDrive FC51 4Kw/5,5HP 3 x 380 - 480 Vac IP20 RFI Class A1/b Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 1035
-  },
-  {
-    "codigo": "132F0028",
-    "descripcion": "VLT® MicroDrive FC51 5,5Kw/7,5HP 3 x 380 - 480 Vac IP20 RFI Class A1/b Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 1208
-  },
-  {
-    "codigo": "132F0030",
-    "descripcion": "VLT® MicroDrive FC51 7,5Kw/10HP 3 x 380 - 480 Vac IP20 RFI Class A1/b Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 1370
-  },
-  {
-    "codigo": "132F0058",
-    "descripcion": "VLT® MicroDrive FC51 11Kw/15HP 3 x 380 - 480 Vac IP20 RFI Class A1/b Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 1837
-  },
-  {
-    "codigo": "132F0059",
-    "descripcion": "VLT® MicroDrive FC51 15Kw/20HP 3 x 380 - 480 Vac IP20 RFI Class A1/b Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 2284
-  },
-  {
-    "codigo": "132F0060",
-    "descripcion": "VLT® MicroDrive FC51 18,5Kw/25HP 3 x 380 - 480 Vac IP20 RFI Class A1/b Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 2822
-  },
-  {
-    "codigo": "132F0061",
-    "descripcion": "VLT® MicroDrive FC51 22Kw/30HP 3 x 380 - 480 Vac IP20 RFI Class A1/b Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 3314
-  },
-  {
-    "codigo": "134X3042",
-    "descripcion": "VLT® Midi Drive FC 280 0,37Kw/0,5HP 1 x 200 - 240 Vac IP20 RFI Class A1/b No Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 417
-  },
-  {
-    "codigo": "134X3053",
-    "descripcion": "VLT® Midi Drive FC 280 0,55Kw/0,75HP 1 x 200 - 240 Vac IP20 RFI Class A1/b No Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 436
-  },
-  {
-    "codigo": "134X3054",
-    "descripcion": "VLT® Midi Drive FC 280 0,75Kw/1HP 1 x 200 - 240 Vac IP20 RFI Class A1/b No Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 479
-  },
-  {
-    "codigo": "134X3055",
-    "descripcion": "VLT® Midi Drive FC 280 1,1Kw/1,5HP 1 x 200 - 240 Vac IP20 RFI Class A1/b No Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 541
-  },
-  {
-    "codigo": "134X3056",
-    "descripcion": "VLT® Midi Drive FC 280 1,5Kw/2HP 1 x 200 - 240 Vac IP20 RFI Class A1/b No Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 647
-  },
-  {
-    "codigo": "134X3057",
-    "descripcion": "VLT® Midi Drive FC 280 2,2Kw/3HP 1 x 200 - 240 Vac IP20 RFI Class A1/b No Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 806
-  },
-  {
-    "codigo": "134U7942",
-    "descripcion": "VLT® Midi Drive FC 280 0,37Kw/0,5HP 3 x 200 - 240 Vac IP20 RFI Class A2 Break Chopper Numeric Control Panel Coated PCB",
-    "precioUSD": 490
-  },
-  {
-    "codigo": "134U7943",
-    "descripcion": "VLT® Midi Drive FC 280 0,55Kw/0,75HP 3 x 200 - 240 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 513
-  },
-  {
-    "codigo": "134U7944",
-    "descripcion": "VLT® Midi Drive FC 280 0,75Kw/1HP 3 x 200 - 240 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 563
-  },
-  {
-    "codigo": "134U7945",
-    "descripcion": "VLT® Midi Drive FC 280 1,1Kw/1,5HP 3 x 200 - 240 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 648
-  },
-  {
-    "codigo": "134U7946",
-    "descripcion": "VLT® Midi Drive FC 280 1,5Kw/2HP 3 x 200 - 240 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 763
-  },
-  {
-    "codigo": "134U7947",
-    "descripcion": "VLT® Midi Drive FC 280 2,2Kw/3HP 3 x 200 - 240 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 953
-  },
-  {
-    "codigo": "134U7948",
-    "descripcion": "VLT® Midi Drive FC 280 3,7Kw/5HP 3 x 200 - 240 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 1169
-  },
-  {
-    "codigo": "134U7960",
-    "descripcion": "VLT® Midi Drive FC 280 0,37Kw/0,5HP 3 x 200 - 240 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated Profibus DP",
-    "precioUSD": 654
-  },
-  {
-    "codigo": "134U7961",
-    "descripcion": "VLT® Midi Drive FC 280 0,55Kw/0,75HP 3 x 200 - 240 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated Profibus DP",
-    "precioUSD": 677
-  },
-  {
-    "codigo": "134U7962",
-    "descripcion": "VLT® Midi Drive FC 280 0,75Kw/1HP 3 x 200 - 240 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated Profibus DP",
-    "precioUSD": 727
-  },
-  {
-    "codigo": "134U7963",
-    "descripcion": "VLT® Midi Drive FC 280 1,1Kw/1,5HP 3 x 200 - 240 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated Profibus DP",
-    "precioUSD": 812
-  },
-  {
-    "codigo": "134U7964",
-    "descripcion": "VLT® Midi Drive FC 280 1,5Kw/2HP 3 x 200 - 240 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated Profibus DP",
-    "precioUSD": 928
-  },
-  {
-    "codigo": "134U7965",
-    "descripcion": "VLT® Midi Drive FC 280 2,2Kw/3HP 3 x 200 - 240 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated Profibus DP",
-    "precioUSD": 1117
-  },
-  {
-    "codigo": "134U7966",
-    "descripcion": "VLT® Midi Drive FC 280 3,7Kw/5HP 3 x 200 - 240 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated Profibus DP",
-    "precioUSD": 1334
-  },
-  {
-    "codigo": "134U7967",
-    "descripcion": "VLT® Midi Drive FC 280 0,37Kw/0,5HP 3 x 200 - 240 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated ProfiNet",
-    "precioUSD": 736
-  },
-  {
-    "codigo": "134U7968",
-    "descripcion": "VLT® Midi Drive FC 280 0,55Kw/0,75HP 3 x 200 - 240 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated ProfiNet",
-    "precioUSD": 759
-  },
-  {
-    "codigo": "134U7969",
-    "descripcion": "VLT® Midi Drive FC 280 0,75Kw/1HP 3 x 200 - 240 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated ProfiNet",
-    "precioUSD": 809
-  },
-  {
-    "codigo": "134U7970",
-    "descripcion": "VLT® Midi Drive FC 280 1,1Kw/1,5HP 3 x 200 - 240 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated ProfiNet",
-    "precioUSD": 894
-  },
-  {
-    "codigo": "134U7971",
-    "descripcion": "VLT® Midi Drive FC 280 1,5Kw/2HP 3 x 200 - 240 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated ProfiNet",
-    "precioUSD": 1009
-  },
-  {
-    "codigo": "134U7972",
-    "descripcion": "VLT® Midi Drive FC 280 2,2Kw/3HP 3 x 200 - 240 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated ProfiNet",
-    "precioUSD": 1198
-  },
-  {
-    "codigo": "134U7973",
-    "descripcion": "VLT® Midi Drive FC 280 3,7Kw/5HP 3 x 200 - 240 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated ProfiNet",
-    "precioUSD": 1415
-  },
-  {
-    "codigo": "134X0723",
-    "descripcion": "VLT® Midi Drive FC 280 0,37Kw/0,5HP 3 x 200 - 240 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated EtherNet IP",
-    "precioUSD": 736
-  },
-  {
-    "codigo": "134X0724",
-    "descripcion": "VLT® Midi Drive FC 280 0,55Kw/0,75HP 3 x 200 - 240 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated EtherNet IP",
-    "precioUSD": 759
-  },
-  {
-    "codigo": "134X0726",
-    "descripcion": "VLT® Midi Drive FC 280 0,75Kw/1HP 3 x 200 - 240 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated EtherNet IP",
-    "precioUSD": 809
-  },
-  {
-    "codigo": "134X0727",
-    "descripcion": "VLT® Midi Drive FC 280 1,1Kw/1,5HP 3 x 200 - 240 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated EtherNet IP",
-    "precioUSD": 894
-  },
-  {
-    "codigo": "134X0728",
-    "descripcion": "VLT® Midi Drive FC 280 1,5Kw/2HP 3 x 200 - 240 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated EtherNet IP",
-    "precioUSD": 1009
-  },
-  {
-    "codigo": "134X0729",
-    "descripcion": "VLT® Midi Drive FC 280 2,2Kw/3HP 3 x 200 - 240 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated EtherNet IP",
-    "precioUSD": 1198
-  },
-  {
-    "codigo": "134X0730",
-    "descripcion": "VLT® Midi Drive FC 280 1,1Kw/1,5HP 3 x 200 - 240 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated EtherNet IP",
-    "precioUSD": 1415
-  },
-  {
-    "codigo": "134U3006",
-    "descripcion": "VLT® Midi Drive FC 280 0,37Kw/0,5HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 585
-  },
-  {
-    "codigo": "134U3007",
-    "descripcion": "VLT® Midi Drive FC 280 0,55Kw/0,75HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 616
-  },
-  {
-    "codigo": "134U3008",
-    "descripcion": "VLT® Midi Drive FC 280 0,75Kw/1HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 667
-  },
-  {
-    "codigo": "134U3009",
-    "descripcion": "VLT® Midi Drive FC 280 1,1Kw/1,5HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 771
-  },
-  {
-    "codigo": "134U3010",
-    "descripcion": "VLT® Midi Drive FC 280 1,5Kw/2HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 851
-  },
-  {
-    "codigo": "134U3011",
-    "descripcion": "VLT® Midi Drive FC 280 2,2Kw/3HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 976
-  },
-  {
-    "codigo": "134U3012",
-    "descripcion": "VLT® Midi Drive FC 280 3Kw/4HP 3 x 380 - 480Vac 7.2Amp  IP20 RFI Class A2 Break Chopper Numeric Control Panel Coated PCB",
-    "precioUSD": 1075
-  },
-  {
-    "codigo": "134U3013",
-    "descripcion": "VLT® Midi Drive FC 280 4Kw/5,5HP 3 x 380 - 480Vac 9Amp IP20 RFI Class A2 Break Chopper Numeric Control Panel Coated PCB                                                                                              Frame K2 272x90x168  mm AlxAnxPr",
-    "precioUSD": 1236
-  },
-  {
-    "codigo": "134U3014",
-    "descripcion": "VLT® Midi Drive FC 280 5,5Kw/7,5HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 1482
-  },
-  {
-    "codigo": "134U3015",
-    "descripcion": "VLT® Midi Drive FC 280 7,5Kw/10HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 1745
-  },
-  {
-    "codigo": "134U3016",
-    "descripcion": "VLT® Midi Drive FC 280 11Kw/15HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 2151
-  },
-  {
-    "codigo": "134U3017",
-    "descripcion": "VLT® Midi Drive FC 280 15Kw/20HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 2797
-  },
-  {
-    "codigo": "134U3018",
-    "descripcion": "VLT® Midi Drive FC 280 18,5Kw/25HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 3557
-  },
-  {
-    "codigo": "134U3019",
-    "descripcion": "VLT® Midi Drive FC 280 22Kw/30HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 4389
-  },
-  {
-    "codigo": "134U7743",
-    "descripcion": "VLT® Midi Drive FC 280 0,37Kw/0,5HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated Profibus DP",
-    "precioUSD": 749
-  },
-  {
-    "codigo": "134U7744",
-    "descripcion": "VLT® Midi Drive FC 280 0,55Kw/0,75HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated Profibus DP",
-    "precioUSD": 780
-  },
-  {
-    "codigo": "134U7745",
-    "descripcion": "VLT® Midi Drive FC 280 0,75Kw/1HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated Profibus DP",
-    "precioUSD": 832
-  },
-  {
-    "codigo": "134U7746",
-    "descripcion": "VLT® Midi Drive FC 280 1,1Kw/1,5HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated Profibus DP",
-    "precioUSD": 936
-  },
-  {
-    "codigo": "134U7747",
-    "descripcion": "VLT® Midi Drive FC 280 1,5Kw/2HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated Profibus DP",
-    "precioUSD": 1015
-  },
-  {
-    "codigo": "134U7748",
-    "descripcion": "VLT® Midi Drive FC 280 2,2Kw/3HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated Profibus DP",
-    "precioUSD": 1141
-  },
-  {
-    "codigo": "134U7749",
-    "descripcion": "VLT® Midi Drive FC 280 3Kw/4HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated Profibus DP",
-    "precioUSD": 1240
-  },
-  {
-    "codigo": "134U7750",
-    "descripcion": "VLT® Midi Drive FC 280 4Kw/5,5HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated Profibus DP",
-    "precioUSD": 1401
-  },
-  {
-    "codigo": "134U7751",
-    "descripcion": "VLT® Midi Drive FC 280 5,5Kw/7,5HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated Profibus DP",
-    "precioUSD": 1647
-  },
-  {
-    "codigo": "134U7752",
-    "descripcion": "VLT® Midi Drive FC 280 7,5Kw/10HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated Profibus DP",
-    "precioUSD": 1910
-  },
-  {
-    "codigo": "134U7753",
-    "descripcion": "VLT® Midi Drive FC 280 11Kw/15HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated Profibus DP",
-    "precioUSD": 2316
-  },
-  {
-    "codigo": "134U7754",
-    "descripcion": "VLT® Midi Drive FC 280 15Kw/20HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated Profibus DP",
-    "precioUSD": 2961
-  },
-  {
-    "codigo": "134U7755",
-    "descripcion": "VLT® Midi Drive FC 280 18,5Kw/25HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated Profibus DP",
-    "precioUSD": 3721
-  },
-  {
-    "codigo": "134U7756",
-    "descripcion": "VLT® Midi Drive FC 280 22Kw/30HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated Profibus DP",
-    "precioUSD": 4553
-  },
-  {
-    "codigo": "134U7768",
-    "descripcion": "VLT® Midi Drive FC 280 0,37Kw/0,5HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated ProfiNet",
-    "precioUSD": 830
-  },
-  {
-    "codigo": "134U7769",
-    "descripcion": "VLT® Midi Drive FC 280 0,55Kw/0,75HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated ProfiNet",
-    "precioUSD": 862
-  },
-  {
-    "codigo": "134U7770",
-    "descripcion": "VLT® Midi Drive FC 280 0,75Kw/1HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated ProfiNet",
-    "precioUSD": 913
-  },
-  {
-    "codigo": "134U7771",
-    "descripcion": "VLT® Midi Drive FC 280 1,1Kw/1,5HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated ProfiNet",
-    "precioUSD": 1017
-  },
-  {
-    "codigo": "134U7772",
-    "descripcion": "VLT® Midi Drive FC 280 1,5Kw/2HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated ProfiNet",
-    "precioUSD": 1096
-  },
-  {
-    "codigo": "134U7773",
-    "descripcion": "VLT® Midi Drive FC 280 2,2Kw/3HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated ProfiNet",
-    "precioUSD": 1222
-  },
-  {
-    "codigo": "134U7774",
-    "descripcion": "VLT® Midi Drive FC 280 3Kw/4HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated ProfiNet",
-    "precioUSD": 1321
-  },
-  {
-    "codigo": "134U7776",
-    "descripcion": "VLT® Midi Drive FC 280 4Kw/5,5HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated ProfiNet",
-    "precioUSD": 1482
-  },
-  {
-    "codigo": "134U7777",
-    "descripcion": "VLT® Midi Drive FC 280 5,5Kw/7,5HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated ProfiNet",
-    "precioUSD": 1728
-  },
-  {
-    "codigo": "134U7778",
-    "descripcion": "VLT® Midi Drive FC 280 7,5Kw/10HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated ProfiNet",
-    "precioUSD": 1991
-  },
-  {
-    "codigo": "134U7779",
-    "descripcion": "VLT® Midi Drive FC 280 11Kw/15HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated ProfiNet",
-    "precioUSD": 2397
-  },
-  {
-    "codigo": "134U7780",
-    "descripcion": "VLT® Midi Drive FC 280 15Kw/20HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated ProfiNet",
-    "precioUSD": 3043
-  },
-  {
-    "codigo": "134U7781",
-    "descripcion": "VLT® Midi Drive FC 280 18,5Kw/25HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated ProfiNet",
-    "precioUSD": 3803
-  },
-  {
-    "codigo": "134U7782",
-    "descripcion": "VLT® Midi Drive FC 280 22Kw/30HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated ProfiNet",
-    "precioUSD": 4635
-  },
-  {
-    "codigo": "134X0709",
-    "descripcion": "VLT® Midi Drive FC 280 0,37Kw/0,5HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated EtherNet IP",
-    "precioUSD": 830
-  },
-  {
-    "codigo": "134X0710",
-    "descripcion": "VLT® Midi Drive FC 280 0,55Kw/0,75HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated EtherNet IP",
-    "precioUSD": 862
-  },
-  {
-    "codigo": "134X0711",
-    "descripcion": "VLT® Midi Drive FC 280 0,75Kw/1HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated EtherNet IP",
-    "precioUSD": 913
-  },
-  {
-    "codigo": "134X0712",
-    "descripcion": "VLT® Midi Drive FC 280 1,1Kw/1,5HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated EtherNet IP",
-    "precioUSD": 1017
-  },
-  {
-    "codigo": "134X0713",
-    "descripcion": "VLT® Midi Drive FC 280 1,5Kw/2HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated EtherNet IP",
-    "precioUSD": 1096
-  },
-  {
-    "codigo": "134X0714",
-    "descripcion": "VLT® Midi Drive FC 280 2,2Kw/3HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated EtherNet IP",
-    "precioUSD": 1222
-  },
-  {
-    "codigo": "134X0715",
-    "descripcion": "VLT® Midi Drive FC 280 3Kw/4HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated EtherNet IP",
-    "precioUSD": 1321
-  },
-  {
-    "codigo": "134X0716",
-    "descripcion": "VLT® Midi Drive FC 280 4Kw/5,5HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated EtherNet IP",
-    "precioUSD": 1482
-  },
-  {
-    "codigo": "134X0717",
-    "descripcion": "VLT® Midi Drive FC 280 5,5Kw/7,5HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated EtherNet IP",
-    "precioUSD": 1728
-  },
-  {
-    "codigo": "134X0718",
-    "descripcion": "VLT® Midi Drive FC 280 7,5Kw/10HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated EtherNet IP",
-    "precioUSD": 1991
-  },
-  {
-    "codigo": "134X0719",
-    "descripcion": "VLT® Midi Drive FC 280 11Kw/15HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated EtherNet IP",
-    "precioUSD": 2397
-  },
-  {
-    "codigo": "134X0720",
-    "descripcion": "VLT® Midi Drive FC 280 15Kw/20HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated EtherNet IP",
-    "precioUSD": 3043
-  },
-  {
-    "codigo": "134X0721",
-    "descripcion": "VLT® Midi Drive FC 280 18,5Kw/25HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated EtherNet IP",
-    "precioUSD": 3803
-  },
-  {
-    "codigo": "134X0722",
-    "descripcion": "VLT® Midi Drive FC 280 22Kw/30HP 3 x 380 - 480 Vac IP20 RFI Class A2 Break Chopper No Numeric Control Panel Coated PCB Integrated EtherNet IP",
-    "precioUSD": 4635
-  },
-  {
-    "codigo": "131B5875",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 1,1Kw/1,5HP 3 x 200 -240 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 895
-  },
-  {
-    "codigo": "131B6224",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 1,5Kw/2HP 3 x 200 -240 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 1046
-  },
-  {
-    "codigo": "131B6144",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 2,2Kw/3HP 3 x 200 -240 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 1296
-  },
-  {
-    "codigo": "131B6721",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 3Kw/4HP 3 x 200 -240 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 1434
-  },
-  {
-    "codigo": "131B6722",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 3,7Kw/5HP 3 x 200 -240 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 1609
-  },
-  {
-    "codigo": "131F7681",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 5,5Kw/7,5HP 3 x 200 -240 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 1798
-  },
-  {
-    "codigo": "131F7682",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 7,5Kw/10HP 3 x 200 -240 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 2098
-  },
-  {
-    "codigo": "131H4638",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 15Kw/20HP 3 x 200 -240 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 3210
-  },
-  {
-    "codigo": "131H4645",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 18,5Kw/25HP 3 x 200 -240 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 3795
-  },
-  {
-    "codigo": "131H5972",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 22Kw/30HP 3 x 200 -240 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 5381
-  },
-  {
-    "codigo": "131H5975",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 30Kw/40HP 3 x 200 -240 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 6742
-  },
-  {
-    "codigo": "131H3677",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 37Kw/50HP 3 x 200 -240 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 8368
-  },
-  {
-    "codigo": "131H3678",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 45Kw/60HP 3 x 200 -240 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 9204
-  },
-  {
-    "codigo": "131B4991",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 1,1Kw/1,5HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 907
-  },
-  {
-    "codigo": "131B4992",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 1,5Kw/2HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 1065
-  },
-  {
-    "codigo": "131B4993",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 2,2Kw/3HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 1316
-  },
-  {
-    "codigo": "131B4994",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 3Kw/4HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 1484
-  },
-  {
-    "codigo": "131B4995",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 4Kw/5,5HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 1591
-  },
-  {
-    "codigo": "131B4996",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 5,5Kw/7,5HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 1859
-  },
-  {
-    "codigo": "131B4997",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 7,5Kw/10HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 2104
-  },
-  {
-    "codigo": "131F3119",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 11Kw/15HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 2543
-  },
-  {
-    "codigo": "131F3120",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 15Kw/20HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 3148
-  },
-  {
-    "codigo": "131F3121",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 18,5Kw/25HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 4001
-  },
-  {
-    "codigo": "131F6622",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 22Kw/30HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 4962
-  },
-  {
-    "codigo": "131F6623",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 30Kw/40HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 5679
-  },
-  {
-    "codigo": "131F6624",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 37Kw/50HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 6988
-  },
-  {
-    "codigo": "131F3122",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 45Kw/60HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 8586
-  },
-  {
-    "codigo": "131F3123",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 55Kw/75HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 10320
-  },
-  {
-    "codigo": "131F3127",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 75Kw/100HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 11745
-  },
-  {
-    "codigo": "131F3133",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 90Kw/125HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 13848
-  },
-  {
-    "codigo": "134F0374",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 110Kw/150HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 14283
-  },
-  {
-    "codigo": "134F0383",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 132Kw/200HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 16896
-  },
-  {
-    "codigo": "134F0386",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 160Kw/250HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 20624
-  },
-  {
-    "codigo": "134F0389",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 200Kw/300HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 24506
-  },
-  {
-    "codigo": "134F0530",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 250Kw/350HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 31411
-  },
-  {
-    "codigo": "134F1124",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 315Kw/450HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 37798
-  },
-  {
-    "codigo": "131B6963",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 355Kw/500HP 3 x 380 - 480 VacE00 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 53961
-  },
-  {
-    "codigo": "131B6969",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 400Kw/550HP 3 x 380 - 480 VacE00 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 61022
-  },
-  {
-    "codigo": "131B7431",
-    "descripcion": "VLT® HVAC Drive FC 102 HVAC 450Kw/600HP 3 x 380 - 480 VacE00 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 76868
-  },
-  {
-    "codigo": "131L9793",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 0,37Kw/0,5HP 3 x 200 -240 Vac IP20 RFI class A1 No Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 583
-  },
-  {
-    "codigo": "131L9794",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 0,75Kw/1HP 3 x 200 -240 Vac IP20 RFI class A1 No Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 711
-  },
-  {
-    "codigo": "131L9795",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 1,5Kw/2HP 3 x 200 -240 Vac IP20 RFI class A1 No Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 958
-  },
-  {
-    "codigo": "131L9796",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 2,2Kw/3HP 3 x 200 -240 Vac IP20 RFI class A1 No Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 1099
-  },
-  {
-    "codigo": "131L9797",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 3,7Kw/5HP 3 x 200 -240 Vac IP20 RFI class A1 No Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 1410
-  },
-  {
-    "codigo": "131L9798",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 5,5Kw/7,5HP 3 x 200 -240 Vac IP20 RFI class A1 No Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 1632
-  },
-  {
-    "codigo": "131L9799",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 7,5Kw/10HP 3 x 200 -240 Vac IP20 RFI class A1 No Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 1878
-  },
-  {
-    "codigo": "131L9800",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 11Kw/15HP 3 x 200 -240 Vac IP20 RFI class A1 No Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 2070
-  },
-  {
-    "codigo": "131L9801",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 15Kw/20HP 3 x 200 -240 Vac IP20 RFI class A2 No Break Chopper No Numeric Control Panel",
-    "precioUSD": 2430
-  },
-  {
-    "codigo": "131L9809",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 18,5Kw/25HP 3 x 200 -240 Vac IP20 RFI class A2 No Break Chopper No Numeric Control Panel",
-    "precioUSD": 3067
-  },
-  {
-    "codigo": "131L9832",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 22Kw/30HP 3 x 200 -240 Vac IP20 RFI class A2 No Break Chopper No Numeric Control Panel",
-    "precioUSD": 3623
-  },
-  {
-    "codigo": "131L9837",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 30Kw/40HP 3 x 200 -240 Vac IP20 RFI class A2 No Break Chopper No Numeric Control Panel",
-    "precioUSD": 5077
-  },
-  {
-    "codigo": "131L9845",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 37Kw/50HP 3 x 200 -240 Vac IP20 RFI class A2 No Break Chopper No Numeric Control Panel",
-    "precioUSD": 6367
-  },
-  {
-    "codigo": "131L9853",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 45Kw/60HP 3 x 200 -240 Vac IP20 RFI class A2 No Break Chopper No Numeric Control Panel",
-    "precioUSD": 7816
-  },
-  {
-    "codigo": "131L9861",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 0,37Kw/0,5HP 3 x 380 - 440 Vac IP20 RFI class A1 No Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 608
-  },
-  {
-    "codigo": "131L9862",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 0,75Kw/1HP 3 x 380 - 440 Vac IP20 RFI class A1 No Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 694
-  },
-  {
-    "codigo": "131L9863",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 1,5Kw/2HP 3 x 380 - 440 Vac IP20 RFI class A1 No Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 905
-  },
-  {
-    "codigo": "131L9864",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 2,2Kw/3HP 3 x 380 - 440 Vac IP20 RFI class A1 No Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 1039
-  },
-  {
-    "codigo": "131L9865",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 3Kw/4HP 3 x 380 - 440 Vac IP20 RFI class A1 No Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 1202
-  },
-  {
-    "codigo": "131L9866",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 4Kw/5,5HP 3 x 380 - 440 Vac IP20 RFI class A1 No Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 1343
-  },
-  {
-    "codigo": "131L9867",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 5,5Kw/7,5HP 3 x 380 - 440 Vac IP20 RFI class A1 No Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 1633
-  },
-  {
-    "codigo": "131L9868",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 7,5Kw/10HP 3 x 380 - 440 Vac IP20 RFI class A1 No Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 1897
-  },
-  {
-    "codigo": "131L9869",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 11Kw/15HP 3 x 380 - 440 Vac IP20 RFI class A1 No Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 2338
-  },
-  {
-    "codigo": "131L9870",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 15Kw/20HP 3 x 380 - 440 Vac IP20 RFI class A1 No Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 3041
-  },
-  {
-    "codigo": "131L9871",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 18,5Kw/25HP 3 x 380 - 440 Vac IP20 RFI class A1 No Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 3866
-  },
-  {
-    "codigo": "131L9872",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 22Kw/30HP 3 x 380 - 440 Vac IP20 RFI class A1 No Break Chopper No Numeric Control Panel Coated PCB",
-    "precioUSD": 4771
-  },
-  {
-    "codigo": "131L9873",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 30Kw/40HP 3 x 380 - 440 Vac IP20 RFI class A2 No Break Chopper No Numeric Control Panel",
-    "precioUSD": 5460
-  },
-  {
-    "codigo": "131L9881",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 37Kw/50HP 3 x 380 - 440 Vac IP20 RFI class A2 No Break Chopper No Numeric Control Panel",
-    "precioUSD": 6719
-  },
-  {
-    "codigo": "131L9889",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 45Kw/60HP 3 x 380 - 440 Vac IP20 RFI class A2 No Break Chopper No Numeric Control Panel",
-    "precioUSD": 8256
-  },
-  {
-    "codigo": "131L9897",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 55Kw/75HP 3 x 380 - 440 Vac IP20 RFI class A2 No Break Chopper No Numeric Control Panel",
-    "precioUSD": 9923
-  },
-  {
-    "codigo": "131L9905",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 75Kw/100HP 3 x 380 - 440 Vac IP20 RFI class A2 No Break Chopper No Numeric Control Panel",
-    "precioUSD": 11293
-  },
-  {
-    "codigo": "131L9913",
-    "descripcion": "VLT® HVAC Basic Drive FC 101 90Kw/125HP 3 x 380 - 440 Vac IP20 RFI class A2 No Break Chopper No Numeric Control Panel",
-    "precioUSD": 13316
-  },
-  {
-    "codigo": "131B9159",
-    "descripcion": "VLT® AQUA Drive FC 202 1,1Kw/1,5HP 3 x 200 - 240 Vac Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 895
-  },
-  {
-    "codigo": "131F0661",
-    "descripcion": "VLT® AQUA Drive FC 202 1,5Kw/2HP 3 x 200 - 240 Vac Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 1046
-  },
-  {
-    "codigo": "131B9173",
-    "descripcion": "VLT® AQUA Drive FC 202 2,2Kw/3HP 3 x 200 - 240 Vac Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 1296
-  },
-  {
-    "codigo": "131B9189",
-    "descripcion": "VLT® AQUA Drive FC 202 3Kw/4HP 3 x 200 - 240 Vac Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 1434
-  },
-  {
-    "codigo": "131B9209",
-    "descripcion": "VLT® AQUA Drive FC 202 3,7Kw/5HP 3 x 200 - 240 Vac Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 1609
-  },
-  {
-    "codigo": "131F8371",
-    "descripcion": "VLT® AQUA Drive FC 202 5,5Kw/7,5HP 3 x 200 - 240 Vac Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 1798
-  },
-  {
-    "codigo": "131F8467",
-    "descripcion": "VLT® AQUA Drive FC 202 7,5Kw/10HP 3 x 200 - 240 Vac Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 2098
-  },
-  {
-    "codigo": "131H2141",
-    "descripcion": "VLT® HVAC Drive FC 102 11Kw/15HP 3 x 200 - 240 Vac Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 2517
-  },
-  {
-    "codigo": "131H5093",
-    "descripcion": "VLT® HVAC Drive FC 202 15Kw/20HP 3 x 200 - 240 Vac Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 3210
-  },
-  {
-    "codigo": "131H5062",
-    "descripcion": "VLT® AQUA Drive FC 202 18,5Kw/25HP 3 x 200 - 240 Vac Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 3795
-  },
-  {
-    "codigo": "131H5155",
-    "descripcion": "VLT® AQUA Drive FC 202 22Kw/30HP 3 x 200 - 240 Vac Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 5381
-  },
-  {
-    "codigo": "131H5156",
-    "descripcion": "VLT® AQUA Drive FC 202 30Kw/40HP 3 x 200 - 240 Vac Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 6742
-  },
-  {
-    "codigo": "131H5157",
-    "descripcion": "VLT® AQUA Drive FC 202 45Kw/60HP 3 x 200 - 240 Vac Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 9204
-  },
-  {
-    "codigo": "131B8893",
-    "descripcion": "VLT® AQUA Drive FC 202 1,1Kw/1,5HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 907
-  },
-  {
-    "codigo": "131F0647",
-    "descripcion": "VLT® AQUA Drive FC 202 1,5Kw/2HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 1065
-  },
-  {
-    "codigo": "131B8902",
-    "descripcion": "VLT® AQUA Drive FC 202 2,2Kw/3HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 1316
-  },
-  {
-    "codigo": "131B8911",
-    "descripcion": "VLT® AQUA Drive FC 202 3Kw/4HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 1484
-  },
-  {
-    "codigo": "131B8919",
-    "descripcion": "VLT® AQUA Drive FC 202 4Kw/5,5HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 1591
-  },
-  {
-    "codigo": "131B8938",
-    "descripcion": "VLT® AQUA Drive FC 202 5,5Kw/7,5HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 1859
-  },
-  {
-    "codigo": "131B8949",
-    "descripcion": "VLT® AQUA Drive FC 202 7,5Kw/10HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 2104
-  },
-  {
-    "codigo": "131F3061",
-    "descripcion": "VLT® AQUA Drive FC 202 11Kw/15HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 2543
-  },
-  {
-    "codigo": "131F3062",
-    "descripcion": "VLT® AQUA Drive FC 202 15Kw/20HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 3148
-  },
-  {
-    "codigo": "131F3063",
-    "descripcion": "VLT® AQUA Drive FC 202 18,5Kw/25HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 4001
-  },
-  {
-    "codigo": "131F6764",
-    "descripcion": "VLT® AQUA Drive FC 202 22Kw/30HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 4962
-  },
-  {
-    "codigo": "131F6769",
-    "descripcion": "VLT® AQUA Drive FC 202 30Kw/40HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 5679
-  },
-  {
-    "codigo": "131F6774",
-    "descripcion": "VLT® AQUA Drive FC 202 37Kw/50HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 6988
-  },
-  {
-    "codigo": "131F3069",
-    "descripcion": "VLT® AQUA Drive FC 202 45Kw/60HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 8586
-  },
-  {
-    "codigo": "131F3070",
-    "descripcion": "VLT® AQUA Drive FC 202 55Kw/75HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 10320
-  },
-  {
-    "codigo": "131F3071",
-    "descripcion": "VLT® AQUA Drive FC 202 75Kw/100HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 11745
-  },
-  {
-    "codigo": "131F3072",
-    "descripcion": "VLT® AQUA Drive FC 202 90Kw/125HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 13848
-  },
-  {
-    "codigo": "134F0366",
-    "descripcion": "VLT® AQUA Drive FC 202 110Kw/150HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 14283
-  },
-  {
-    "codigo": "134F0368",
-    "descripcion": "VLT® AQUA Drive FC 202 132Kw/200HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 16896
-  },
-  {
-    "codigo": "134F0371",
-    "descripcion": "VLT® AQUA Drive FC 202 160Kw/250HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 20624
-  },
-  {
-    "codigo": "134F0372",
-    "descripcion": "VLT® AQUA Drive FC 202 200Kw/300HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 24506
-  },
-  {
-    "codigo": "134F0373",
-    "descripcion": "VLT® AQUA Drive FC 202 250Kw/350HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 31411
-  },
-  {
-    "codigo": "134F4192",
-    "descripcion": "VLT® AQUA Drive FC 202 315Kw/450HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 37798
-  },
-  {
-    "codigo": "131B9496",
-    "descripcion": "VLT® AQUA Drive FC 202 355Kw/500HP 3 x 380 - 480 VacE00 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 53961
-  },
-  {
-    "codigo": "131B9504",
-    "descripcion": "VLT® AQUA Drive FC 202 400Kw/550HP 3 x 380 - 480 VacE00 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 61022
-  },
-  {
-    "codigo": "131B9511",
-    "descripcion": "VLT® AQUA Drive FC 202 450Kw/600HP 3 x 380 - 480 VacE00 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 76868
-  },
-  {
-    "codigo": "131B1037",
-    "descripcion": "VLT® AutomationDrive FC 301 0,25Kw/0,34HP 3 x 200 - 240 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 684
-  },
-  {
-    "codigo": "131B1051",
-    "descripcion": "VLT® AutomationDrive FC 301 0,37Kw/0,5HP 3 x 200 - 240 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 722
-  },
-  {
-    "codigo": "131B1074",
-    "descripcion": "VLT® AutomationDrive FC 301 0,55Kw/0,75HP 3 x 200 - 240 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 753
-  },
-  {
-    "codigo": "131B1091",
-    "descripcion": "VLT® AutomationDrive FC 301 0,75Kw/1HP 3 x 200 - 240 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 826
-  },
-  {
-    "codigo": "131B1107",
-    "descripcion": "VLT® AutomationDrive FC 301 1,1Kw/1,5HP 3 x 200 - 240 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 980
-  },
-  {
-    "codigo": "131B1123",
-    "descripcion": "VLT® AutomationDrive FC 301 1,5Kw/2HP 3 x 200 - 240 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 1146
-  },
-  {
-    "codigo": "131B1137",
-    "descripcion": "VLT® AutomationDrive FC 301 2,2Kw/3HP 3 x 200 - 240 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 1547
-  },
-  {
-    "codigo": "131B1159",
-    "descripcion": "VLT® AutomationDrive FC 301 3Kw/4HP 3 x 200 - 240 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 1765
-  },
-  {
-    "codigo": "131B1191",
-    "descripcion": "VLT® AutomationDrive FC 301 3,7Kw/5HP 3 x 200 - 240 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 1980
-  },
-  {
-    "codigo": "131F8631",
-    "descripcion": "VLT® AutomationDrive FC 301 5,5Kw/7,5HP 3 x 200 - 240 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 2286
-  },
-  {
-    "codigo": "131H4635",
-    "descripcion": "VLT® AutomationDrive FC 301 11Kw/15HP 3 x 200 - 240 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 3201
-  },
-  {
-    "codigo": "131H5162",
-    "descripcion": "VLT® AutomationDrive FC 301 15Kw/20HP 3 x 200 - 240 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 3933
-  },
-  {
-    "codigo": "131H5169",
-    "descripcion": "VLT® AutomationDrive FC 301 18,5Kw/25HP 3 x 200 - 240 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 4651
-  },
-  {
-    "codigo": "131H5174",
-    "descripcion": "VLT® AutomationDrive FC 301 22Kw/30HP 3 x 200 - 240 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 6593
-  },
-  {
-    "codigo": "131H5178",
-    "descripcion": "VLT® AutomationDrive FC 301 30Kw/40HP 3 x 200 - 240 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 8262
-  },
-  {
-    "codigo": "131H5182",
-    "descripcion": "VLT® AutomationDrive FC 301 37Kw/50HP 3 x 200 - 240 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 10254
-  },
-  {
-    "codigo": "131B0884",
-    "descripcion": "VLT® AutomationDrive FC 301 0,37Kw/0,5HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 840
-  },
-  {
-    "codigo": "131B0901",
-    "descripcion": "VLT® AutomationDrive FC 301 0,55Kw/0,75HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 876
-  },
-  {
-    "codigo": "131B0917",
-    "descripcion": "VLT® AutomationDrive FC 301 0,75Kw/1HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 962
-  },
-  {
-    "codigo": "131B0745",
-    "descripcion": "VLT® AutomationDrive FC 301 1,1Kw/1,5HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 1107
-  },
-  {
-    "codigo": "131B0749",
-    "descripcion": "VLT® AutomationDrive FC 301 1,5Kw/2HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 1294
-  },
-  {
-    "codigo": "131B0965",
-    "descripcion": "VLT® AutomationDrive FC 301 2,2Kw/3HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 1605
-  },
-  {
-    "codigo": "131B0721",
-    "descripcion": "VLT® AutomationDrive FC 301 3Kw/4HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 1774
-  },
-  {
-    "codigo": "131B0725",
-    "descripcion": "VLT® AutomationDrive FC 301 4Kw/5,5HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 1903
-  },
-  {
-    "codigo": "131B0755",
-    "descripcion": "VLT® AutomationDrive FC 301 5,5Kw/7,5HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 2145
-  },
-  {
-    "codigo": "131B0759",
-    "descripcion": "VLT® AutomationDrive FC 301 7,5Kw/10HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 2554
-  },
-  {
-    "codigo": "131F7136",
-    "descripcion": "VLT® AutomationDrive FC 301 11Kw/15HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 3114
-  },
-  {
-    "codigo": "131F0587",
-    "descripcion": "VLT® AutomationDrive FC 301 15Kw/20HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 3752
-  },
-  {
-    "codigo": "131F7138",
-    "descripcion": "VLT® AutomationDrive FC 301 18,5Kw/25HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 4414
-  },
-  {
-    "codigo": "131F7139",
-    "descripcion": "VLT® AutomationDrive FC 301 22Kw/30HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 5367
-  },
-  {
-    "codigo": "131F7140",
-    "descripcion": "VLT® AutomationDrive FC 301 30Kw/40HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 6142
-  },
-  {
-    "codigo": "131F7141",
-    "descripcion": "VLT® AutomationDrive FC 301 37Kw/50HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 7558
-  },
-  {
-    "codigo": "131F7142",
-    "descripcion": "VLT® AutomationDrive FC 301 45Kw/60HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 9287
-  },
-  {
-    "codigo": "131F7143",
-    "descripcion": "VLT® AutomationDrive FC 301 55Kw/75HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 11162
-  },
-  {
-    "codigo": "131F7144",
-    "descripcion": "VLT® AutomationDrive FC 301 75Kw/100HP 3 x 380 - 480 Vac IP20 RFI Class A2 No Break Chopper No Graphical Control Panel",
-    "precioUSD": 12703
-  },
-  {
-    "codigo": "131B0297",
-    "descripcion": "VLT® AutomationDrive FC 302 0,25Kw/0,34HP 3 x 200 -240 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 933
-  },
-  {
-    "codigo": "131B0298",
-    "descripcion": "VLT® AutomationDrive FC 302 0,37Kw/0,5HP 3 x 200 -240 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 985
-  },
-  {
-    "codigo": "131B0299",
-    "descripcion": "VLT® AutomationDrive FC 302 0,55Kw/0,75HP 3 x 200 -240 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 1027
-  },
-  {
-    "codigo": "131B0300",
-    "descripcion": "VLT® AutomationDrive FC 302 0,75Kw/1HP 3 x 200 -240 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 1127
-  },
-  {
-    "codigo": "131B0301",
-    "descripcion": "VLT® AutomationDrive FC 302 1,1Kw/1,5HP 3 x 200 -240 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 1297
-  },
-  {
-    "codigo": "131B0302",
-    "descripcion": "VLT® AutomationDrive FC 302 1,5Kw/2HP 3 x 200 -240 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 1518
-  },
-  {
-    "codigo": "131B0303",
-    "descripcion": "VLT® AutomationDrive FC 302 2,2Kw/3HP 3 x 200 -240 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 1882
-  },
-  {
-    "codigo": "131B0304",
-    "descripcion": "VLT® AutomationDrive FC 302 3Kw/4HP 3 x 200 -240 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 2126
-  },
-  {
-    "codigo": "131B0305",
-    "descripcion": "VLT® AutomationDrive FC 302 3,7Kw/5HP 3 x 200 -240 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 2385
-  },
-  {
-    "codigo": "131F9313",
-    "descripcion": "VLT® AutomationDrive FC 302 5,5Kw/7,5HP 3 x 200 -240 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 2754
-  },
-  {
-    "codigo": "131H4575",
-    "descripcion": "VLT® AutomationDrive FC 302 11Kw/15HP 3 x 200 -240 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 3856
-  },
-  {
-    "codigo": "131H4577",
-    "descripcion": "VLT® AutomationDrive FC 302 15Kw/20HP 3 x 200 -240 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 4916
-  },
-  {
-    "codigo": "131F2985",
-    "descripcion": "VLT® AutomationDrive FC 302 18,5Kw/25HP 3 x 200 -240 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 5814
-  },
-  {
-    "codigo": "131H5359",
-    "descripcion": "VLT® AutomationDrive FC 302 22Kw/30HP 3 x 200 -240 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 8242
-  },
-  {
-    "codigo": "131H4488",
-    "descripcion": "VLT® AutomationDrive FC 302 30Kw/40HP 3 x 200 -240 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 10328
-  },
-  {
-    "codigo": "131H4580",
-    "descripcion": "VLT® AutomationDrive FC 302 37Kw/50HP 3 x 200 -240 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 12817
-  },
-  {
-    "codigo": "131B0073",
-    "descripcion": "VLT® AutomationDrive FC 302 0,37Kw/0,5HP 3 x 380 - 500 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 966
-  },
-  {
-    "codigo": "131B0074",
-    "descripcion": "VLT® AutomationDrive FC 302 0,55Kw/0,75HP 3 x 380 - 500 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 1008
-  },
-  {
-    "codigo": "131B0075",
-    "descripcion": "VLT® AutomationDrive FC 302 0,75Kw/1HP 3 x 380 - 500 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 1105
-  },
-  {
-    "codigo": "131B0076",
-    "descripcion": "VLT® AutomationDrive FC 302 1,1Kw/1,5HP 3 x 380 - 500 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 1272
-  },
-  {
-    "codigo": "131B0077",
-    "descripcion": "VLT® AutomationDrive FC 302 1,5Kw/2HP 3 x 380 - 500 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 1488
-  },
-  {
-    "codigo": "131B0078",
-    "descripcion": "VLT® AutomationDrive FC 302 2,2Kw/3HP 3 x 380 - 500 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 1845
-  },
-  {
-    "codigo": "131B0079",
-    "descripcion": "VLT® AutomationDrive FC 302 3Kw/4HP 3 x 380 - 500 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 2084
-  },
-  {
-    "codigo": "131B0080",
-    "descripcion": "VLT® AutomationDrive FC 302 4Kw/5,5HP 3 x 380 - 500 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 2239
-  },
-  {
-    "codigo": "131B0081",
-    "descripcion": "VLT® AutomationDrive FC 302 5,5Kw/7,5HP 3 x 380 - 500 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 2624
-  },
-  {
-    "codigo": "131B0082",
-    "descripcion": "VLT® AutomationDrive FC 302 7,5Kw/10HP 3 x 380 - 500 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 2976
-  },
-  {
-    "codigo": "131F0428",
-    "descripcion": "VLT® AutomationDrive FC 302 11Kw/15HP 3 x 380 - 500 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 3577
-  },
-  {
-    "codigo": "131F0429",
-    "descripcion": "VLT® AutomationDrive FC 302 15Kw/20HP 3 x 380 - 500 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 4312
-  },
-  {
-    "codigo": "131F0432",
-    "descripcion": "VLT® AutomationDrive FC 302 18,5Kw/25HP 3 x 380 - 500 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 5191
-  },
-  {
-    "codigo": "131F0433",
-    "descripcion": "VLT® AutomationDrive FC 302 22Kw/30HP 3 x 380 - 500 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 6329
-  },
-  {
-    "codigo": "131F0435",
-    "descripcion": "VLT® AutomationDrive FC 302 30Kw/40HP 3 x 380 - 500 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 7281
-  },
-  {
-    "codigo": "131F0436",
-    "descripcion": "VLT® AutomationDrive FC 302 37Kw/50HP 3 x 380 - 500 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 8174
-  },
-  {
-    "codigo": "131F0439",
-    "descripcion": "VLT® AutomationDrive FC 302 45Kw/60HP 3 x 380 - 500 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 10045
-  },
-  {
-    "codigo": "131F0440",
-    "descripcion": "VLT® AutomationDrive FC 302 55Kw/75HP 3 x 380 - 500 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 12073
-  },
-  {
-    "codigo": "131F0446",
-    "descripcion": "VLT® AutomationDrive FC 302 75Kw/100HP 3 x 380 - 500 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 13751
-  },
-  {
-    "codigo": "134F0292",
-    "descripcion": "VLT® AutomationDrive FC 302 110Kw/150HP 3 x 380 - 500 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 16289
-  },
-  {
-    "codigo": "134F0300",
-    "descripcion": "VLT® AutomationDrive FC 302 110Kw/150HP 3 x 380 - 500 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 19185
-  },
-  {
-    "codigo": "134F0310",
-    "descripcion": "VLT® AutomationDrive FC 302 132Kw/200HP 3 x 380 - 500 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 22683
-  },
-  {
-    "codigo": "134F0313",
-    "descripcion": "VLT® AutomationDrive FC 302 160Kw/250HP 3 x 380 - 500 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 27422
-  },
-  {
-    "codigo": "134F0316",
-    "descripcion": "VLT® AutomationDrive FC 302 200Kw/300HP 3 x 380 - 500 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 32632
-  },
-  {
-    "codigo": "134F4162",
-    "descripcion": "VLT® AutomationDrive FC 302 250Kw/350HP 3 x 380 - 500 Vac IP20 RFI Class A2 No Break Chopper Include Graphical Control Panel",
-    "precioUSD": 39158
-  },
-  {
-    "codigo": "130B1100",
-    "descripcion": "VLT® Profibus DP V1 MCA 101",
-    "precioUSD": null
-  },
-  {
-    "codigo": "130B1107",
-    "descripcion": "VLT® Graphic Control Panel LCP 102",
-    "precioUSD": null
-  },
-  {
-    "codigo": "130B1117",
-    "descripcion": "LCP Mounting Kit, w/ no LCP",
-    "precioUSD": null
-  },
-  {
-    "codigo": "130B1119",
-    "descripcion": "VLT® EtherNet/IP MCA 121, uncoated",
-    "precioUSD": null
-  },
-  {
-    "codigo": "130B1124",
-    "descripcion": "VLT® Numerical Control Panel LCP 101",
-    "precioUSD": null
-  },
-  {
-    "codigo": "130B1806",
-    "descripcion": "Switch Mode Power Supply 15kW 200V",
-    "precioUSD": null
-  },
-  {
-    "codigo": "132B0101",
-    "descripcion": "VLT® Control Panel LCP 12, w. potmeter",
-    "precioUSD": null
-  },
-  {
-    "codigo": "132B0200",
-    "descripcion": "VLT® Control Panel LCP 31",
-    "precioUSD": null
-  },
-  {
-    "codigo": "132B0254",
-    "descripcion": "VLT® Control Panel LCP 21, numeric",
-    "precioUSD": null
-  },
-  {
-    "codigo": "132B0466",
-    "descripcion": "VLT®Memory Module MCM 103",
-    "precioUSD": null
-  },
-  {
-    "codigo": "134N4168",
-    "descripcion": "VLT® AutomationDrive FC 302 90Kw/125HP 3 x 380 - 500 Vac IP20 RFI Class A2 Regen Term + Brake Chopper Include Graphical Control Panel",
-    "precioUSD": null
-  },
-  {
-    "codigo": "175G5216",
-    "descripcion": "VLT® MCD202 100A 200-440 VAC, Control Voltage: 110/240 VAC or 440 VAC",
-    "precioUSD": null
-  },
-  {
-    "codigo": "175G5217",
-    "descripcion": "VLT® MCD202 140A 200-440 VAC, Control Voltage: 110/240 VAC or 440 VAC",
-    "precioUSD": null
-  },
-  {
-    "codigo": "130B1937",
-    "descripcion": "VLT® HVAC Drive Power Card 55kW 400V",
-    "precioUSD": null
-  },
-  {
-    "codigo": "001A0008",
-    "descripcion": "Recargo Extra Horario Laboral 20%",
-    "precioUSD": null
-  },
-  {
-    "codigo": "001A0007",
-    "descripcion": "Mantenimiento Preventivo Frame B4 |15Hp - 20Hp| 240Vac",
-    "precioUSD": null
-  },
-  {
-    "codigo": "001A0006",
-    "descripcion": "Mantenimiento Preventivo Frame C4 |40Hp - 50Hp| 240Vac",
-    "precioUSD": null
-  },
-  {
-    "codigo": "176F3859",
-    "descripcion": "Rectifier SCR/Diode 320A 1600V",
-    "precioUSD": null
-  },
-  {
-    "codigo": "001A0001",
-    "descripcion": "Servicio Tecnico Correctivo",
-    "precioUSD": null
-  },
-  {
-    "codigo": "001A0002",
-    "descripcion": "Servicio Tecnico Diagnostico Variador de Frecuencia Danfoss",
-    "precioUSD": null
-  },
-  {
-    "codigo": "001A0003",
-    "descripcion": "Servicio Tecnico Diagnostico VLT HVAC Basic FC-101 - Informe Tecnico",
-    "precioUSD": null
-  },
-  {
-    "codigo": "001A0004",
-    "descripcion": "Hora de Servicio Tecnico Programacion Variador de Frecuencia",
-    "precioUSD": null
-  },
-  {
-    "codigo": "130B1423",
-    "descripcion": "Maintenance spare part DC bus capacitor 4500µF 450V Frame C3|4",
-    "precioUSD": null
-  },
-  {
-    "codigo": "001A0005",
-    "descripcion": "Mantenimiento Preventivo",
-    "precioUSD": null
-  }
+  { codigo: '134X3042', descripcion: 'VLT® Midi Drive FC 280 0,37Kw/0,5HP 1x200-240 VAC IP20 RFI A1/B No Brake Chopper Coated PCB', precioUSD: 585 },
+  { codigo: '134X3053', descripcion: 'VLT® Midi Drive FC 280 0,55Kw/0,75HP 1x200-240 VAC IP20 RFI A1/B No Brake Chopper Coated PCB', precioUSD: 612 },
+  { codigo: '134X3054', descripcion: 'VLT® Midi Drive FC 280 0,75Kw/1HP 1x200-240 VAC IP20 RFI A1/B No Brake Chopper Coated PCB', precioUSD: 673 },
+  { codigo: '134X3055', descripcion: 'VLT® Midi Drive FC 280 1,1Kw/1,5HP 1x200-240 VAC IP20 RFI A1/B No Brake Chopper Coated PCB', precioUSD: 759 },
+  { codigo: '134X3056', descripcion: 'VLT® Midi Drive FC 280 1,5Kw/2HP 1x200-240 VAC IP20 RFI A1/B No Brake Chopper Coated PCB', precioUSD: 908 },
+  { codigo: '134X3057', descripcion: 'VLT® Midi Drive FC 280 2,2Kw/3HP 1x200-240 VAC IP20 RFI A1/B No Brake Chopper Coated PCB', precioUSD: 1133 },
+  { codigo: '134U7942', descripcion: 'VLT® Midi Drive FC 280 0,37Kw/0,5HP 3x200-240 VAC IP20 RFI A2 Brake Chopper Coated PCB Modbus RTU', precioUSD: 688 },
+  { codigo: '134U7943', descripcion: 'VLT® Midi Drive FC 280 0,55Kw/0,75HP 3x200-240 VAC IP20 RFI A2 Brake Chopper Coated PCB Modbus RTU', precioUSD: 720 },
+  { codigo: '134U7944', descripcion: 'VLT® Midi Drive FC 280 0,75Kw/1HP 3x200-240 VAC IP20 RFI A2 Brake Chopper Coated PCB Modbus RTU', precioUSD: 790 },
+  { codigo: '134U7945', descripcion: 'VLT® Midi Drive FC 280 1,1Kw/1,5HP 3x200-240 VAC IP20 RFI A2 Brake Chopper Coated PCB Modbus RTU', precioUSD: 910 },
+  { codigo: '134U7946', descripcion: 'VLT® Midi Drive FC 280 1,5Kw/2HP 3x200-240 VAC IP20 RFI A2 Brake Chopper Coated PCB Modbus RTU', precioUSD: 1072 },
+  { codigo: '134U7947', descripcion: 'VLT® Midi Drive FC 280 2,2Kw/3HP 3x200-240 VAC IP20 RFI A2 Brake Chopper Coated PCB Modbus RTU', precioUSD: 1338 },
+  { codigo: '134U7948', descripcion: 'VLT® Midi Drive FC 280 3,7Kw/5HP 3x200-240 VAC IP20 RFI A2 Brake Chopper Coated PCB Modbus RTU', precioUSD: 1642 },
+  { codigo: '134U7960', descripcion: 'VLT® Midi Drive FC 280 0,37Kw/0,5HP 3x200-240 VAC IP20 RFI A2 Brake Chopper Coated PCB Profibus DP', precioUSD: 919 },
+  { codigo: '134U7961', descripcion: 'VLT® Midi Drive FC 280 0,55Kw/0,75HP 3x200-240 VAC IP20 RFI A2 Brake Chopper Coated PCB Profibus DP', precioUSD: 951 },
+  { codigo: '134U7962', descripcion: 'VLT® Midi Drive FC 280 0,75Kw/1HP 3x200-240 VAC IP20 RFI A2 Brake Chopper Coated PCB Profibus DP', precioUSD: 1022 },
+  { codigo: '134U7963', descripcion: 'VLT® Midi Drive FC 280 1,1Kw/1,5HP 3x200-240 VAC IP20 RFI A2 Brake Chopper Coated PCB Profibus DP', precioUSD: 1141 },
+  { codigo: '134U7964', descripcion: 'VLT® Midi Drive FC 280 1,5Kw/2HP 3x200-240 VAC IP20 RFI A2 Brake Chopper Coated PCB Profibus DP', precioUSD: 1303 },
+  { codigo: '134U7965', descripcion: 'VLT® Midi Drive FC 280 2,2Kw/3HP 3x200-240 VAC IP20 RFI A2 Brake Chopper Coated PCB Profibus DP', precioUSD: 1569 },
+  { codigo: '134U7966', descripcion: 'VLT® Midi Drive FC 280 3,7Kw/5HP 3x200-240 VAC IP20 RFI A2 Brake Chopper Coated PCB Profibus DP', precioUSD: 1873 },
+  { codigo: '134U7967', descripcion: 'VLT® Midi Drive FC 280 0,37Kw/0,5HP 3x200-240 VAC IP20 RFI A2 Brake Chopper Coated PCB ProfiNet', precioUSD: 1033 },
+  { codigo: '134U7968', descripcion: 'VLT® Midi Drive FC 280 0,55Kw/0,75HP 3x200-240 VAC IP20 RFI A2 Brake Chopper Coated PCB ProfiNet', precioUSD: 1065 },
+  { codigo: '134U7969', descripcion: 'VLT® Midi Drive FC 280 0,75Kw/1HP 3x200-240 VAC IP20 RFI A2 Brake Chopper Coated PCB ProfiNet', precioUSD: 1136 },
+  { codigo: '134U7970', descripcion: 'VLT® Midi Drive FC 280 1,1Kw/1,5HP 3x200-240 VAC IP20 RFI A2 Brake Chopper Coated PCB ProfiNet', precioUSD: 1255 },
+  { codigo: '134U7971', descripcion: 'VLT® Midi Drive FC 280 1,5Kw/2HP 3x200-240 VAC IP20 RFI A2 Brake Chopper Coated PCB ProfiNet', precioUSD: 1417 },
+  { codigo: '134U7972', descripcion: 'VLT® Midi Drive FC 280 2,2Kw/3HP 3x200-240 VAC IP20 RFI A2 Brake Chopper Coated PCB ProfiNet', precioUSD: 1683 },
+  { codigo: '134U7973', descripcion: 'VLT® Midi Drive FC 280 3,7Kw/5HP 3x200-240 VAC IP20 RFI A2 Brake Chopper Coated PCB ProfiNet', precioUSD: 1987 },
+  { codigo: '134X0723', descripcion: 'VLT® Midi Drive FC 280 0,37Kw/0,5HP 3x200-240 VAC IP20 RFI A2 Brake Chopper Coated PCB EtherNet IP', precioUSD: 1033 },
+  { codigo: '134X0724', descripcion: 'VLT® Midi Drive FC 280 0,55Kw/0,75HP 3x200-240 VAC IP20 RFI A2 Brake Chopper Coated PCB EtherNet IP', precioUSD: 1065 },
+  { codigo: '134X0726', descripcion: 'VLT® Midi Drive FC 280 0,75Kw/1HP 3x200-240 VAC IP20 RFI A2 Brake Chopper Coated PCB EtherNet IP', precioUSD: 1136 },
+  { codigo: '134X0727', descripcion: 'VLT® Midi Drive FC 280 1,1Kw/1,5HP 3x200-240 VAC IP20 RFI A2 Brake Chopper Coated PCB EtherNet IP', precioUSD: 1255 },
+  { codigo: '134X0728', descripcion: 'VLT® Midi Drive FC 280 1,5Kw/2HP 3x200-240 VAC IP20 RFI A2 Brake Chopper Coated PCB EtherNet IP', precioUSD: 1417 },
+  { codigo: '134X0729', descripcion: 'VLT® Midi Drive FC 280 2,2Kw/3HP 3x200-240 VAC IP20 RFI A2 Brake Chopper Coated PCB EtherNet IP', precioUSD: 1683 },
+  { codigo: '134X0730', descripcion: 'VLT® Midi Drive FC 280 3,7Kw/5HP 3x200-240 VAC IP20 RFI A2 Brake Chopper Coated PCB EtherNet IP', precioUSD: 1987 },
+  { codigo: '134U3006', descripcion: 'VLT® Midi Drive FC 280 0,37Kw/0,5HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB Modbus RTU', precioUSD: 821 },
+  { codigo: '134U3007', descripcion: 'VLT® Midi Drive FC 280 0,55Kw/0,75HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB Modbus RTU', precioUSD: 865 },
+  { codigo: '134U3008', descripcion: 'VLT® Midi Drive FC 280 0,75Kw/1HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB Modbus RTU', precioUSD: 937 },
+  { codigo: '134U3009', descripcion: 'VLT® Midi Drive FC 280 1,1Kw/1,5HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB Modbus RTU', precioUSD: 1083 },
+  { codigo: '134U3010', descripcion: 'VLT® Midi Drive FC 280 1,5Kw/2HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB Modbus RTU', precioUSD: 1195 },
+  { codigo: '134U3011', descripcion: 'VLT® Midi Drive FC 280 2,2Kw/3HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB Modbus RTU', precioUSD: 1371 },
+  { codigo: '134U3012', descripcion: 'VLT® Midi Drive FC 280 3Kw/4HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB Modbus RTU', precioUSD: 1510 },
+  { codigo: '134U3013', descripcion: 'VLT® Midi Drive FC 280 4Kw/5,5HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB Modbus RTU', precioUSD: 1736 },
+  { codigo: '134U3014', descripcion: 'VLT® Midi Drive FC 280 5,5Kw/7,5HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB Modbus RTU', precioUSD: 2081 },
+  { codigo: '134U3015', descripcion: 'VLT® Midi Drive FC 280 7,5Kw/10HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB Modbus RTU', precioUSD: 2451 },
+  { codigo: '134U3016', descripcion: 'VLT® Midi Drive FC 280 11Kw/15HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB Modbus RTU', precioUSD: 3021 },
+  { codigo: '134U3017', descripcion: 'VLT® Midi Drive FC 280 15Kw/20HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB Modbus RTU', precioUSD: 3928 },
+  { codigo: '134U3018', descripcion: 'VLT® Midi Drive FC 280 18,5Kw/25HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB Modbus RTU', precioUSD: 4995 },
+  { codigo: '134U3019', descripcion: 'VLT® Midi Drive FC 280 22Kw/30HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB Modbus RTU', precioUSD: 6164 },
+  { codigo: '134U7743', descripcion: 'VLT® Midi Drive FC 280 0,37Kw/0,5HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB Profibus DP', precioUSD: 1052 },
+  { codigo: '134U7744', descripcion: 'VLT® Midi Drive FC 280 0,55Kw/0,75HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB Profibus DP', precioUSD: 1096 },
+  { codigo: '134U7745', descripcion: 'VLT® Midi Drive FC 280 0,75Kw/1HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB Profibus DP', precioUSD: 1168 },
+  { codigo: '134U7746', descripcion: 'VLT® Midi Drive FC 280 1,1Kw/1,5HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB Profibus DP', precioUSD: 1314 },
+  { codigo: '134U7747', descripcion: 'VLT® Midi Drive FC 280 1,5Kw/2HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB Profibus DP', precioUSD: 1426 },
+  { codigo: '134U7748', descripcion: 'VLT® Midi Drive FC 280 2,2Kw/3HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB Profibus DP', precioUSD: 1602 },
+  { codigo: '134U7749', descripcion: 'VLT® Midi Drive FC 280 3Kw/4HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB Profibus DP', precioUSD: 1741 },
+  { codigo: '134U7750', descripcion: 'VLT® Midi Drive FC 280 4Kw/5,5HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB Profibus DP', precioUSD: 1967 },
+  { codigo: '134U7751', descripcion: 'VLT® Midi Drive FC 280 5,5Kw/7,5HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB Profibus DP', precioUSD: 2313 },
+  { codigo: '134U7752', descripcion: 'VLT® Midi Drive FC 280 7,5Kw/10HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB Profibus DP', precioUSD: 2682 },
+  { codigo: '134U7753', descripcion: 'VLT® Midi Drive FC 280 11Kw/15HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB Profibus DP', precioUSD: 3252 },
+  { codigo: '134U7754', descripcion: 'VLT® Midi Drive FC 280 15Kw/20HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB Profibus DP', precioUSD: 4159 },
+  { codigo: '134U7755', descripcion: 'VLT® Midi Drive FC 280 18,5Kw/25HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB Profibus DP', precioUSD: 5226 },
+  { codigo: '134U7756', descripcion: 'VLT® Midi Drive FC 280 22Kw/30HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB Profibus DP', precioUSD: 6395 },
+  { codigo: '134U7768', descripcion: 'VLT® Midi Drive FC 280 0,37Kw/0,5HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB ProfiNet', precioUSD: 1166 },
+  { codigo: '134U7769', descripcion: 'VLT® Midi Drive FC 280 0,55Kw/0,75HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB ProfiNet', precioUSD: 1210 },
+  { codigo: '134U7770', descripcion: 'VLT® Midi Drive FC 280 0,75Kw/1HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB ProfiNet', precioUSD: 1282 },
+  { codigo: '134U7771', descripcion: 'VLT® Midi Drive FC 280 1,1Kw/1,5HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB ProfiNet', precioUSD: 1428 },
+  { codigo: '134U7772', descripcion: 'VLT® Midi Drive FC 280 1,5Kw/2HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB ProfiNet', precioUSD: 1540 },
+  { codigo: '134U7773', descripcion: 'VLT® Midi Drive FC 280 2,2Kw/3HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB ProfiNet', precioUSD: 1716 },
+  { codigo: '134U7774', descripcion: 'VLT® Midi Drive FC 280 3Kw/4HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB ProfiNet', precioUSD: 1855 },
+  { codigo: '134U7776', descripcion: 'VLT® Midi Drive FC 280 4Kw/5,5HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB ProfiNet', precioUSD: 2081 },
+  { codigo: '134U7777', descripcion: 'VLT® Midi Drive FC 280 5,5Kw/7,5HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB ProfiNet', precioUSD: 2427 },
+  { codigo: '134U7778', descripcion: 'VLT® Midi Drive FC 280 7,5Kw/10HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB ProfiNet', precioUSD: 2796 },
+  { codigo: '134U7779', descripcion: 'VLT® Midi Drive FC 280 11Kw/15HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB ProfiNet', precioUSD: 3366 },
+  { codigo: '134U7780', descripcion: 'VLT® Midi Drive FC 280 15Kw/20HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB ProfiNet', precioUSD: 4273 },
+  { codigo: '134U7781', descripcion: 'VLT® Midi Drive FC 280 18,5Kw/25HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB ProfiNet', precioUSD: 5340 },
+  { codigo: '134U7782', descripcion: 'VLT® Midi Drive FC 280 22Kw/30HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB ProfiNet', precioUSD: 6509 },
+  { codigo: '134X0709', descripcion: 'VLT® Midi Drive FC 280 0,37Kw/0,5HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB EtherNet IP', precioUSD: 1166 },
+  { codigo: '134X0710', descripcion: 'VLT® Midi Drive FC 280 0,55Kw/0,75HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB EtherNet IP', precioUSD: 1210 },
+  { codigo: '134X0711', descripcion: 'VLT® Midi Drive FC 280 0,75Kw/1HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB EtherNet IP', precioUSD: 1282 },
+  { codigo: '134X0712', descripcion: 'VLT® Midi Drive FC 280 1,1Kw/1,5HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB EtherNet IP', precioUSD: 1428 },
+  { codigo: '134X0713', descripcion: 'VLT® Midi Drive FC 280 1,5Kw/2HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB EtherNet IP', precioUSD: 1540 },
+  { codigo: '134X0714', descripcion: 'VLT® Midi Drive FC 280 2,2Kw/3HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB EtherNet IP', precioUSD: 1716 },
+  { codigo: '134X0715', descripcion: 'VLT® Midi Drive FC 280 3Kw/4HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB EtherNet IP', precioUSD: 1855 },
+  { codigo: '134X0716', descripcion: 'VLT® Midi Drive FC 280 4Kw/5,5HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB EtherNet IP', precioUSD: 2081 },
+  { codigo: '134X0717', descripcion: 'VLT® Midi Drive FC 280 5,5Kw/7,5HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB EtherNet IP', precioUSD: 2427 },
+  { codigo: '134X0718', descripcion: 'VLT® Midi Drive FC 280 7,5Kw/10HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB EtherNet IP', precioUSD: 2796 },
+  { codigo: '134X0719', descripcion: 'VLT® Midi Drive FC 280 11Kw/15HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB EtherNet IP', precioUSD: 3366 },
+  { codigo: '134X0720', descripcion: 'VLT® Midi Drive FC 280 15Kw/20HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB EtherNet IP', precioUSD: 4273 },
+  { codigo: '134X0721', descripcion: 'VLT® Midi Drive FC 280 18,5Kw/25HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB EtherNet IP', precioUSD: 5340 },
+  { codigo: '134X0722', descripcion: 'VLT® Midi Drive FC 280 22Kw/30HP 3x380-480 VAC IP20 RFI A2 Brake Chopper Coated PCB EtherNet IP', precioUSD: 6509 },
+  { codigo: '131B5875', descripcion: 'VLT® HVAC Drive FC 102 1,1Kw/1,5HP 3x200-240 VAC IP20 Frame A2', precioUSD: 1268 },
+  { codigo: '131B6224', descripcion: 'VLT® HVAC Drive FC 102 1,5Kw/2HP 3x200-240 VAC IP20 Frame A2', precioUSD: 1483 },
+  { codigo: '131B6144', descripcion: 'VLT® HVAC Drive FC 102 2,2Kw/3HP 3x200-240 VAC IP20 Frame A2', precioUSD: 1838 },
+  { codigo: '131B6721', descripcion: 'VLT® HVAC Drive FC 102 3Kw/4HP 3x200-240 VAC IP20 Frame A3', precioUSD: 2034 },
+  { codigo: '131B6722', descripcion: 'VLT® HVAC Drive FC 102 3,7Kw/5HP 3x200-240 VAC IP20 Frame A3', precioUSD: 2281 },
+  { codigo: '131F7681', descripcion: 'VLT® HVAC Drive FC 102 5,5Kw/7,5HP 3x200-240 VAC IP20 Frame B3', precioUSD: 2550 },
+  { codigo: '131F7682', descripcion: 'VLT® HVAC Drive FC 102 7,5Kw/10HP 3x200-240 VAC IP20 Frame B3', precioUSD: 2975 },
+  { codigo: '131H2141', descripcion: 'VLT® HVAC Drive FC 102 11Kw/15HP 3x200-240 VAC IP20 Frame B3', precioUSD: 3570 },
+  { codigo: '131H4638', descripcion: 'VLT® HVAC Drive FC 102 15Kw/20HP 3x200-240 VAC IP20 Frame B4', precioUSD: 4552 },
+  { codigo: '131H4645', descripcion: 'VLT® HVAC Drive FC 102 18,5Kw/25HP 3x200-240 VAC IP20 Frame B4', precioUSD: 5382 },
+  { codigo: '131H5972', descripcion: 'VLT® HVAC Drive FC 102 22Kw/30HP 3x200-240 VAC IP20 Frame C3', precioUSD: 7630 },
+  { codigo: '131H5975', descripcion: 'VLT® HVAC Drive FC 102 30Kw/40HP 3x200-240 VAC IP20 Frame C3', precioUSD: 9561 },
+  { codigo: '131H3677', descripcion: 'VLT® HVAC Drive FC 102 37Kw/50HP 3x200-240 VAC IP20 Frame C4', precioUSD: 11866 },
+  { codigo: '131H3678', descripcion: 'VLT® HVAC Drive FC 102 45Kw/60HP 3x200-240 VAC IP20 Frame C4', precioUSD: 13052 },
+  { codigo: '131B4991', descripcion: 'VLT® HVAC Drive FC 102 1,1Kw/1,5HP 3x380-480 VAC IP20 Frame A2', precioUSD: 1286 },
+  { codigo: '131B4992', descripcion: 'VLT® HVAC Drive FC 102 1,5Kw/2HP 3x380-480 VAC IP20 Frame A2', precioUSD: 1510 },
+  { codigo: '131B4993', descripcion: 'VLT® HVAC Drive FC 102 2,2Kw/3HP 3x380-480 VAC IP20 Frame A2', precioUSD: 1866 },
+  { codigo: '131B4994', descripcion: 'VLT® HVAC Drive FC 102 3Kw/4HP 3x380-480 VAC IP20 Frame A2', precioUSD: 2104 },
+  { codigo: '131B4995', descripcion: 'VLT® HVAC Drive FC 102 4Kw/5,5HP 3x380-480 VAC IP20 Frame A2', precioUSD: 2256 },
+  { codigo: '131B4996', descripcion: 'VLT® HVAC Drive FC 102 5,5Kw/7,5HP 3x380-480 VAC IP20 Frame A3', precioUSD: 2637 },
+  { codigo: '131B4997', descripcion: 'VLT® HVAC Drive FC 102 7,5Kw/10HP 3x380-480 VAC IP20 Frame A3', precioUSD: 2984 },
+  { codigo: '131F3119', descripcion: 'VLT® HVAC Drive FC 102 11Kw/15HP 3x380-480 VAC IP20 Frame B3', precioUSD: 3606 },
+  { codigo: '131F3120', descripcion: 'VLT® HVAC Drive FC 102 15Kw/20HP 3x380-480 VAC IP20 Frame B3', precioUSD: 4464 },
+  { codigo: '131F3121', descripcion: 'VLT® HVAC Drive FC 102 18,5Kw/25HP 3x380-480 VAC IP20 Frame B3', precioUSD: 5674 },
+  { codigo: '131F6622', descripcion: 'VLT® HVAC Drive FC 102 22Kw/30HP 3x380-480 VAC IP20 Frame B4', precioUSD: 7036 },
+  { codigo: '131F6623', descripcion: 'VLT® HVAC Drive FC 102 30Kw/40HP 3x380-480 VAC IP20 Frame B4', precioUSD: 8052 },
+  { codigo: '131F6624', descripcion: 'VLT® HVAC Drive FC 102 37Kw/50HP 3x380-480 VAC IP20 Frame B4', precioUSD: 9908 },
+  { codigo: '131F3122', descripcion: 'VLT® HVAC Drive FC 102 45Kw/60HP 3x380-480 VAC IP20 Frame C3', precioUSD: 12176 },
+  { codigo: '131F3123', descripcion: 'VLT® HVAC Drive FC 102 55Kw/75HP 3x380-480 VAC IP20 Frame C3', precioUSD: 14633 },
+  { codigo: '131F3127', descripcion: 'VLT® HVAC Drive FC 102 75Kw/100HP 3x380-480 VAC IP20 Frame C4', precioUSD: 16655 },
+  { codigo: '131F3133', descripcion: 'VLT® HVAC Drive FC 102 90Kw/125HP 3x380-480 VAC IP20 Frame C4', precioUSD: 19637 },
+  { codigo: '134F0374', descripcion: 'VLT® HVAC Drive FC 102 110Kw/150HP 3x380-480 VAC IP20 Frame D3H Graphical LCP Coated PCB', precioUSD: 20254 },
+  { codigo: '134F0383', descripcion: 'VLT® HVAC Drive FC 102 132Kw/200HP 3x380-480 VAC IP20 Frame D3H Graphical LCP Coated PCB', precioUSD: 23959 },
+  { codigo: '134F0386', descripcion: 'VLT® HVAC Drive FC 102 160Kw/250HP 3x380-480 VAC IP20 Frame D3H Graphical LCP Coated PCB', precioUSD: 29246 },
+  { codigo: '134F0389', descripcion: 'VLT® HVAC Drive FC 102 200Kw/300HP 3x380-480 VAC IP20 Frame D4H Graphical LCP Coated PCB', precioUSD: 34750 },
+  { codigo: '134F0530', descripcion: 'VLT® HVAC Drive FC 102 250Kw/350HP 3x380-480 VAC IP20 Frame D4H Graphical LCP Coated PCB', precioUSD: 44541 },
+  { codigo: '134F1124', descripcion: 'VLT® HVAC Drive FC 102 315Kw/450HP 3x380-480 VAC IP20 Frame D4H Graphical LCP Coated PCB', precioUSD: 53598 },
+  { codigo: '131B6963', descripcion: 'VLT® HVAC Drive FC 102 355Kw/500HP 3x380-480 VAC IP00 Frame E3H Graphical LCP Coated PCB', precioUSD: 76518 },
+  { codigo: '131B6969', descripcion: 'VLT® HVAC Drive FC 102 400Kw/550HP 3x380-480 VAC IP00 Frame E3H Graphical LCP Coated PCB', precioUSD: 86530 },
+  { codigo: '131B7431', descripcion: 'VLT® HVAC Drive FC 102 450Kw/600HP 3x380-480 VAC IP00 Frame E3H Graphical LCP Coated PCB', precioUSD: 109000 },
+  { codigo: '131B9159', descripcion: 'VLT® AQUA Drive FC 202 1,1Kw/1,5HP 3x200-240 VAC IP20 Frame A2', precioUSD: 1268 },
+  { codigo: '131F0661', descripcion: 'VLT® AQUA Drive FC 202 1,5Kw/2HP 3x200-240 VAC IP20 Frame A2', precioUSD: 1483 },
+  { codigo: '131B9173', descripcion: 'VLT® AQUA Drive FC 202 2,2Kw/3HP 3x200-240 VAC IP20 Frame A2', precioUSD: 1838 },
+  { codigo: '131B9189', descripcion: 'VLT® AQUA Drive FC 202 3Kw/4HP 3x200-240 VAC IP20 Frame A3', precioUSD: 2034 },
+  { codigo: '131B9209', descripcion: 'VLT® AQUA Drive FC 202 3,7Kw/5HP 3x200-240 VAC IP20 Frame A3', precioUSD: 2281 },
+  { codigo: '131F8371', descripcion: 'VLT® AQUA Drive FC 202 5,5Kw/7,5HP 3x200-240 VAC IP20 Frame B3', precioUSD: 2550 },
+  { codigo: '131F8467', descripcion: 'VLT® AQUA Drive FC 202 7,5Kw/10HP 3x200-240 VAC IP20 Frame B3', precioUSD: 2975 },
+  { codigo: '131H2285', descripcion: 'VLT® AQUA Drive FC 202 11Kw/15HP 3x200-240 VAC IP20 Frame B3', precioUSD: 3570 },
+  { codigo: '131H5093', descripcion: 'VLT® AQUA Drive FC 202 15Kw/20HP 3x200-240 VAC IP20 Frame B4', precioUSD: 4552 },
+  { codigo: '131H5062', descripcion: 'VLT® AQUA Drive FC 202 18,5Kw/25HP 3x200-240 VAC IP20 Frame B4', precioUSD: 5382 },
+  { codigo: '131H5155', descripcion: 'VLT® AQUA Drive FC 202 22Kw/30HP 3x200-240 VAC IP20 Frame C3', precioUSD: 7630 },
+  { codigo: '131H5156', descripcion: 'VLT® AQUA Drive FC 202 30Kw/40HP 3x200-240 VAC IP20 Frame C3', precioUSD: 9561 },
+  { codigo: '131H2501', descripcion: 'VLT® AQUA Drive FC 202 37Kw/50HP 3x200-240 VAC IP20 Frame C4', precioUSD: 11866 },
+  { codigo: '131H5157', descripcion: 'VLT® AQUA Drive FC 202 45Kw/60HP 3x200-240 VAC IP20 Frame C4', precioUSD: 13052 },
+  { codigo: '131B8893', descripcion: 'VLT® AQUA Drive FC 202 1,1Kw/1,5HP 3x380-480 VAC IP20 Frame A2', precioUSD: 1286 },
+  { codigo: '131F0647', descripcion: 'VLT® AQUA Drive FC 202 1,5Kw/2HP 3x380-480 VAC IP20 Frame A2', precioUSD: 1510 },
+  { codigo: '131B8902', descripcion: 'VLT® AQUA Drive FC 202 2,2Kw/3HP 3x380-480 VAC IP20 Frame A2', precioUSD: 1866 },
+  { codigo: '131B8911', descripcion: 'VLT® AQUA Drive FC 202 3Kw/4HP 3x380-480 VAC IP20 Frame A2', precioUSD: 2104 },
+  { codigo: '131B8919', descripcion: 'VLT® AQUA Drive FC 202 4Kw/5HP 3x380-480 VAC IP20 Frame A2', precioUSD: 2256 },
+  { codigo: '131B8938', descripcion: 'VLT® AQUA Drive FC 202 5,5Kw/7,5HP 3x380-480 VAC IP20 Frame A3', precioUSD: 2637 },
+  { codigo: '131B8949', descripcion: 'VLT® AQUA Drive FC 202 7,5Kw/10HP 3x380-480 VAC IP20 Frame A3', precioUSD: 2984 },
+  { codigo: '131F3061', descripcion: 'VLT® AQUA Drive FC 202 11Kw/15HP 3x380-480 VAC IP20 Frame B3', precioUSD: 3606 },
+  { codigo: '131F3062', descripcion: 'VLT® AQUA Drive FC 202 15Kw/20HP 3x380-480 VAC IP20 Frame B3', precioUSD: 4464 },
+  { codigo: '131F3063', descripcion: 'VLT® AQUA Drive FC 202 18,5Kw/25HP 3x380-480 VAC IP20 Frame B3', precioUSD: 5674 },
+  { codigo: '131F6764', descripcion: 'VLT® AQUA Drive FC 202 22Kw/30HP 3x380-480 VAC IP20 Frame B4', precioUSD: 7036 },
+  { codigo: '131F6769', descripcion: 'VLT® AQUA Drive FC 202 30Kw/40HP 3x380-480 VAC IP20 Frame B4', precioUSD: 8052 },
+  { codigo: '131F6774', descripcion: 'VLT® AQUA Drive FC 202 37Kw/50HP 3x380-480 VAC IP20 Frame B4', precioUSD: 9908 },
+  { codigo: '131F3069', descripcion: 'VLT® AQUA Drive FC 202 45Kw/60HP 3x380-480 VAC IP20 Frame C3', precioUSD: 12176 },
+  { codigo: '131F3070', descripcion: 'VLT® AQUA Drive FC 202 55Kw/75HP 3x380-480 VAC IP20 Frame C3', precioUSD: 14633 },
+  { codigo: '131F3071', descripcion: 'VLT® AQUA Drive FC 202 75Kw/100HP 3x380-480 VAC IP20 Frame C4', precioUSD: 16655 },
+  { codigo: '131F3072', descripcion: 'VLT® AQUA Drive FC 202 90Kw/125HP 3x380-480 VAC IP20 Frame C4', precioUSD: 19637 },
+  { codigo: '134F0366', descripcion: 'VLT® AQUA Drive FC 202 110Kw/150HP 3x380-480 VAC IP20 Frame D3H Graphical LCP Coated PCB', precioUSD: 20254 },
+  { codigo: '134F0368', descripcion: 'VLT® AQUA Drive FC 202 132Kw/200HP 3x380-480 VAC IP20 Frame D3H Graphical LCP Coated PCB', precioUSD: 23959 },
+  { codigo: '134F0371', descripcion: 'VLT® AQUA Drive FC 202 160Kw/250HP 3x380-480 VAC IP20 Frame D3H Graphical LCP Coated PCB', precioUSD: 29246 },
+  { codigo: '134F0372', descripcion: 'VLT® AQUA Drive FC 202 200Kw/300HP 3x380-480 VAC IP20 Frame D4H Graphical LCP Coated PCB', precioUSD: 34750 },
+  { codigo: '134F0373', descripcion: 'VLT® AQUA Drive FC 202 250Kw/350HP 3x380-480 VAC IP20 Frame D4H Graphical LCP Coated PCB', precioUSD: 44541 },
+  { codigo: '134F4192', descripcion: 'VLT® AQUA Drive FC 202 315Kw/450HP 3x380-480 VAC IP20 Frame D4H Graphical LCP Coated PCB', precioUSD: 53598 },
+  { codigo: '131B9496', descripcion: 'VLT® AQUA Drive FC 202 355Kw/500HP 3x380-480 VAC IP00 Frame E2 Graphical LCP Coated PCB', precioUSD: 76518 },
+  { codigo: '131B9504', descripcion: 'VLT® AQUA Drive FC 202 400Kw/550HP 3x380-480 VAC IP00 Frame E2 Graphical LCP Coated PCB', precioUSD: 86530 },
+  { codigo: '131B9511', descripcion: 'VLT® AQUA Drive FC 202 450Kw/600HP 3x380-480 VAC IP00 Frame E2 Graphical LCP Coated PCB', precioUSD: 109000 },
+  { codigo: '131B1037', descripcion: 'VLT® AutomationDrive FC 301 0,25Kw/0,33HP 3x200-240 VAC IP20 Frame A2', precioUSD: 969 },
+  { codigo: '131B1051', descripcion: 'VLT® AutomationDrive FC 301 0,37Kw/0,5HP 3x200-240 VAC IP20 Frame A2', precioUSD: 1024 },
+  { codigo: '131B1074', descripcion: 'VLT® AutomationDrive FC 301 0,55Kw/0,75HP 3x200-240 VAC IP20 Frame A2', precioUSD: 1067 },
+  { codigo: '131B1091', descripcion: 'VLT® AutomationDrive FC 301 0,75Kw/1HP 3x200-240 VAC IP20 Frame A2', precioUSD: 1171 },
+  { codigo: '131B1107', descripcion: 'VLT® AutomationDrive FC 301 1,1Kw/1,5HP 3x200-240 VAC IP20 Frame A2', precioUSD: 1390 },
+  { codigo: '131B1123', descripcion: 'VLT® AutomationDrive FC 301 1,5Kw/2HP 3x200-240 VAC IP20 Frame A2', precioUSD: 1626 },
+  { codigo: '131B1137', descripcion: 'VLT® AutomationDrive FC 301 2,2Kw/3HP 3x200-240 VAC IP20 Frame A2', precioUSD: 2193 },
+  { codigo: '131B1159', descripcion: 'VLT® AutomationDrive FC 301 3Kw/4HP 3x200-240 VAC IP20 Frame A3', precioUSD: 2502 },
+  { codigo: '131B1191', descripcion: 'VLT® AutomationDrive FC 301 3,7Kw/5HP 3x200-240 VAC IP20 Frame A3', precioUSD: 2807 },
+  { codigo: '131F8631', descripcion: 'VLT® AutomationDrive FC 301 5,5Kw/7,5HP 3x200-240 VAC IP20 Frame B3', precioUSD: 3241 },
+  { codigo: '131H2288', descripcion: 'VLT® AutomationDrive FC 301 7,5Kw/10HP 3x200-240 VAC IP20 Frame B3', precioUSD: 3782 },
+  { codigo: '131H4635', descripcion: 'VLT® AutomationDrive FC 301 11Kw/15HP 3x200-240 VAC IP20 Frame B4', precioUSD: 4539 },
+  { codigo: '131H5162', descripcion: 'VLT® AutomationDrive FC 301 15Kw/20HP 3x200-240 VAC IP20 Frame B4', precioUSD: 5577 },
+  { codigo: '131H5169', descripcion: 'VLT® AutomationDrive FC 301 18,5Kw/25HP 3x200-240 VAC IP20 Frame C3', precioUSD: 6595 },
+  { codigo: '131H5174', descripcion: 'VLT® AutomationDrive FC 301 22Kw/30HP 3x200-240 VAC IP20 Frame C3', precioUSD: 9349 },
+  { codigo: '131H5178', descripcion: 'VLT® AutomationDrive FC 301 30Kw/40HP 3x200-240 VAC IP20 Frame C4', precioUSD: 11716 },
+  { codigo: '131H5182', descripcion: 'VLT® AutomationDrive FC 301 37Kw/50HP 3x200-240 VAC IP20 Frame C4', precioUSD: 14540 },
+  { codigo: '131B0884', descripcion: 'VLT® AutomationDrive FC 301 0,37Kw/0,5HP 3x380-480 VAC IP20 Frame A2', precioUSD: 1192 },
+  { codigo: '131B0901', descripcion: 'VLT® AutomationDrive FC 301 0,55Kw/0,75HP 3x380-480 VAC IP20 Frame A2', precioUSD: 1242 },
+  { codigo: '131B0917', descripcion: 'VLT® AutomationDrive FC 301 0,75Kw/1HP 3x380-480 VAC IP20 Frame A2', precioUSD: 1364 },
+  { codigo: '131B0745', descripcion: 'VLT® AutomationDrive FC 301 1,1Kw/1,5HP 3x380-480 VAC IP20 Frame A2', precioUSD: 1569 },
+  { codigo: '131B0749', descripcion: 'VLT® AutomationDrive FC 301 1,5Kw/2HP 3x380-480 VAC IP20 Frame A2', precioUSD: 1835 },
+  { codigo: '131B0965', descripcion: 'VLT® AutomationDrive FC 301 2,2Kw/3HP 3x380-480 VAC IP20 Frame A2', precioUSD: 2277 },
+  { codigo: '131B0721', descripcion: 'VLT® AutomationDrive FC 301 3Kw/4HP 3x380-480 VAC IP20 Frame A2', precioUSD: 2515 },
+  { codigo: '131B0725', descripcion: 'VLT® AutomationDrive FC 301 4Kw/5,5HP 3x380-480 VAC IP20 Frame A2', precioUSD: 2699 },
+  { codigo: '131B0755', descripcion: 'VLT® AutomationDrive FC 301 5,5Kw/7,5HP 3x380-480 VAC IP20 Frame A3', precioUSD: 3042 },
+  { codigo: '131B0759', descripcion: 'VLT® AutomationDrive FC 301 7,5Kw/10HP 3x380-480 VAC IP20 Frame A3', precioUSD: 3621 },
+  { codigo: '131F7136', descripcion: 'VLT® AutomationDrive FC 301 11Kw/15HP 3x380-480 VAC IP20 Frame B3', precioUSD: 4416 },
+  { codigo: '131F0587', descripcion: 'VLT® AutomationDrive FC 301 15Kw/20HP 3x380-480 VAC IP20 Frame B3', precioUSD: 5320 },
+  { codigo: '131F7138', descripcion: 'VLT® AutomationDrive FC 301 18,5Kw/25HP 3x380-480 VAC IP20 Frame B4', precioUSD: 6259 },
+  { codigo: '131F7139', descripcion: 'VLT® AutomationDrive FC 301 22Kw/30HP 3x380-480 VAC IP20 Frame B4', precioUSD: 7610 },
+  { codigo: '131F7140', descripcion: 'VLT® AutomationDrive FC 301 30Kw/40HP 3x380-480 VAC IP20 Frame B4', precioUSD: 8709 },
+  { codigo: '131F7141', descripcion: 'VLT® AutomationDrive FC 301 37Kw/50HP 3x380-480 VAC IP20 Frame C3', precioUSD: 10717 },
+  { codigo: '131F7142', descripcion: 'VLT® AutomationDrive FC 301 45Kw/60HP 3x380-480 VAC IP20 Frame C3', precioUSD: 13169 },
+  { codigo: '131F7143', descripcion: 'VLT® AutomationDrive FC 301 55Kw/75HP 3x380-480 VAC IP20 Frame C4', precioUSD: 15827 },
+  { codigo: '131F7144', descripcion: 'VLT® AutomationDrive FC 301 75Kw/100HP 3x380-480 VAC IP20 Frame C4', precioUSD: 18014 },
+  { codigo: '131B0297', descripcion: 'VLT® AutomationDrive FC 302 0,25Kw/0,34HP 3x200-240 VAC IP20 Frame A2 Graphical LCP', precioUSD: 1323 },
+  { codigo: '131B0298', descripcion: 'VLT® AutomationDrive FC 302 0,37Kw/0,5HP 3x200-240 VAC IP20 Frame A2 Graphical LCP', precioUSD: 1397 },
+  { codigo: '131B0299', descripcion: 'VLT® AutomationDrive FC 302 0,55Kw/0,75HP 3x200-240 VAC IP20 Frame A2 Graphical LCP', precioUSD: 1456 },
+  { codigo: '131B0300', descripcion: 'VLT® AutomationDrive FC 302 0,75Kw/1HP 3x200-240 VAC IP20 Frame A2 Graphical LCP', precioUSD: 1598 },
+  { codigo: '131B0301', descripcion: 'VLT® AutomationDrive FC 302 1,1Kw/1,5HP 3x200-240 VAC IP20 Frame A2 Graphical LCP', precioUSD: 1840 },
+  { codigo: '131B0302', descripcion: 'VLT® AutomationDrive FC 302 1,5Kw/2HP 3x200-240 VAC IP20 Frame A2 Graphical LCP', precioUSD: 2152 },
+  { codigo: '131B0303', descripcion: 'VLT® AutomationDrive FC 302 2,2Kw/3HP 3x200-240 VAC IP20 Frame A2 Graphical LCP', precioUSD: 2669 },
+  { codigo: '131B0304', descripcion: 'VLT® AutomationDrive FC 302 3Kw/4HP 3x200-240 VAC IP20 Frame A2 Graphical LCP', precioUSD: 3014 },
+  { codigo: '131B0305', descripcion: 'VLT® AutomationDrive FC 302 3,7Kw/5HP 3x200-240 VAC IP20 Frame A3 Graphical LCP', precioUSD: 3382 },
+  { codigo: '131F9313', descripcion: 'VLT® AutomationDrive FC 302 5,5Kw/7,5HP 3x200-240 VAC IP20 Frame A3 Graphical LCP', precioUSD: 3905 },
+  { codigo: '131H2230', descripcion: 'VLT® AutomationDrive FC 302 7,5Kw/10HP 3x200-240 VAC IP20 Frame B3 Graphical LCP', precioUSD: 4556 },
+  { codigo: '131H4575', descripcion: 'VLT® AutomationDrive FC 302 11Kw/15HP 3x200-240 VAC IP20 Frame B3 Graphical LCP', precioUSD: 5467 },
+  { codigo: '131H4577', descripcion: 'VLT® AutomationDrive FC 302 15Kw/20HP 3x200-240 VAC IP20 Frame B4 Graphical LCP', precioUSD: 6972 },
+  { codigo: '131F2985', descripcion: 'VLT® AutomationDrive FC 302 18,5Kw/25HP 3x200-240 VAC IP20 Frame B4 Graphical LCP', precioUSD: 8244 },
+  { codigo: '131H5359', descripcion: 'VLT® AutomationDrive FC 302 22Kw/30HP 3x200-240 VAC IP20 Frame B4 Graphical LCP', precioUSD: 11687 },
+  { codigo: '131H4488', descripcion: 'VLT® AutomationDrive FC 302 30Kw/40HP 3x200-240 VAC IP20 Frame C3 Graphical LCP', precioUSD: 14645 },
+  { codigo: '131H4580', descripcion: 'VLT® AutomationDrive FC 302 37Kw/50HP 3x200-240 VAC IP20 Frame C3 Graphical LCP', precioUSD: 18175 },
+  { codigo: '131B0073', descripcion: 'VLT® AutomationDrive FC 302 0,37Kw/0,5HP 3x380-500 VAC IP20 Frame A2 Graphical LCP', precioUSD: 1370 },
+  { codigo: '131B0074', descripcion: 'VLT® AutomationDrive FC 302 0,55Kw/0,75HP 3x380-500 VAC IP20 Frame A2 Graphical LCP', precioUSD: 1429 },
+  { codigo: '131B0075', descripcion: 'VLT® AutomationDrive FC 302 0,75Kw/1HP 3x380-500 VAC IP20 Frame A2 Graphical LCP', precioUSD: 1567 },
+  { codigo: '131B0076', descripcion: 'VLT® AutomationDrive FC 302 1,1Kw/1,5HP 3x380-500 VAC IP20 Frame A2 Graphical LCP', precioUSD: 1804 },
+  { codigo: '131B0077', descripcion: 'VLT® AutomationDrive FC 302 1,5Kw/2HP 3x380-500 VAC IP20 Frame A2 Graphical LCP', precioUSD: 2110 },
+  { codigo: '131B0078', descripcion: 'VLT® AutomationDrive FC 302 2,2Kw/3HP 3x380-500 VAC IP20 Frame A2 Graphical LCP', precioUSD: 2617 },
+  { codigo: '131B0079', descripcion: 'VLT® AutomationDrive FC 302 3Kw/4HP 3x380-500 VAC IP20 Frame A2 Graphical LCP', precioUSD: 2956 },
+  { codigo: '131B0080', descripcion: 'VLT® AutomationDrive FC 302 4Kw/5HP 3x380-500 VAC IP20 Frame A2 Graphical LCP', precioUSD: 3174 },
+  { codigo: '131B0081', descripcion: 'VLT® AutomationDrive FC 302 5,5Kw/7,5HP 3x380-500 VAC IP20 Frame A3 Graphical LCP', precioUSD: 3721 },
+  { codigo: '131B0082', descripcion: 'VLT® AutomationDrive FC 302 7,5Kw/10HP 3x380-500 VAC IP20 Frame A3 Graphical LCP', precioUSD: 4220 },
+  { codigo: '131F0428', descripcion: 'VLT® AutomationDrive FC 302 11Kw/15HP 3x380-500 VAC IP20 Frame B3 Graphical LCP', precioUSD: 5072 },
+  { codigo: '131F0429', descripcion: 'VLT® AutomationDrive FC 302 15Kw/20HP 3x380-500 VAC IP20 Frame B3 Graphical LCP', precioUSD: 6114 },
+  { codigo: '131F0432', descripcion: 'VLT® AutomationDrive FC 302 18,5Kw/25HP 3x380-500 VAC IP20 Frame B4 Graphical LCP', precioUSD: 7361 },
+  { codigo: '131F0433', descripcion: 'VLT® AutomationDrive FC 302 22Kw/30HP 3x380-500 VAC IP20 Frame B4 Graphical LCP', precioUSD: 8975 },
+  { codigo: '131F0435', descripcion: 'VLT® AutomationDrive FC 302 30Kw/40HP 3x380-500 VAC IP20 Frame B4 Graphical LCP', precioUSD: 10324 },
+  { codigo: '131F0436', descripcion: 'VLT® AutomationDrive FC 302 37Kw/50HP 3x380-500 VAC IP20 Frame C3 Graphical LCP', precioUSD: 11591 },
+  { codigo: '131F0439', descripcion: 'VLT® AutomationDrive FC 302 45Kw/60HP 3x380-500 VAC IP20 Frame C3 Graphical LCP', precioUSD: 14244 },
+  { codigo: '131F0440', descripcion: 'VLT® AutomationDrive FC 302 55Kw/75HP 3x380-500 VAC IP20 Frame C4 Graphical LCP', precioUSD: 17119 },
+  { codigo: '131F0446', descripcion: 'VLT® AutomationDrive FC 302 75Kw/100HP 3x380-500 VAC IP20 Frame C4 Graphical LCP', precioUSD: 19499 },
+  { codigo: '134F0292', descripcion: 'VLT® AutomationDrive FC 302 90Kw/125HP 3x380-500 VAC IP20 Frame D3H Graphical LCP Coated PCB', precioUSD: 23099 },
+  { codigo: '134F0300', descripcion: 'VLT® AutomationDrive FC 302 110Kw/150HP 3x380-500 VAC IP20 Frame D3H Graphical LCP Coated PCB', precioUSD: 27204 },
+  { codigo: '134F0310', descripcion: 'VLT® AutomationDrive FC 302 132Kw/200HP 3x380-500 VAC IP20 Frame D3H Graphical LCP Coated PCB', precioUSD: 32165 },
+  { codigo: '134F0313', descripcion: 'VLT® AutomationDrive FC 302 160Kw/250HP 3x380-500 VAC IP20 Frame D4H Graphical LCP Coated PCB', precioUSD: 38884 },
+  { codigo: '134F0316', descripcion: 'VLT® AutomationDrive FC 302 200Kw/300HP 3x380-500 VAC IP20 Frame D4H Graphical LCP Coated PCB', precioUSD: 46272 },
+  { codigo: '134F4162', descripcion: 'VLT® AutomationDrive FC 302 250Kw/350HP 3x380-500 VAC IP20 Frame D4H Graphical LCP Coated PCB', precioUSD: 55527 },
+  { codigo: '175G4000', descripcion: 'VLT® Soft Starter MCD 100 0,7Kw 3A 1x208-240V IP20 Control 24-480VAC/VDC', precioUSD: 396 },
+  { codigo: '175G4002', descripcion: 'VLT® Soft Starter MCD 100 1,5Kw 3A 1x440-480V IP20 Control 24-480VAC/VDC', precioUSD: 461 },
+  { codigo: '175G4004', descripcion: 'VLT® Soft Starter MCD 100 4Kw 15A 1x208-240V IP20 Control 24-480VAC/VDC', precioUSD: 543 },
+  { codigo: '175G4005', descripcion: 'VLT® Soft Starter MCD 100 7,5Kw 15A 1x400-480V IP20 Control 24-480VAC/VDC', precioUSD: 543 },
+  { codigo: '175G4007', descripcion: 'VLT® Soft Starter MCD 100 7,5Kw 25A 1x208-240V IP20 Control 24-480VAC/VDC', precioUSD: 814 },
+  { codigo: '175G4008', descripcion: 'VLT® Soft Starter MCD 100 11Kw 25A 1x400-480V IP20 Control 24-480VAC/VDC', precioUSD: 814 },
+  { codigo: '175G5165', descripcion: 'VLT® Soft Starter MCD 201 7,5Kw 18A 2x200-440V IP20 Sin proteccion motor', precioUSD: 911 },
+  { codigo: '175G5166', descripcion: 'VLT® Soft Starter MCD 201 15Kw 34A 2x200-440V IP20 Sin proteccion motor', precioUSD: 1002 },
+  { codigo: '175G5167', descripcion: 'VLT® Soft Starter MCD 201 18Kw 42A 2x200-440V IP20 Sin proteccion motor', precioUSD: 1067 },
+  { codigo: '175G5168', descripcion: 'VLT® Soft Starter MCD 201 22Kw 48A 2x200-440V IP20 Sin proteccion motor', precioUSD: 1159 },
+  { codigo: '175G5169', descripcion: 'VLT® Soft Starter MCD 201 30Kw 60A 2x200-440V IP20 Sin proteccion motor', precioUSD: 1354 },
+  { codigo: '175G5170', descripcion: 'VLT® Soft Starter MCD 201 37Kw 75A 2x200-440V IP20 Sin proteccion motor', precioUSD: 1631 },
+  { codigo: '175G5171', descripcion: 'VLT® Soft Starter MCD 201 45Kw 85A 2x200-440V IP20 Sin proteccion motor', precioUSD: 2012 },
+  { codigo: '175G5172', descripcion: 'VLT® Soft Starter MCD 201 55Kw 100A 2x200-440V IP20 Sin proteccion motor', precioUSD: 2069 },
+  { codigo: '175G5173', descripcion: 'VLT® Soft Starter MCD 201 75Kw 140A 2x200-440V IP00 Sin proteccion motor', precioUSD: 2594 },
+  { codigo: '175G5174', descripcion: 'VLT® Soft Starter MCD 201 90Kw 170A 2x200-440V IP00 Sin proteccion motor', precioUSD: 3426 },
+  { codigo: '175G5175', descripcion: 'VLT® Soft Starter MCD 201 110Kw 200A 2x200-440V IP00 Sin proteccion motor', precioUSD: 3726 },
+  { codigo: '175G5209', descripcion: 'VLT® Soft Starter MCD 202 7,5Kw 18A 2x200-440V IP20 Con proteccion motor', precioUSD: 1435 },
+  { codigo: '175G5210', descripcion: 'VLT® Soft Starter MCD 202 15Kw 34A 2x200-440V IP20 Con proteccion motor', precioUSD: 1532 },
+  { codigo: '175G5211', descripcion: 'VLT® Soft Starter MCD 202 18Kw 42A 2x200-440V IP20 Con proteccion motor', precioUSD: 1592 },
+  { codigo: '175G5212', descripcion: 'VLT® Soft Starter MCD 202 22Kw 48A 2x200-440V IP20 Con proteccion motor', precioUSD: 1704 },
+  { codigo: '175G5213', descripcion: 'VLT® Soft Starter MCD 202 30Kw 60A 2x200-440V IP20 Con proteccion motor', precioUSD: 1897 },
+  { codigo: '175G5214', descripcion: 'VLT® Soft Starter MCD 202 37Kw 75A 2x200-440V IP20 Con proteccion motor', precioUSD: 2116 },
+  { codigo: '175G5215', descripcion: 'VLT® Soft Starter MCD 202 45Kw 85A 2x200-440V IP20 Con proteccion motor', precioUSD: 2586 },
+  { codigo: '175G5216', descripcion: 'VLT® Soft Starter MCD 202 55Kw 100A 2x200-440V IP20 Con proteccion motor', precioUSD: 2735 },
+  { codigo: '175G5217', descripcion: 'VLT® Soft Starter MCD 202 75Kw 140A 2x200-440V IP00 Con proteccion motor', precioUSD: 3181 },
+  { codigo: '175G5218', descripcion: 'VLT® Soft Starter MCD 202 90Kw 170A 2x200-440V IP00 Con proteccion motor', precioUSD: 4290 },
+  { codigo: '175G5219', descripcion: 'VLT® Soft Starter MCD 202 110Kw 200A 2x200-440V IP00 Con proteccion motor', precioUSD: 4645 },
+  { codigo: '136G7346', descripcion: 'VLT® Soft Starter MCD 600 20A 3x200-525V IP20 Frame S1 Internal Bypass', precioUSD: 2270 },
+  { codigo: '136G8759', descripcion: 'VLT® Soft Starter MCD 600 34A 3x200-525V IP20 Frame S1 Internal Bypass', precioUSD: 2447 },
+  { codigo: '136G7347', descripcion: 'VLT® Soft Starter MCD 600 42A 3x200-525V IP20 Frame S1 Internal Bypass', precioUSD: 2557 },
+  { codigo: '136G8763', descripcion: 'VLT® Soft Starter MCD 600 63A 3x200-525V IP20 Frame S1 Internal Bypass', precioUSD: 2790 },
+  { codigo: '136G7348', descripcion: 'VLT® Soft Starter MCD 600 69A 3x200-525V IP20 Frame S1 Internal Bypass', precioUSD: 3056 },
+  { codigo: '136G7349', descripcion: 'VLT® Soft Starter MCD 600 86A 3x200-525V IP20 Frame S1 Internal Bypass', precioUSD: 3451 },
+  { codigo: '136G8768', descripcion: 'VLT® Soft Starter MCD 600 108A 3x200-525V IP20 Frame S1 Internal Bypass', precioUSD: 3886 },
+  { codigo: '136G7350', descripcion: 'VLT® Soft Starter MCD 600 129A 3x200-525V IP20 Frame S1 Internal Bypass', precioUSD: 4285 },
+  { codigo: '136G8774', descripcion: 'VLT® Soft Starter MCD 600 144A 3x200-525V IP00 Frame S2 Internal Bypass', precioUSD: 4583 },
+  { codigo: '136G7351', descripcion: 'VLT® Soft Starter MCD 600 171A 3x200-525V IP00 Frame S2 Internal Bypass', precioUSD: 5444 },
+  { codigo: '136G8779', descripcion: 'VLT® Soft Starter MCD 600 194A 3x200-525V IP00 Frame S2 Internal Bypass', precioUSD: 6175 },
+  { codigo: '136G7352', descripcion: 'VLT® Soft Starter MCD 600 244A 3x200-525V IP00 Frame S2 Internal Bypass', precioUSD: 7766 },
+  { codigo: '136G8787', descripcion: 'VLT® Soft Starter MCD 600 287A 3x200-525V IP00 Frame S2 Internal Bypass', precioUSD: 9136 },
+  { codigo: '136G7353', descripcion: 'VLT® Soft Starter MCD 600 323A 3x200-525V IP00 Frame S2 Internal Bypass', precioUSD: 10282 },
+  { codigo: '136G8794', descripcion: 'VLT® Soft Starter MCD 600 410A 3x200-525V IP00 Frame S2 Internal Bypass', precioUSD: 13050 },
+  { codigo: '136G7354', descripcion: 'VLT® Soft Starter MCD 600 527A 3x200-525V IP00 Frame S2 Internal Bypass', precioUSD: 16045 },
+  { codigo: '136G7355', descripcion: 'VLT® Soft Starter MCD 600 579A 3x200-525V IP00 Frame S2 Internal Bypass', precioUSD: 17628 },
+  { codigo: '136Z4283', descripcion: 'VLT® Soft Starter MCD 600 654A 3x200-525V IP00 Frame S3 Internal Bypass', precioUSD: 18101 },
+  { codigo: '136Z4305', descripcion: 'VLT® Soft Starter MCD 600 736A 3x200-525V IP00 Frame S3 Internal Bypass', precioUSD: 20371 },
+  { codigo: '136Z4306', descripcion: 'VLT® Soft Starter MCD 600 950A 3x200-525V IP00 Frame S3 Internal Bypass', precioUSD: 26294 },
+  { codigo: '136Z4307', descripcion: 'VLT® Soft Starter MCD 600 1154A 3x200-525V IP00 Frame S3 Internal Bypass', precioUSD: 31940 },
+  { codigo: '136Z4308', descripcion: 'VLT® Soft Starter MCD 600 1250A 3x200-525V IP00 Frame S3 Internal Bypass', precioUSD: 34597 },
+  { codigo: '132B0100', descripcion: 'VLT® Control Panel LCP 11 sin potenciómetro para FC-051', precioUSD: 83 },
+  { codigo: '132B0101', descripcion: 'VLT® Control Panel LCP 12 con potenciómetro para FC-051', precioUSD: 83 },
+  { codigo: '132B0102', descripcion: 'LCP Remote Mounting Kit con cable 3m para FC-051 / FC-280', precioUSD: 38 },
+  { codigo: '132B0254', descripcion: 'VLT® Control Panel LCP 21 Numérico para FC-280', precioUSD: 150 },
+  { codigo: '130B1107', descripcion: 'VLT® Control Panel LCP 102 Gráfico para FC-280 / FC-102 / FC-202 / FC-300', precioUSD: 303 },
+  { codigo: '130B1117', descripcion: 'GLCP Remote Mounting Kit con cable 3m', precioUSD: 153 },
+  { codigo: '132B0281', descripcion: 'Adaptador Graphical LCP para FC-280', precioUSD: 86 },
+  { codigo: '132B0262', descripcion: 'LCP Blind Cover IP20/21 para FC-280', precioUSD: 5 },
+  { codigo: '132B0368', descripcion: 'VLT® 24V DC Supply MCB 106 para FC-280', precioUSD: 166 },
+  { codigo: '130B1124', descripcion: 'VLT® Control Panel LCP 101 Numérico', precioUSD: 134 },
+  { codigo: '130B1113', descripcion: 'Panel Mounting Kit con LCP Gráfico', precioUSD: 453 },
+  { codigo: '130B1114', descripcion: 'Panel Mounting Kit con LCP Numérico', precioUSD: 284 },
+  { codigo: '175Z0929', descripcion: 'Cable para LCP 3m MCF 103', precioUSD: 67 },
+  { codigo: '130B1144', descripcion: 'BACNet MCA 109 para FC-102', precioUSD: 360 },
+  { codigo: '130B1103', descripcion: 'CanOpen MCA 105 para FC-302', precioUSD: 335 },
+  { codigo: '130B1102', descripcion: 'DeviceNet MCA 104', precioUSD: 335 },
+  { codigo: '130B1135', descripcion: 'Profinet Uncoated MCA 120', precioUSD: 896 },
+  { codigo: '130B1119', descripcion: 'Ethernet IP MCA 121', precioUSD: 912 },
+  { codigo: '130B1196', descripcion: 'Modbus TCP Kit MCA 122', precioUSD: 896 },
+  { codigo: '130B1490', descripcion: 'Ethernet Powerlink Coated MCA 123', precioUSD: 861 },
+  { codigo: '130B5646', descripcion: 'VLT® EtherCAT MCA 124 Coated', precioUSD: 861 },
+  { codigo: '130B1106', descripcion: 'LON Works MCA 108 para FC-102', precioUSD: 446 },
+  { codigo: '130B1100', descripcion: 'Profibus MCA 101', precioUSD: 446 },
+  { codigo: '130B1245', descripcion: 'Profibus VLT3000 Protocol Converter MCA 113', precioUSD: 909 },
+  { codigo: '130B1246', descripcion: 'Profibus VLT5000 Protocol Converter MCA 114', precioUSD: 1116 },
+  { codigo: '130B1108', descripcion: '24V Option MCB 107', precioUSD: 188 },
+  { codigo: '130B1143', descripcion: 'Analog I/O MCB 109', precioUSD: 360 },
+  { codigo: '130B1137', descripcion: 'ATEX PTC Thermistor Card Coated MCB 112', precioUSD: 434 },
+  { codigo: '130B1115', descripcion: 'Encoder MCB 102', precioUSD: 622 },
+  { codigo: '130B1164', descripcion: 'Ext. Relay Card MCB 113', precioUSD: 689 },
+  { codigo: '130B1125', descripcion: 'General Purpose I/O MCB 101', precioUSD: 284 },
+  { codigo: '130B1172', descripcion: 'PT100/PT1000 Sensor Input MCB 114', precioUSD: 360 },
+  { codigo: '130B1110', descripcion: 'Relay Option MCB 105', precioUSD: 309 },
+  { codigo: '130B1127', descripcion: 'Resolver MCB 103', precioUSD: 711 },
+  { codigo: '130B1120', descripcion: 'Safety PLC Interface MCB 108', precioUSD: 239 },
+  { codigo: '130B6447', descripcion: 'VLT® MCB 141 External Safe Option', precioUSD: 1327 },
+  { codigo: '130B1154', descripcion: 'Advanced Cascade Control MCO 102 para FC-202', precioUSD: 1540 },
+  { codigo: '130B1118', descripcion: 'Extended Cascade Control MCO 101 para FC-202', precioUSD: 1381 },
+  { codigo: '130B1153', descripcion: 'Positioning Controller MCO 351 para FC-302', precioUSD: 1786 },
+  { codigo: '130B1152', descripcion: 'Synchronizing Controller MCO 350 para FC-302', precioUSD: 1786 },
+  { codigo: '130B1134', descripcion: 'Programmable Motion Controller MCO 305', precioUSD: 1339 },
+  { codigo: '130B1000', descripcion: 'MCT 10 Set-up Software 1 usuario', precioUSD: 488 },
+  { codigo: '175G9000', descripcion: 'Modbus RTU Module para MCD 200 / MCD 500', precioUSD: 488 },
+  { codigo: '175G9001', descripcion: 'Profibus Module para MCD 200 / MCD 500', precioUSD: 810 },
+  { codigo: '175G9002', descripcion: 'DeviceNet Module para MCD 200 / MCD 500', precioUSD: 641 },
+  { codigo: '175G9004', descripcion: 'Remote Operator Kit para MCD 200', precioUSD: 851 },
+  { codigo: '175G9007', descripcion: 'Finger Guard Kit IP20 para MCD 200', precioUSD: 488 },
+  { codigo: '175G9009', descripcion: 'USB Module', precioUSD: 612 },
+  { codigo: '175G0133', descripcion: 'MCD 600 Pumping Smart Card', precioUSD: 805 },
+  { codigo: '175G0127', descripcion: 'MCD 600 Modbus RTU', precioUSD: 460 },
+  { codigo: '175G0128', descripcion: 'MCD 600 Profibus', precioUSD: 767 },
+  { codigo: '175G0129', descripcion: 'MCD 600 DeviceNet', precioUSD: 605 },
+  { codigo: '175G0130', descripcion: 'MCD 600 Modbus TCP', precioUSD: 1484 },
+  { codigo: '175G0131', descripcion: 'MCD 600 Ethernet/IP', precioUSD: 1637 },
+  { codigo: '175G0132', descripcion: 'MCD 600 ProfiNet', precioUSD: 1637 },
+  { codigo: '175G0134', descripcion: 'MCD 600 Remote Keypad/Display', precioUSD: 776 },
+  { codigo: '175G0186', descripcion: 'MCD 600 Finger Guards para 0144B-0579B', precioUSD: 868 },
+  { codigo: '132L6111', descripcion: 'iC2-30, Frequency converter air cooled IC2-30FA1N02-04A2E20F0+ACXX Single-phase, 200-240 V AC 4.2 A, 0.75 kW/1 HP, IP20/Open type C1 category, No integrated brake chopper', precioUSD: 166 },
+  { codigo: '137H7364', descripcion: 'iC2-30, Frequency converter air cooled IC2-30FA3N02-04A2E20F4+ACXX Three-phase, 200-240 V AC 4.2 A, 0.75 kW/1 HP, IP20/Open type C4 category, No integrated brake chopper', precioUSD: 237 },
+  { codigo: '137H7365', descripcion: 'iC2-30, Frequency converter air cooled IC2-30FA3N02-07A8E20F4+ACBC Three-phase, 200-240 V AC 7.8 A, 1.5 kW/2 HP, IP20/Open type C4 category, Integrated brake chopper', precioUSD: 373 },
+  { codigo: '137H7368', descripcion: 'iC2-30, Frequency converter air cooled IC2-30FA3N02-11A0E20F4+ACBC Three-phase, 200-240 V AC 11.0 A, 2.2 kW/3 HP, IP20/Open type C4 category, Integrated brake chopper', precioUSD: 440 },
+  { codigo: '137H7369', descripcion: 'iC2-30, Frequency converter air cooled IC2-30FA3N02-15A2E20F4+ACBC Three-phase, 200-240 V AC 15.2 A, 3.7 kW/5 HP, IP20/Open type C4 category, Integrated brake chopper', precioUSD: 537 },
+  { codigo: '137N0759', descripcion: 'iC2-30, Frequency converter air cooled IC2-30FA3N02-24A2E20F4+ACBC Three-phase, 200-240 V AC 24.2 A, 5.5 kW/7.5 HP, IP20/Open type C4 category, Integrated brake chopper', precioUSD: 771 },
+  { codigo: '137N0760', descripcion: 'iC2-30, Frequency converter air cooled IC2-30FA3N02-31A0E20F4+ACBC Three-phase, 200-240 V AC 31 A, 7.5 kW/10 HP, IP20/Open type C4 category, Integrated brake chopper', precioUSD: 910 },
+  { codigo: '137N0761', descripcion: 'iC2-30, Frequency converter air cooled IC2-30FA3N02-46A2E20F4+ACBC Three-phase, 200-240 V AC 46.2 A, 11 kW/15 HP, IP20/Open type C4 category, Integrated brake chopper', precioUSD: 1325 },
+  { codigo: '132L6129', descripcion: 'iC2-30, Frequency converter air cooled IC2-30FA3N04-02A2E20F2+ACXX Three-phase, 380-480 V AC 2.2 A, 0.75 kW/1 HP, IP20/Open type C2 category, No integrated brake chopper', precioUSD: 221 },
+  { codigo: '132L6130', descripcion: 'iC2-30, Frequency converter air cooled IC2-30FA3N04-03A7E20F2+ACXX Three-phase, 380-480 V AC 3.7 A, 1.5 kW/2 HP, IP20/Open type C2 category, No integrated brake chopper', precioUSD: 295 },
+  { codigo: '132L6131', descripcion: 'iC2-30, Frequency converter air cooled IC2-30FA3N04-05A3E20F2+ACBC Three-phase, 380-480 V AC 5.3 A, 2.2 kW/3 HP, IP20/Open type C2 category, Integrated brake chopper', precioUSD: 353 },
+  { codigo: '132L6132', descripcion: 'iC2-30, Frequency converter air cooled IC2-30FA3N04-07A2E20F2+ACBC Three-phase, 380-480 V AC 7.2 A, 3.0 kW/4 HP, IP20/Open type C2 category, Integrated brake chopper', precioUSD: 408 },
+  { codigo: '132L6133', descripcion: 'iC2-30, Frequency converter air cooled IC2-30FA3N04-09A0E20F2+ACBC Three-phase, 380-480 V AC 9.0 A, 4.0 kW/5 HP, IP20/Open type C2 category, Integrated brake chopper', precioUSD: 454 },
+  { codigo: '132L6134', descripcion: 'iC2-30, Frequency converter air cooled IC2-30FA3N04-12A0E20F2+ACBC Three-phase, 380-480 V AC 12.0 A, 5.5 kW/7.5 HP, IP20/Open type C2 category, Integrated brake chopper', precioUSD: 514 },
+  { codigo: '132L6135', descripcion: 'iC2-30, Frequency converter air cooled IC2-30FA3N04-15A5E20F2+ACBC Three-phase, 380-480 V AC 15.5 A, 7.5 kW/10 HP, IP20/Open type C2 category, Integrated brake chopper', precioUSD: 597 },
+  { codigo: '132L6136', descripcion: 'iC2-30, Frequency converter air cooled IC2-30FA3N04-23A0E20F2+ACBC Three-phase, 380-480 V AC 23.0 A, 11 kW/15 HP, IP20/Open type C2 category, Integrated brake chopper', precioUSD: 830 },
+  { codigo: '132L6137', descripcion: 'iC2-30, Frequency converter air cooled IC2-30FA3N04-31A0E20F2+ACBC Three-phase, 380-480 V AC 31 A, 15 kW/20 HP, IP20/Open type C2 category, Integrated brake chopper', precioUSD: 1007 },
+  { codigo: '132L6138', descripcion: 'C2-30, Frequency converter air cooled IC2-30FA3N04-37A0E20F2+ACBC Three-phase, 380-480 V AC 37.0 A, 18.5 kW/25 HP, IP20/Open type C2 category, Integrated brake chopper', precioUSD: 1199 },
+  { codigo: '132L6139', descripcion: 'iC2-30, Frequency converter air cooled IC2-30FA3N04-43A0E20F2+ACBC Three-phase, 380-480 V AC 43 A, 22 kW/30 HP, IP20/Open type C2 category, Integrated brake chopper', precioUSD: 1396 },
 ];

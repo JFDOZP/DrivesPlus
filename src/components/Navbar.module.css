@@ -33,9 +33,7 @@
       rgba(255, 255, 255, 0.012) 41px
     );
 
-  /* Borde derecho rojo — línea de tensión lateral */
   border-right: 2px solid #DB0100;
-
   box-shadow:
     4px 0 32px rgba(219, 1, 0, 0.18),
     1px 0 0 rgba(219, 1, 0, 0.5);
@@ -44,25 +42,59 @@
 /* ── Logo ── */
 .logo {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem 1.5rem 1.5rem;
+  padding: 1.75rem 1.5rem 1.25rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   flex-shrink: 0;
-  color: #FFFFFF;
 }
 
 .logo img {
   width: 100%;
-  max-width: 130px;
+  max-width: 120px;
   height: auto;
   object-fit: contain;
   filter: brightness(1) drop-shadow(0 0 8px rgba(219, 1, 0, 0.5));
   transition: filter 0.3s ease;
+  margin-bottom: 14px;
 }
 
 .logo img:hover {
   filter: brightness(1.2) drop-shadow(0 0 14px rgba(219, 1, 0, 0.9));
+}
+
+/* ── Bloque de usuario ── */
+.userBloque {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  width: 100%;
+}
+
+.userLabel {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.25);
+  text-transform: uppercase;
+}
+
+.userName {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #DB0100;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.2;
+  /* truncar si es muy largo */
+  max-width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* ── Links container ── */
@@ -123,20 +155,13 @@
   transition: opacity 0.25s ease;
 }
 
-/* ── Hover ── */
 .link:hover {
   color: rgba(255, 255, 255, 0.85);
 }
 
-.link:hover::before {
-  transform: scaleY(0.6);
-}
+.link:hover::before { transform: scaleY(0.6); }
+.link:hover::after  { opacity: 1; }
 
-.link:hover::after {
-  opacity: 1;
-}
-
-/* ── Active ── */
 .active {
   color: #FFFFFF !important;
 }
@@ -150,7 +175,6 @@
   background: linear-gradient(90deg, rgba(219, 1, 0, 0.14) 0%, transparent 70%) !important;
 }
 
-/* Número índice decorativo */
 .index {
   font-family: 'Share Tech Mono', monospace;
   font-size: 0.58rem;
@@ -159,7 +183,6 @@
   flex-shrink: 0;
 }
 
-/* Icono SVG */
 .icon {
   width: 16px;
   height: 16px;
@@ -173,14 +196,20 @@
   opacity: 1;
 }
 
-/* ── Status dot — fondo del sidebar ── */
+/* ── Pie del sidebar: status + logout ── */
+.pie {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  flex-shrink: 0;
+}
+
 .statusDot {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 1.25rem 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  flex-shrink: 0;
+  padding: 0.85rem 1.5rem 0.6rem;
 
   font-family: 'Share Tech Mono', monospace;
   font-size: 0.6rem;
@@ -199,6 +228,48 @@
   box-shadow: 0 0 6px rgba(219, 1, 0, 0.9);
   animation: pulse 2s ease-in-out infinite;
   flex-shrink: 0;
+}
+
+/* ── Botón logout ── */
+.btnLogout {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 16px 16px;
+  padding: 8px 16px;
+
+  background: transparent;
+  border: 1px solid rgba(219, 1, 0, 0.4);
+  border-radius: 6px;
+  cursor: pointer;
+
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+
+  transition: all 0.2s ease;
+}
+
+.btnLogout:hover {
+  background: rgba(219, 1, 0, 0.12);
+  border-color: #DB0100;
+  color: #fff;
+  box-shadow: 0 0 12px rgba(219, 1, 0, 0.25);
+}
+
+.btnLogout svg {
+  width: 14px;
+  height: 14px;
+  opacity: 0.6;
+  flex-shrink: 0;
+  transition: opacity 0.2s ease;
+}
+
+.btnLogout:hover svg {
+  opacity: 1;
 }
 
 @keyframes pulse {
@@ -241,9 +312,7 @@
       );
   }
 
-  .logo {
-    display: none;
-  }
+  .logo { display: none; }
 
   .links {
     flex-direction: row;
@@ -266,7 +335,6 @@
     letter-spacing: 0.05em;
   }
 
-  /* En móvil: línea activa arriba */
   .link::before {
     top: 0;
     left: 15%;
@@ -279,28 +347,56 @@
     transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .link:hover::before {
-    transform: scaleX(0.6);
-  }
-
-  .active::before {
-    transform: scaleX(1) !important;
-  }
+  .link:hover::before  { transform: scaleX(0.6); }
+  .active::before      { transform: scaleX(1) !important; }
 
   .link::after {
     background: linear-gradient(180deg, rgba(219, 1, 0, 0.1) 0%, transparent 100%);
   }
 
-  .icon {
+  .icon  { width: 20px; height: 20px; }
+  .index { display: none; }
+
+  /* Logout en mobile: icono compacto al final de la barra */
+  .pie {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-top: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.04);
+    width: 52px;
+    flex-shrink: 0;
+  }
+
+  .statusDot { display: none; }
+
+  .btnLogout {
+    flex-direction: column;
+    gap: 2px;
+    margin: 0;
+    padding: 0.4rem 0.5rem;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    font-size: 0.52rem;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.4);
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btnLogout:hover {
+    background: rgba(219, 1, 0, 0.1);
+    border: none;
+    box-shadow: none;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .btnLogout svg {
     width: 20px;
     height: 20px;
-  }
-
-  .index {
-    display: none;
-  }
-
-  .statusDot {
-    display: none;
   }
 }

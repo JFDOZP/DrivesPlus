@@ -206,7 +206,7 @@
 /* ── Tabla de ítems ── */
 .tableHeader {
   display: grid;
-  grid-template-columns: 130px 1fr 65px 130px 80px 130px 32px;
+  grid-template-columns: 90px 120px 1fr 65px 130px 80px 130px 32px;
   gap: 8px;
   padding: 6px 8px;
   background: #f1f5f9;
@@ -223,7 +223,7 @@
 
 .itemRow {
   display: grid;
-  grid-template-columns: 130px 1fr 65px 130px 80px 130px 32px;
+  grid-template-columns: 90px 120px 1fr 65px 130px 80px 130px 32px;
   gap: 8px;
   padding: 10px 8px;
   background: #fafbfc;
@@ -238,28 +238,30 @@
 /* Tipo toggle */
 .itemTipo {
   display: flex;
+  align-items:flex-start;
   flex-direction: column;
   gap: 4px;
 }
 
 .tipoBtn {
-  padding: 4px 6px;
+  width: 100%;
+  padding: 6px 8px;
   border: 1px solid #cbd5e0;
-  border-radius: 4px;
-  font-size: 0.68rem;
+  border-radius: 6px;
   font-family: 'Rajdhani', sans-serif;
+  font-size: 0.78rem;
   font-weight: 700;
-  background: #f8fafc;
-  color: #6b7280;
+  background: #fff;
+  color: #1A1A1A;
+  outline: none;
   cursor: pointer;
-  text-transform: uppercase;
-  transition: all 0.15s;
+  transition: border-color 0.15s;
 }
 
 .tipoBtnActive {
-  background: #1A1A1A;
+  background: #DB0100;
   color: #fff;
-  border-color: #1A1A1A;
+  border-color: #0c0c0c;
 }
 
 /* Código */
@@ -608,23 +610,80 @@
 }
 
 @media (max-width: 768px) {
-  .page { padding: 16px; }
+  .page {
+    padding: 12px;
+  }
 
   .tableHeader { display: none; }
 
+  /* 2. Transformar la fila en una "Tarjeta" blanca */
   .itemRow {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    position: relative; /* Para posicionar el botón de borrar */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   }
 
-  .itemTipo   { grid-column: 1; grid-row: 1; }
-  .itemCodigo { grid-column: 2; grid-row: 1; }
-  .itemDesc   { grid-column: 1 / -1; grid-row: 2; }
-  .itemCant   { grid-column: 1; grid-row: 3; }
-  .itemPrecio { grid-column: 2; grid-row: 3; }
-  .itemDesc2  { grid-column: 1; grid-row: 4; }
-  .itemTotal  { grid-column: 2; grid-row: 4; text-align: right; }
-  .btnEliminar{ grid-column: 1 / -1; grid-row: 5; justify-self: end; }
+  /* 3. Ajustar los campos para que ocupen el ancho total */
+  .itemTipo, .itemCodigo, .itemDesc, .itemCant, .itemPrecio, .itemDesc2, .itemTotal {
+    width: 100%;
+    text-align: left;
+  }
+/* Estética específica para la descripción técnica (textarea) */
+  .itemDesc textarea {
+    min-height: 100px;
+    font-size: 0.95rem;
+  }
+
+  /* 4. Resaltar el Total del ítem al final de la tarjeta */
+  .itemTotal {
+    border-top: 1px solid #f1f5f9;
+    padding-top: 10px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+  }
+
+  .itemTotal::before {
+    content: "TOTAL ÍTEM:"; /* Etiqueta que solo aparece en móvil */
+    font-size: 0.75rem;
+    color: #64748b;
+  }
+
+  /* 5. Mover el botón de borrar a la esquina superior derecha */
+  .colDel {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: auto;
+  }
+
+  .btnEliminar {
+  background: #f1f5f9;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+  /* Ajuste de la sección de totales generales */
+  .bottomGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .resumenFinal {
+    width: 100%;
+    padding: 20px;
+  }
+
+ 
 }
 
 /* ── Botón descargar PDF ── */

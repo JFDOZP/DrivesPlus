@@ -35,11 +35,12 @@ const generarNroCotizacion = (email = '') => {
 // FIX: ID siempre único con crypto.randomUUID()
 const itemVacio = () => ({
   id: crypto.randomUUID(),
+  tipo: 'producto',
   codigo: '',
   descripcion: '',
   cantidad: 1,
-  precioUnit: 0,
-  descuento: 0,
+  precioUnit: '',
+  descuento: '',
 });
 
 const FORM_INICIAL = {
@@ -125,7 +126,7 @@ const BuscadorCatalogo = ({ onSeleccionar, onCerrar }) => {
 // Un ítem sin código del catálogo simplemente queda con código manual o vacío.
 const FilaItem = ({ item, moneda, onChange, onEliminar }) => {
   const [showCatalogo, setShowCatalogo] = useState(false);
-  const precioTotal = item.cantidad * item.precioUnit * (1 - item.descuento / 100);
+  const precioTotal = item.cantidad * (Number(item.precioUnit) || 0) * (1 - item.descuento / 100);
 
   const handleSeleccionar = (producto) => {
     // FIX: onChange recibe el item actualizado conservando su ID original
@@ -145,6 +146,23 @@ const FilaItem = ({ item, moneda, onChange, onEliminar }) => {
     <>
       <div className={styles.itemRow}>
 
+        <div className={styles.itemTipo}>
+          <button
+            type="button"
+            className={`${styles.tipoBtn} ${item.tipo === 'producto' ? styles.tipoBtnActive : ''}`}
+            onClick={() => onChange({ ...item, tipo: 'producto', codigo: '' })}
+          >Prod.</button>
+          <button
+            type="button"
+            className={`${styles.tipoBtn} ${item.tipo === 'servicio' ? styles.tipoBtnActive : ''}`}
+            onClick={() => onChange({ ...item, tipo: 'servicio', codigo: '' })}
+          >Serv.</button>
+          <button
+            type="button"
+            className={`${styles.tipoBtn} ${item.tipo === 'repuesto' ? styles.tipoBtnActive : ''}`}
+            onClick={() => onChange({ ...item, tipo: 'repuesto', codigo: '' })}
+          >Rep.</button>
+        </div>
         {/* Código + botón catálogo */}
         <div className={styles.itemCodigo}>
           <div className={styles.codigoGroup}>
@@ -270,7 +288,8 @@ const Cotizaciones = () => {
   }, [searchParams]);
   const set = (campo, valor) => setForm(prev => ({ ...prev, [campo]: valor }));
 
-  const subtotal = form.items.reduce((acc, i) => acc + i.cantidad * i.precioUnit * (1 - i.descuento / 100), 0);
+  const subtotal = form.items.reduce((acc, item) =>
+    acc + item.cantidad * (Number(item.precioUnit) || 0) * (1 - item.descuento / 100), 0);
   const descuentoMonto = subtotal * (form.descuentoGlobal / 100);
   const totalFinal = subtotal - descuentoMonto;
 
@@ -432,6 +451,7 @@ const Cotizaciones = () => {
           </div>
 
           <div className={styles.tableHeader}>
+            <span className={styles.colTipo}>Tipo</span>
             <span className={styles.colCodigo}>Código</span>
             <span className={styles.colDesc}>Descripción</span>
             <span className={styles.colCant}>Cant.</span>

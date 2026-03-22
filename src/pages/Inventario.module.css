@@ -217,16 +217,25 @@
   .page { padding: 16px; }
   .tablaHeader { display: none; }
   .fila {
-    grid-template-columns: 1fr 1fr;
-    gap: 6px;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto auto;
+    gap: 4px 8px;
     border-radius: 8px !important;
     margin-bottom: 8px;
     border: 1px solid #e2e8f0 !important;
+    padding: 12px 14px;
   }
-  .serial  { grid-column: 1; }
-  .dias    { grid-column: 2; text-align: right; }
-  .empresa { grid-column: 1 / -1; }
-  .modelo  { grid-column: 1 / -1; font-size: 0.78rem; }
-  .fecha   { grid-column: 1; }
-  .fila > span:last-child { grid-column: 2; justify-self: end; }
+  .serial  { grid-column: 1; grid-row: 1; }
+  .dias    { grid-column: 2; grid-row: 1; text-align: right; }
+  .empresa { grid-column: 1 / -1; grid-row: 2; }
+  .modelo  { grid-column: 1 / -1; grid-row: 3; font-size: 0.78rem; color: #6b7280; }
+  .fecha   { display: none; } /* se omite en móvil para no saturar */
+  .fila > span:last-child { grid-column: 1 / -1; grid-row: 4; }
+}
+
+/* AGREGAR breakpoint adicional */
+@media (max-width: 480px) {
+  .indicadores { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .indicadorValor { font-size: 1.4rem; }
+  .indicadorCard { padding: 12px 14px; }
 }

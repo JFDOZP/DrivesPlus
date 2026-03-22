@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap');
+
+.page {
+  font-family: 'Rajdhani', sans-serif;
+  padding-top: 4px;
+}
+
+/* ── Filtro ── */
+.filtro {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 12px 16px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.filtroLabel {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.filtroInputs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.inputFecha {
+  padding: 7px 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.9rem;
+  color: #1A1A1A;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.inputFecha:focus { border-color: #DB0100; }
+
+.filtroSep { color: #9ca3af; font-size: 0.9rem; }
+
+.filtroResumen {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.7rem;
+  color: #9ca3af;
+  margin-left: auto;
+}
+
+/* ── Empty ── */
+.empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: #9ca3af;
+  font-size: 1rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+/* ── KPI Grid: dos columnas ── */
+.kpiGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+/* ── KPI Strip ── */
+.kpiStrip {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 16px 18px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.kpiStripTitle {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #1A1A1A;
+  border-left: 3px solid #DB0100;
+  padding-left: 8px;
+  margin-bottom: 12px;
+}
+
+.kpiStripNums {
+  display: flex;
+  gap: 0;
+}
+
+.kpiNum {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 4px 10px;
+  border-right: 1px solid #f1f5f9;
+}
+.kpiNum:first-child { padding-left: 0; }
+.kpiNum:last-child  { border-right: none; }
+
+.kpiVal {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.kpiLbl {
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+}
+
+/* ── Ranking Grid: dos columnas ── */
+.rankingGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* ── Card ── */
+.card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 18px 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.cardAccent {
+  width: 3px;
+  height: 16px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.cardTitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+  flex: 1;
+}
+
+.cardCount {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  color: #9ca3af;
+  background: #f1f5f9;
+  padding: 2px 7px;
+  border-radius: 10px;
+}
+
+/* ── Ranking ── */
+.ranking {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.rankingItem {
+  border-bottom: 1px solid #f8fafc;
+  padding-bottom: 10px;
+}
+.rankingItem:last-child { border-bottom: none; padding-bottom: 0; }
+
+.rankingMeta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+
+.rankingPos {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.62rem;
+  color: #d1d5db;
+  font-weight: 700;
+  min-width: 20px;
+}
+
+.rankingCod {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #DB0100;
+}
+
+.rankingBadges {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.badgeOk {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #166534;
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  padding: 1px 5px;
+  border-radius: 8px;
+}
+
+.badgeNo {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #991b1b;
+  background: #fff5f5;
+  border: 1px solid #fca5a5;
+  padding: 1px 5px;
+  border-radius: 8px;
+}
+
+.rankingDesc {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin: 0 0 5px;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Barra horizontal ── */
+.barraRow {
+  display: grid;
+  grid-template-columns: 1fr 40px;
+  gap: 8px;
+  align-items: center;
+}
+
+.barraLabel {
+  display: none; /* sin label en el ranking */
+}
+
+.barraTrack {
+  background: #f1f5f9;
+  border-radius: 4px;
+  height: 6px;
+  overflow: hidden;
+  grid-column: 1;
+}
+
+.barraFill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.4s ease;
+  min-width: 3px;
+}
+
+.barraRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1px;
+}
+
+.barraValor {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #1A1A1A;
+}
+
+.barraSub {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  color: #9ca3af;
+  white-space: nowrap;
+}
+
+.sinDatos {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  text-align: center;
+  padding: 24px 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .kpiGrid    { grid-template-columns: 1fr; }
+  .rankingGrid { grid-template-columns: 1fr; }
+
+  .kpiStripNums { flex-wrap: wrap; }
+  .kpiNum {
+    min-width: 45%;
+    border-right: none;
+    border-bottom: 1px solid #f1f5f9;
+    padding: 6px 0;
+  }
+  .kpiNum:nth-child(odd)  { padding-right: 8px; }
+  .kpiNum:nth-child(even) { padding-left: 8px; }
+
+  .filtroResumen { width: 100%; margin-left: 0; }
+}
