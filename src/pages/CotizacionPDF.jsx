@@ -24,6 +24,7 @@ const CotizacionPDF = React.forwardRef(({ cotizacion }, ref) => {
     empresa, contacto, email, telefono, ciudad,
     items = [],
     subtotal = 0, descuentoGlobal = 0, descuentoMonto = 0, totalFinal = 0,
+    trm = null, subtotalUSD = null,
     garantia, formaPago, validez, tiempoEntrega, impuestos, observaciones, firmante = {}
   } = cotizacion;
 
@@ -112,22 +113,28 @@ const CotizacionPDF = React.forwardRef(({ cotizacion }, ref) => {
 
         {/* ── BLOQUE DE TOTALES ── */}
         <div className={styles.totalesZona}>
-          <div className={styles.totalesBloque}>
-            <div className={styles.totalesRow}>
-              <span>Subtotal</span>
-              <span>{fmt(subtotal, moneda)}</span>
-            </div>
-            {descuentoMonto > 0 && (
-              <div className={styles.totalesRow}>
-                <span>Descuento global ({descuentoGlobal}%)</span>
-                <span className={styles.colorRojo}>− {fmt(descuentoMonto, moneda)}</span>
-              </div>
-            )}
-            <div className={styles.totalesRowFinal}>
-              <span>TOTAL {moneda}</span>
-              <span>{fmt(totalFinal, moneda)}</span>
-            </div>
-          </div>
+    <div className={styles.totalesBloque}>
+  <div className={styles.totalesRow}>
+    <span>Subtotal {subtotalUSD ? 'USD' : moneda}</span>
+    <span>{fmt(subtotalUSD ?? subtotal, subtotalUSD ? 'USD' : moneda)}</span>
+  </div>
+  {trm && (
+    <div className={styles.totalesRow}>
+      <span>TRM aplicada</span>
+      <span>${Number(trm).toLocaleString('es-CO')}</span>
+    </div>
+  )}
+  {descuentoMonto > 0 && (
+    <div className={styles.totalesRow}>
+      <span>Descuento global ({descuentoGlobal}%)</span>
+      <span className={styles.colorRojo}>− {fmt(descuentoMonto, moneda)}</span>
+    </div>
+  )}
+  <div className={styles.totalesRowFinal}>
+    <span>TOTAL {moneda}</span>
+    <span>{fmt(totalFinal, moneda)}</span>
+  </div>
+</div>
         </div>
 
         {/* ── CONDICIONES Y OBSERVACIONES (Look Profesional) ── */}
