@@ -114,6 +114,7 @@ const ListaCotizaciones = () => {
   const [cargando, setCargando] = useState(true);
   const [filtroEmpresa, setFiltroEmpresa] = useState('');
   const [filtroEstado, setFiltroEstado] = useState('Todos');
+  const [filtroCreadoPor, setFiltroCreadoPor] = useState('Todos');
   const [tabActivo, setTabActivo] = useState('lista'); // 'lista' | 'estadisticas'
 
   useEffect(() => {
@@ -140,13 +141,20 @@ const ListaCotizaciones = () => {
   };
 
   // Filtrado en memoria
-  const filtradas = useMemo(() => {
-    return cotizaciones.filter(c => {
-      const matchEmpresa = c.empresa?.toLowerCase().includes(filtroEmpresa.toLowerCase());
-      const matchEstado = filtroEstado === 'Todos' || c.estado === filtroEstado;
-      return matchEmpresa && matchEstado;
-    });
-  }, [cotizaciones, filtroEmpresa, filtroEstado]);
+const filtradas = useMemo(() => {
+  return cotizaciones.filter(c => {
+    const matchEmpresa    = c.empresa?.toLowerCase().includes(filtroEmpresa.toLowerCase());
+    const matchEstado     = filtroEstado === 'Todos' || c.estado === filtroEstado;
+    const matchCreadoPor  = !isAdmin || filtroCreadoPor === 'Todos' || c.creadoPor === filtroCreadoPor;
+    return matchEmpresa && matchEstado && matchCreadoPor;
+  });
+}, [cotizaciones, filtroEmpresa, filtroEstado, filtroCreadoPor, isAdmin]);
+
+const usuariosUnicos = useMemo(() => {
+  if (!isAdmin) return [];
+  const nombres = [...new Set(cotizaciones.map(c => c.creadoPor).filter(Boolean))];
+  return nombres.sort();
+}, [cotizaciones, isAdmin]);
 
   // Indicadores resumen
   const resumen = useMemo(() => ({
@@ -212,30 +220,46 @@ const ListaCotizaciones = () => {
 
         {/* ── FILTROS ── */}
         <div className={styles.filtros}>
-          <input
-            type="text"
-            placeholder="Buscar por empresa..."
-            value={filtroEmpresa}
-            onChange={e => setFiltroEmpresa(e.target.value)}
-            className={styles.inputFiltro}
-          />
-          <select
-            value={filtroEstado}
-            onChange={e => setFiltroEstado(e.target.value)}
-            className={styles.selectFiltro}
-          >
-            <option value="Todos">Todos los estados</option>
-            {ESTADOS.map(e => <option key={e}>{e}</option>)}
-          </select>
-          {(filtroEmpresa || filtroEstado !== 'Todos') && (
-            <button
-              className={styles.btnLimpiar}
-              onClick={() => { setFiltroEmpresa(''); setFiltroEstado('Todos'); }}
-            >
-              Limpiar filtros
-            </button>
-          )}
-        </div>
+  <input
+    type="text"
+    placeholder="Buscar por empresa..."
+    value={filtroEmpresa}
+    onChange={e => setFiltroEmpresa(e.target.value)}
+    className={styles.inputFiltro}
+  />
+  <select
+    value={filtroEstado}
+    onChange={e => setFiltroEstado(e.target.value)}
+    className={styles.selectFiltro}
+  >
+    <option value="Todos">Todos los estados</option>
+    {ESTADOS.map(e => <option key={e}>{e}</option>)}
+  </select>
+
+  {isAdmin && usuariosUnicos.length > 0 && (
+    <select
+      value={filtroCreadoPor}
+      onChange={e => setFiltroCreadoPor(e.target.value)}
+      className={styles.selectFiltro}
+    >
+      <option value="Todos">Todos los usuarios</option>
+      {usuariosUnicos.map(u => <option key={u} value={u}>{u}</option>)}
+    </select>
+  )}
+
+  {(filtroEmpresa || filtroEstado !== 'Todos' || filtroCreadoPor !== 'Todos') && (
+    <button
+      className={styles.btnLimpiar}
+      onClick={() => {
+        setFiltroEmpresa('');
+        setFiltroEstado('Todos');
+        setFiltroCreadoPor('Todos');
+      }}
+    >
+      Limpiar filtros
+    </button>
+  )}
+</div>
 
         {/* ── TABLA HEADER ── */}
         {!cargando && filtradas.length > 0 && (

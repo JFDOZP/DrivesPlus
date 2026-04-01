@@ -65,6 +65,14 @@
   letter-spacing: 0.08em;
 }
 
+/* AGREGAR al final del bloque .topField */
+.topField input[type="number"] {
+  -moz-appearance: textfield;
+}
+.topField input[type="number"]::-webkit-outer-spin-button,
+.topField input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
 .trmNote {
   display: flex;
   align-items: center;

@@ -9,7 +9,7 @@ import { useSearchParams } from 'react-router-dom';
 // ─── Constantes ───────────────────────────────────────────────────────────────
 
 
-const MONEDAS = ['COP', 'USD', 'EUR'];
+const MONEDAS = ['COP', 'USD'];
 
 const CONDICIONES = {
   garantia: ['6 meses', '12 meses', '18 meses', '24 meses'],
@@ -47,6 +47,7 @@ const FORM_INICIAL = {
   nroCotizacion: generarNroCotizacion(),
   fecha: new Date().toISOString().split('T')[0],
   moneda: 'COP',
+  trm: '',
   empresa: '',
   contacto: '',
   email: '',
@@ -288,10 +289,15 @@ const Cotizaciones = () => {
   }, [searchParams]);
   const set = (campo, valor) => setForm(prev => ({ ...prev, [campo]: valor }));
 
+  const trmValida = form.moneda === 'USD' && Number(form.trm) > 0;
+  // Subtotal siempre en USD si moneda es USD
   const subtotal = form.items.reduce((acc, item) =>
-    acc + item.cantidad * (Number(item.precioUnit) || 0) * (1 - item.descuento / 100), 0);
+    acc + item.cantidad * (Number(item.precioUnit) || 0) * (1 - (Number(item.descuento) || 0) / 100), 0);
   const descuentoMonto = subtotal * (form.descuentoGlobal / 100);
-  const totalFinal = subtotal - descuentoMonto;
+  const totalFinalUSD = subtotal - descuentoMonto;
+  // Si hay TRM, convertir a COP; si no, mostrar en USD
+  const totalFinal = trmValida ? totalFinalUSD * Number(form.trm) : totalFinalUSD;
+  const monedaFinal = trmValida ? 'COP' : form.moneda;
 
   const agregarItem = () => set('items', [...form.items, itemVacio()]);
 
@@ -318,6 +324,9 @@ const Cotizaciones = () => {
         subtotal,
         descuentoMonto,
         totalFinal,
+        moneda: monedaFinal,        // ← guardar moneda final (COP si hay TRM, USD si no)
+  trm: Number(form.trm) || null,
+  subtotalUSD: form.moneda === 'USD' ? subtotal : null,
         // NUEVO: identificación del creador
         uid: currentUser?.uid ?? '',
         creadoPor: userProfile?.nombre ?? currentUser?.email ?? '',
@@ -352,22 +361,36 @@ const Cotizaciones = () => {
             <span className={styles.nroCot}>{form.nroCotizacion}</span>
           </div>
           <div className={styles.topRight}>
-            <div className={styles.topField}>
-              <label>Fecha</label>
-              <input type="date" value={form.fecha}
-                onChange={e => set('fecha', e.target.value)} className={styles.inputBase} />
-            </div>
-            <div className={styles.topField}>
-              <label>Moneda</label>
-              <select value={form.moneda} onChange={e => set('moneda', e.target.value)} className={styles.selectBase}>
-                {MONEDAS.map(m => <option key={m}>{m}</option>)}
-              </select>
-            </div>
-            {(form.moneda === 'USD' || form.moneda === 'EUR') && (
-              <div className={styles.trmNote}>
-                <span>★</span> TRM del día de facturación
-              </div>
-            )}
+      <div className={styles.topField}>
+  <label>Moneda</label>
+  <select value={form.moneda}
+    onChange={e => { set('moneda', e.target.value); set('trm', ''); }}
+    className={styles.selectBase}>
+    {MONEDAS.map(m => <option key={m}>{m}</option>)}
+  </select>
+</div>
+{form.moneda === 'USD' && (
+  <div className={styles.topField}>
+    <label>TRM (opcional)</label>
+    <input
+      type="number"
+      min="0"
+      step="1"
+      placeholder="Ej: 4200"
+      value={form.trm}
+      onChange={e => set('trm', e.target.value)}
+      className={styles.inputBase}
+      style={{ width: '130px' }}
+    />
+  </div>
+)}
+{form.moneda === 'USD' && (
+  <div className={styles.trmNote}>
+    {Number(form.trm) > 0
+      ? `★ TRM: $${Number(form.trm).toLocaleString('es-CO')} — Total en COP`
+      : '★ Sin TRM — Total en USD'}
+  </div>
+)}
           </div>
         </div>
 
@@ -498,28 +521,28 @@ const Cotizaciones = () => {
                 <span>Subtotal</span>
                 <span>{fmt(subtotal, form.moneda)}</span>
               </div>
-              <div className={styles.totalesRow}>
-                <span>Descuento global</span>
-                <div className={styles.descuentoInput}>
-                  <input type="number" min="0" max="100"
-                    value={form.descuentoGlobal}
-                    onChange={e => set('descuentoGlobal', Number(e.target.value))}
-                    className={styles.inputSmallTotal} />
-                  <span>%</span>
-                  {form.descuentoGlobal > 0 && (
-                    <span className={styles.descuentoMonto}>− {fmt(descuentoMonto, form.moneda)}</span>
-                  )}
-                </div>
-              </div>
-              <div className={`${styles.totalesRow} ${styles.totalesFinal}`}>
-                <span>TOTAL</span>
-                <span className={styles.totalMonto}>{fmt(totalFinal, form.moneda)}</span>
-              </div>
-              {(form.moneda === 'USD' || form.moneda === 'EUR') && (
-                <p className={styles.trmAviso}>
-                  El valor en COP se calculará aplicando la TRM vigente al día de la facturación.
-                </p>
-              )}
+            <div className={styles.totalesRow}>
+  <span>Subtotal</span>
+  <span>{fmt(subtotal, form.moneda)}</span>
+</div>
+...
+{trmValida && (
+  <div className={styles.totalesRow}>
+    <span>TRM aplicada</span>
+    <span style={{ fontFamily: 'Share Tech Mono', fontSize: '0.82rem' }}>
+      ${Number(form.trm).toLocaleString('es-CO')}
+    </span>
+  </div>
+)}
+<div className={`${styles.totalesRow} ${styles.totalesFinal}`}>
+  <span>TOTAL {monedaFinal}</span>
+  <span className={styles.totalMonto}>{fmt(totalFinal, monedaFinal)}</span>
+</div>
+{form.moneda === 'USD' && !trmValida && (
+  <p className={styles.trmAviso}>
+    Sin TRM — la cotización se guardará en USD. Ingresa la TRM para convertir a COP.
+  </p>
+)}  
             </div>
 
             <button type="submit" className={styles.btnGuardar} disabled={enviando}>
