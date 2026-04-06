@@ -17,7 +17,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Login from './pages/Login';
 import ListaCotizaciones from './pages/ListaCotizaciones';
 import DetalleCotizacion from './pages/DetalleCotizacion';
-
+import Agenda from './pages/Agenda';
 
 
 
@@ -50,6 +50,7 @@ function App() {
           <Route path="cotizaciones/nueva" element={<Cotizaciones />} />
           <Route path="cotizaciones/:id" element={<DetalleCotizacion />} />
 
+          <Route path="agenda" element={<Agenda />} />
           <Route path="reportes" element={<Reportes />} />
         </Route>
 

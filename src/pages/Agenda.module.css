@@ -1,0 +1,579 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap');
+
+/* ── Página ── */
+.page {
+  padding: 28px;
+  min-height: 100vh;
+  background: #f4f5f7;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+/* ── Top bar ── */
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #1A1A1A;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.titulo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 2px;
+}
+
+.subtitulo {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  color: #9ca3af;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ── Navegación de mes ── */
+.navMes {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navBtn {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1A1A1A;
+  transition: all 0.15s;
+}
+.navBtn:hover { background: #1A1A1A; color: #fff; border-color: #1A1A1A; }
+
+.mesActual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 130px;
+}
+
+.mesNombre {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1;
+}
+
+.mesAnio {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.72rem;
+  color: #9ca3af;
+  letter-spacing: 0.1em;
+}
+
+.btnHoy {
+  background: #DB0100;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btnHoy:hover { background: #b30100; }
+
+/* ── Calendario ── */
+.calendario {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 28px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.semanaHeader {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: #1A1A1A;
+}
+
+.diaSemana {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-top: none;
+}
+
+.celdaVacia {
+  min-height: 80px;
+  background: #fafbfc;
+  border-right: 1px solid #f1f5f9;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.celda {
+  min-height: 80px;
+  padding: 8px;
+  border-right: 1px solid #f1f5f9;
+  border-bottom: 1px solid #f1f5f9;
+  cursor: pointer;
+  transition: background 0.12s;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.celda:hover { background: #f8fafc; }
+
+.celdaHoy {
+  background: #fff5f5;
+}
+.celdaHoy:hover { background: #fee2e2; }
+
+.numDia {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #6b7280;
+  line-height: 1;
+}
+
+.numDiaHoy {
+  color: #fff;
+  background: #DB0100;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+}
+
+/* Puntos de eventos en el día */
+.puntosWrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-top: 2px;
+}
+
+.puntoEvento {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.12s;
+}
+.puntoEvento:hover { transform: scale(1.4); }
+
+.masEventos {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.55rem;
+  color: #9ca3af;
+  font-weight: 700;
+}
+
+/* ── Lista de eventos ── */
+.listaSeccion {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.listaTitulo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border-bottom: 1px solid #f1f5f9;
+  background: #fafbfc;
+}
+
+.listaTituloTexto {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.listaBadge {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #DB0100;
+  background: #fff5f5;
+  border: 1px solid #fecaca;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.loading, .empty {
+  text-align: center;
+  padding: 40px 20px;
+  color: #9ca3af;
+  font-size: 0.92rem;
+}
+
+.listaEventos {
+  display: flex;
+  flex-direction: column;
+}
+
+.eventoCard {
+  display: grid;
+  grid-template-columns: 4px 52px 1fr auto;
+  gap: 0 14px;
+  align-items: center;
+  padding: 14px 20px;
+  border-bottom: 1px solid #f8fafc;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.eventoCard:last-child { border-bottom: none; }
+.eventoCard:hover { background: #f8fafc; }
+
+.eventoAccent {
+  width: 4px;
+  height: 36px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.eventoFechaCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+}
+
+.eventoDia {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  line-height: 1;
+}
+
+.eventoMesCorto {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.eventoInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.eventoHora {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.68rem;
+  color: #9ca3af;
+  letter-spacing: 0.06em;
+}
+
+.eventoTitulo {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.eventoEmpresa {
+  font-size: 0.78rem;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.eventoTipoBadge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.eventoCreadoPor {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.62rem;
+  color: #9ca3af;
+  white-space: nowrap;
+  grid-column: 4;
+  align-self: flex-end;
+  padding-top: 4px;
+}
+
+/* ── MODAL ── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.modal {
+  background: #fff;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+  animation: slideUp 0.2s ease;
+  overflow: hidden;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.modalHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.modalFecha {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.68rem;
+  color: #DB0100;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.modalTitulo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.modalClose {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 4px 8px;
+  transition: color 0.15s;
+}
+.modalClose:hover { color: #DB0100; }
+
+.modalBody {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+}
+
+.mGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mGroup label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #4a5568;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.mRow {
+  display: grid;
+  grid-template-columns: 1fr 140px;
+  gap: 12px;
+}
+
+/* Tipo pills */
+.tipoGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tipoPill {
+  padding: 5px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: #f8fafc;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.tipoPill:hover { border-color: #cbd5e0; }
+.tipoPillActive { font-weight: 700; }
+
+/* Inputs */
+.mInput, .mSelect, .mTextarea {
+  padding: 9px 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.92rem;
+  color: #1A1A1A;
+  background: #f8fafc;
+  outline: none;
+  transition: border-color 0.18s, box-shadow 0.18s;
+  width: 100%;
+  box-sizing: border-box;
+}
+.mInput:focus, .mSelect:focus, .mTextarea:focus {
+  border-color: #DB0100;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(219,1,0,0.08);
+}
+.mTextarea { resize: vertical; }
+
+/* Footer modal */
+.modalFoot {
+  display: flex;
+  gap: 8px;
+  padding: 16px 24px;
+  border-top: 1px solid #f1f5f9;
+  background: #fafbfc;
+}
+
+.btnEliminar {
+  background: none;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+  padding: 9px 16px;
+  border-radius: 8px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all 0.15s;
+  margin-right: auto;
+}
+.btnEliminar:hover { background: #fff5f5; }
+
+.btnCancelar {
+  background: none;
+  border: 1px solid #e2e8f0;
+  color: #6b7280;
+  padding: 9px 18px;
+  border-radius: 8px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btnCancelar:hover { border-color: #1A1A1A; color: #1A1A1A; }
+
+.btnGuardar {
+  background: #DB0100;
+  color: #fff;
+  border: none;
+  padding: 9px 22px;
+  border-radius: 8px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btnGuardar:hover:not(:disabled) { background: #b30100; }
+.btnGuardar:disabled { opacity: 0.55; cursor: not-allowed; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .page { padding: 16px; }
+
+  .topBar { flex-direction: column; align-items: flex-start; }
+
+  .celda { min-height: 52px; padding: 5px; }
+  .numDia { font-size: 0.72rem; }
+
+  .eventoCard {
+    grid-template-columns: 4px 40px 1fr;
+    grid-template-rows: auto auto;
+  }
+  .eventoTipoBadge { grid-column: 3; grid-row: 2; margin-top: 4px; justify-self: start; }
+  .eventoCreadoPor { display: none; }
+
+  .mRow { grid-template-columns: 1fr; }
+  .modal { max-height: 95vh; border-radius: 14px 14px 0 0; }
+  .overlay { align-items: flex-end; padding: 0; }
+}
+
+@media (max-width: 480px) {
+  .diaSemana { font-size: 0.55rem; }
+  .celda { min-height: 44px; padding: 4px; }
+  .puntoEvento { width: 5px; height: 5px; }
+}

@@ -129,23 +129,23 @@ const FormularioIngreso = () => {
             </div>
 
             <div className={styles.group}>
-              <label>Código Interno</label>
+              <label>Código</label>
               <input
                 type="text"
                 className={styles.monoInput}
-                placeholder="Opcional"
+                placeholder="Codigo"
                 value={formData.codigo}
                 onChange={(e) => set('codigo', e.target.value.toUpperCase())}
               />
             </div>
 
             <div className={styles.group}>
-              <label>Número de Serial</label>
+              <label>Número de Serie</label>
               <input
                 required
                 type="text"
                 className={`${styles.monoInput} ${styles.serialHighlight}`}
-                placeholder="Ingrese serial"
+                placeholder="Serial"
                 value={formData.serial}
                 onChange={(e) => set('serial', e.target.value.toUpperCase())}
               />

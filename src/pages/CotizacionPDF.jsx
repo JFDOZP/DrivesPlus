@@ -118,12 +118,7 @@ const CotizacionPDF = React.forwardRef(({ cotizacion }, ref) => {
     <span>Subtotal {subtotalUSD ? 'USD' : moneda}</span>
     <span>{fmt(subtotalUSD ?? subtotal, subtotalUSD ? 'USD' : moneda)}</span>
   </div>
-  {trm && (
-    <div className={styles.totalesRow}>
-      <span>TRM aplicada</span>
-      <span>${Number(trm).toLocaleString('es-CO')}</span>
-    </div>
-  )}
+ 
   {descuentoMonto > 0 && (
     <div className={styles.totalesRow}>
       <span>Descuento global ({descuentoGlobal}%)</span>

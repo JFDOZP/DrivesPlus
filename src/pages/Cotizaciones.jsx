@@ -6,8 +6,8 @@ import CotizacionPDF from './CotizacionPDF';
 import { usePDF } from '../hooks/usePDF';
 import styles from './Cotizaciones.module.css';
 import { useSearchParams } from 'react-router-dom';
-// ─── Constantes ───────────────────────────────────────────────────────────────
 
+// ─── Constantes ───────────────────────────────────────────────────────────────
 
 const MONEDAS = ['COP', 'USD'];
 
@@ -24,43 +24,41 @@ const generarNroCotizacion = (email = '') => {
   const prefijo = email
     ? email.split('@')[0].split('.').map(p => p[0]).join('').toUpperCase().slice(0, 4)
     : 'CSA';
-  const yy = String(now.getFullYear()).slice(2);
-  const mm = String(now.getMonth() + 1).padStart(2, '0');
-  const dd = String(now.getDate()).padStart(2, '0');
-
+  const yy  = String(now.getFullYear()).slice(2);
+  const mm  = String(now.getMonth() + 1).padStart(2, '0');
+  const dd  = String(now.getDate()).padStart(2, '0');
   const min = String(now.getMinutes()).padStart(2, '0');
   return `${prefijo}${yy}${mm}${dd}${min}`;
 };
 
-// FIX: ID siempre único con crypto.randomUUID()
 const itemVacio = () => ({
-  id: crypto.randomUUID(),
-  tipo: 'producto',
-  codigo: '',
+  id:          crypto.randomUUID(),
+  tipo:        'producto',
+  codigo:      '',
   descripcion: '',
-  cantidad: 1,
-  precioUnit: '',
-  descuento: '',
+  cantidad:    1,
+  precioUnit:  '',   // siempre en la moneda del formulario
+  descuento:   '',
 });
 
 const FORM_INICIAL = {
   nroCotizacion: generarNroCotizacion(),
-  fecha: new Date().toISOString().split('T')[0],
-  moneda: 'COP',
-  trm: '',
-  empresa: '',
-  contacto: '',
-  email: '',
-  telefono: '',
-  ciudad: '',
-  serialEquipo: '',
-  items: [itemVacio()],
+  fecha:         new Date().toISOString().split('T')[0],
+  moneda:        'COP',
+  trm:           '',   // solo aplica cuando moneda=COP para convertir precios USD del catálogo
+  empresa:       '',
+  contacto:      '',
+  email:         '',
+  telefono:      '',
+  ciudad:        '',
+  serialEquipo:  '',
+  items:         [itemVacio()],
   descuentoGlobal: 0,
-  garantia: '12 meses',
-  formaPago: 'Crédito 30 días',
-  validez: '15 días',
+  garantia:      '12 meses',
+  formaPago:     'Crédito 30 días',
+  validez:       '15 días',
   tiempoEntrega: 'Importación 6 semanas',
-  impuestos: 'IVA 19% a incluir',
+  impuestos:     'IVA 19% a incluir',
   observaciones: '',
 };
 
@@ -69,19 +67,38 @@ const fmt = (n, moneda = 'COP') =>
     style: 'currency', currency: moneda,
     minimumFractionDigits: moneda === 'COP' ? 0 : 2,
     maximumFractionDigits: moneda === 'COP' ? 0 : 2,
-  }).format(n);
+  }).format(n ?? 0);
 
 // ─── BUSCADOR DE CATÁLOGO ─────────────────────────────────────────────────────
-const BuscadorCatalogo = ({ onSeleccionar, onCerrar }) => {
+// Recibe moneda y trm para mostrar y convertir el precio al seleccionar
+const BuscadorCatalogo = ({ onSeleccionar, onCerrar, moneda, trm }) => {
   const [query, setQuery] = useState('');
   const inputRef = useRef(null);
-
   useEffect(() => { inputRef.current?.focus(); }, []);
 
   const resultados = query.length < 2 ? [] : CATALOGO_PRODUCTOS.filter(p =>
     p.codigo.toLowerCase().includes(query.toLowerCase()) ||
     p.descripcion.toLowerCase().includes(query.toLowerCase())
   ).slice(0, 12);
+
+  // Convierte precio USD del catálogo a la moneda del formulario
+  const convertirPrecio = (precioUSD) => {
+    if (!precioUSD) return null;
+    if (moneda === 'USD') return precioUSD;           // USD → USD: directo
+    const trmNum = Number(trm);
+    if (trmNum > 0) return precioUSD * trmNum;        // USD → COP con TRM
+    return null;                                       // COP sin TRM: no convertir
+  };
+
+ const labelPrecio = (precioUSD) => {
+  if (moneda === 'USD')
+    return `USD ${precioUSD.toLocaleString('es-CO', { minimumFractionDigits: 2 })}`;
+  const cop = convertirPrecio(precioUSD);
+  if (cop !== null)
+    return `COP ${Math.round(cop).toLocaleString('es-CO')}`;
+  // Sin TRM: mostrar solo el precio USD sin mensaje adicional
+  return `USD ${precioUSD.toLocaleString('es-CO', { minimumFractionDigits: 2 })}`;
+};
 
   return (
     <div className={styles.modalOverlay} onClick={onCerrar}>
@@ -91,14 +108,10 @@ const BuscadorCatalogo = ({ onSeleccionar, onCerrar }) => {
           <button className={styles.modalClose} onClick={onCerrar}>✕</button>
         </div>
         <div className={styles.modalSearch}>
-          <input
-            ref={inputRef}
-            type="text"
+          <input ref={inputRef} type="text"
             placeholder="Buscar por código o descripción..."
-            value={query}
-            onChange={e => setQuery(e.target.value)}
-            className={styles.modalInput}
-          />
+            value={query} onChange={e => setQuery(e.target.value)}
+            className={styles.modalInput} />
         </div>
         <div className={styles.modalResultados}>
           {query.length < 2 && (
@@ -108,11 +121,12 @@ const BuscadorCatalogo = ({ onSeleccionar, onCerrar }) => {
             <p className={styles.modalHint}>Sin resultados para "{query}"</p>
           )}
           {resultados.map(p => (
-            <div key={p.codigo} className={styles.modalItem} onClick={() => onSeleccionar(p)}>
+            <div key={p.codigo} className={styles.modalItem}
+              onClick={() => onSeleccionar(p, convertirPrecio(p.precioUSD))}>
               <span className={styles.modalCodigo}>{p.codigo}</span>
               <span className={styles.modalDesc}>{p.descripcion}</span>
               {p.precioUSD && (
-                <span className={styles.modalPrecio}>USD {p.precioUSD.toLocaleString()}</span>
+                <span className={styles.modalPrecio}>{labelPrecio(p.precioUSD)}</span>
               )}
             </div>
           ))}
@@ -123,120 +137,88 @@ const BuscadorCatalogo = ({ onSeleccionar, onCerrar }) => {
 };
 
 // ─── FILA DE ÍTEM ─────────────────────────────────────────────────────────────
-// FIX: eliminado el toggle producto/servicio — todos los ítems son iguales.
-// Un ítem sin código del catálogo simplemente queda con código manual o vacío.
-const FilaItem = ({ item, moneda, onChange, onEliminar }) => {
+const FilaItem = ({ item, moneda, trm, onChange, onEliminar }) => {
   const [showCatalogo, setShowCatalogo] = useState(false);
-  const precioTotal = item.cantidad * (Number(item.precioUnit) || 0) * (1 - item.descuento / 100);
+  const [trmSnapshot, setTrmSnapshot]   = useState('');
 
-  const handleSeleccionar = (producto) => {
-    // FIX: onChange recibe el item actualizado conservando su ID original
-    onChange({
-      ...item,
-      codigo: producto.codigo,
-      descripcion: producto.descripcion,
-      precioUnit: producto.precioUSD ?? 0,
-    });
-    setShowCatalogo(false);
-  };
+  const precioTotal = item.cantidad * (Number(item.precioUnit) || 0) * (1 - (Number(item.descuento) || 0) / 100);
 
-
-
-
+  // El precio ya llega convertido a la moneda del formulario desde el catálogo
+ const handleSeleccionar = (producto, precioConvertido) => {
+  onChange({
+    ...item,
+    codigo:      producto.codigo,
+    descripcion: producto.descripcion,
+    // Si hay conversión COP usar ese valor, si no usar el USD directo
+    precioUnit:  precioConvertido !== null ? precioConvertido : (producto.precioUSD ?? ''),
+  });
+  setShowCatalogo(false);
+};
   return (
     <>
       <div className={styles.itemRow}>
 
         <div className={styles.itemTipo}>
-          <button
-            type="button"
+          <button type="button"
             className={`${styles.tipoBtn} ${item.tipo === 'producto' ? styles.tipoBtnActive : ''}`}
             onClick={() => onChange({ ...item, tipo: 'producto', codigo: '' })}
           >Prod.</button>
-          <button
-            type="button"
+          <button type="button"
             className={`${styles.tipoBtn} ${item.tipo === 'servicio' ? styles.tipoBtnActive : ''}`}
             onClick={() => onChange({ ...item, tipo: 'servicio', codigo: '' })}
           >Serv.</button>
-          <button
-            type="button"
+          <button type="button"
             className={`${styles.tipoBtn} ${item.tipo === 'repuesto' ? styles.tipoBtnActive : ''}`}
             onClick={() => onChange({ ...item, tipo: 'repuesto', codigo: '' })}
           >Rep.</button>
         </div>
-        {/* Código + botón catálogo */}
+
         <div className={styles.itemCodigo}>
           <div className={styles.codigoGroup}>
-            <input
-              type="text"
-              value={item.codigo}
+            <input type="text" value={item.codigo}
               onChange={e => onChange({ ...item, codigo: e.target.value.toUpperCase() })}
-              placeholder="Código"
-              className={styles.inputSmall}
-            />
-            <button
-              type="button"
-              className={styles.btnCatalogo}
-              onClick={() => setShowCatalogo(true)}
-              title="Buscar en catálogo"
-            >⊕</button>
+              placeholder="Código" className={styles.inputSmall} />
+            <button type="button" className={styles.btnCatalogo}
+              onClick={() => { setTrmSnapshot(trm); setShowCatalogo(true); }} title="Buscar en catálogo">⊕</button>
           </div>
         </div>
 
-        {/* Descripción */}
         <div className={styles.itemDesc}>
-          <textarea
-            value={item.descripcion}
+          <textarea value={item.descripcion}
             onChange={e => onChange({ ...item, descripcion: e.target.value })}
             placeholder="Descripción del ítem"
-            className={styles.textareaSmall}
-            rows={2}
-          />
+            className={styles.textareaSmall} rows={2} />
         </div>
 
-        {/* Cantidad */}
         <div className={styles.itemCant}>
-          <input
-            type="number"
-            min="1"
-            value={item.cantidad}
+          <input type="number" min="1" value={item.cantidad}
             onChange={e => onChange({ ...item, cantidad: Number(e.target.value) })}
-            className={styles.inputSmall}
-          />
+            className={styles.inputSmall} />
         </div>
 
-        {/* Precio unitario */}
+        {/* Precio unitario — siempre en la moneda del formulario */}
         <div className={styles.itemPrecio}>
-          <input
-            type="number"
-            min="0"
-            step="0.01"
-            value={item.precioUnit}
-            onChange={e => onChange({ ...item, precioUnit: Number(e.target.value) })}
-            className={styles.inputSmall}
-          />
+          <input type="number" min="0" step="0.01" value={item.precioUnit}
+            onChange={e => {
+              const val = e.target.value;
+              onChange({ ...item, precioUnit: val === '' ? '' : Math.max(0, Number(val)) });
+            }}
+            className={styles.inputSmall} />
           <span className={styles.monedaTag}>{moneda}</span>
         </div>
 
-        {/* Descuento % */}
         <div className={styles.itemDesc2}>
-          <input
-            type="number"
-            min="0"
-            max="100"
-            value={item.descuento}
+          <input type="number" min="0" max="100" value={item.descuento}
             onChange={e => onChange({ ...item, descuento: Number(e.target.value) })}
-            className={styles.inputSmall}
-          />
+            className={styles.inputSmall} />
           <span className={styles.monedaTag}>%</span>
         </div>
 
-        {/* Total línea */}
+        {/* Total — en la moneda del formulario */}
         <div className={styles.itemTotal}>
           <span>{fmt(precioTotal, moneda)}</span>
         </div>
 
-        {/* Eliminar */}
         <button type="button" className={styles.btnEliminar} onClick={onEliminar}>✕</button>
       </div>
 
@@ -244,6 +226,8 @@ const FilaItem = ({ item, moneda, onChange, onEliminar }) => {
         <BuscadorCatalogo
           onSeleccionar={handleSeleccionar}
           onCerrar={() => setShowCatalogo(false)}
+          moneda={moneda}
+          trm={trmSnapshot}
         />
       )}
     </>
@@ -254,7 +238,6 @@ const FilaItem = ({ item, moneda, onChange, onEliminar }) => {
 const Cotizaciones = () => {
   const { currentUser, userProfile } = useAuth();
 
-  // Actualiza el número de cotización con el email del usuario al montar
   useEffect(() => {
     if (currentUser?.email) {
       setForm(prev => ({
@@ -264,48 +247,45 @@ const Cotizaciones = () => {
     }
   }, [currentUser?.email]);
 
-  const [searchParams] = useSearchParams();
-  const [form, setForm] = useState(FORM_INICIAL);
+  const [searchParams]         = useSearchParams();
+  const [form, setForm]        = useState(FORM_INICIAL);
   const [enviando, setEnviando] = useState(false);
-  const [mensaje, setMensaje] = useState(null);
+  const [mensaje, setMensaje]  = useState(null);
   const [cotizacionGuardada, setCotizacionGuardada] = useState(null);
   const { pdfRef, generarPDF, generando } = usePDF();
 
   useEffect(() => {
-
-    const serial = searchParams.get('serial');
-    const empresa = searchParams.get('empresa');
+    const serial   = searchParams.get('serial');
+    const empresa  = searchParams.get('empresa');
     const contacto = searchParams.get('contacto');
-
     if (serial || empresa || contacto) {
       setForm(prev => ({
         ...prev,
-        serialEquipo: serial ?? prev.serialEquipo,
-        empresa: empresa ?? prev.empresa,
-        contacto: contacto ?? prev.contacto,
+        serialEquipo: serial   ?? prev.serialEquipo,
+        empresa:      empresa  ?? prev.empresa,
+        contacto:     contacto ?? prev.contacto,
       }));
     }
-
   }, [searchParams]);
+
   const set = (campo, valor) => setForm(prev => ({ ...prev, [campo]: valor }));
 
-  const trmValida = form.moneda === 'USD' && Number(form.trm) > 0;
-  // Subtotal siempre en USD si moneda es USD
-  const subtotal = form.items.reduce((acc, item) =>
+  // ── Lógica de moneda/TRM ──────────────────────────────────────────────────
+  // Regla: la moneda seleccionada define TODO el documento, sin mezcla.
+  // TRM solo aplica cuando moneda=COP: convierte precios USD del catálogo a COP
+  // al momento de seleccionarlos. Los totales siempre son en form.moneda.
+  const trmNum    = Number(form.trm);
+  const trmActiva = form.moneda === 'COP' && trmNum > 0;
+
+  const subtotal       = form.items.reduce((acc, item) =>
     acc + item.cantidad * (Number(item.precioUnit) || 0) * (1 - (Number(item.descuento) || 0) / 100), 0);
-  const descuentoMonto = subtotal * (form.descuentoGlobal / 100);
-  const totalFinalUSD = subtotal - descuentoMonto;
-  // Si hay TRM, convertir a COP; si no, mostrar en USD
-  const totalFinal = trmValida ? totalFinalUSD * Number(form.trm) : totalFinalUSD;
-  const monedaFinal = trmValida ? 'COP' : form.moneda;
+  const descuentoMonto = subtotal * ((form.descuentoGlobal || 0) / 100);
+  const totalFinal     = subtotal - descuentoMonto;
 
-  const agregarItem = () => set('items', [...form.items, itemVacio()]);
-
-  // FIX: compara por ID único — nunca afecta otros ítems
+  const agregarItem    = () => set('items', [...form.items, itemVacio()]);
   const actualizarItem = (id, nuevoItem) =>
     set('items', form.items.map(i => i.id === id ? nuevoItem : i));
-
-  const eliminarItem = (id) =>
+  const eliminarItem   = (id) =>
     set('items', form.items.filter(i => i.id !== id));
 
   const handleSubmit = async (e) => {
@@ -317,28 +297,24 @@ const Cotizaciones = () => {
     setEnviando(true);
     setMensaje(null);
     try {
-      // Limpiamos el campo interno `id` antes de guardar en Firestore
       const datosCompletos = {
         ...form,
-        items: form.items.map(({ id, ...rest }) => rest),
+        items:          form.items.map(({ id, ...rest }) => rest),
         subtotal,
         descuentoMonto,
         totalFinal,
-        moneda: monedaFinal,        // ← guardar moneda final (COP si hay TRM, USD si no)
-        trm: Number(form.trm) || null,
-        subtotalUSD: form.moneda === 'USD' ? subtotal : null,
-        // NUEVO: identificación del creador
-        uid: currentUser?.uid ?? '',
-        creadoPor: userProfile?.nombre ?? currentUser?.email ?? '',
+        moneda:         form.moneda,             // COP o USD, sin mezcla
+        trm:            trmActiva ? trmNum : null,
+        uid:            currentUser?.uid ?? '',
+        creadoPor:      userProfile?.nombre ?? currentUser?.email ?? '',
         firmante: {
-          nombre: userProfile?.nombre ?? '',
-          cargo: userProfile?.cargo ?? '',
+          nombre:   userProfile?.nombre   ?? '',
+          cargo:    userProfile?.cargo    ?? '',
           telefono: userProfile?.telefono ?? '',
-          email: userProfile?.email ?? currentUser?.email ?? '',
+          email:    userProfile?.email    ?? currentUser?.email ?? '',
         },
       };
       await guardarCotizacion(datosCompletos);
-      // Guardamos con IDs para que el PDF pueda renderizar la lista
       setCotizacionGuardada({ ...datosCompletos, items: form.items });
       setMensaje({ tipo: 'ok', texto: `Cotización ${form.nroCotizacion} guardada con éxito.` });
       setForm({ ...FORM_INICIAL, nroCotizacion: generarNroCotizacion(currentUser?.email ?? '') });
@@ -361,6 +337,14 @@ const Cotizaciones = () => {
             <span className={styles.nroCot}>{form.nroCotizacion}</span>
           </div>
           <div className={styles.topRight}>
+
+            <div className={styles.topField}>
+              <label>Fecha</label>
+              <input type="date" value={form.fecha}
+                onChange={e => set('fecha', e.target.value)}
+                className={styles.inputBase} />
+            </div>
+
             <div className={styles.topField}>
               <label>Moneda</label>
               <select value={form.moneda}
@@ -369,28 +353,37 @@ const Cotizaciones = () => {
                 {MONEDAS.map(m => <option key={m}>{m}</option>)}
               </select>
             </div>
-            {form.moneda === 'USD' && (
+
+            {/* TRM: solo visible cuando moneda=COP */}
+            {form.moneda === 'COP' && (
               <div className={styles.topField}>
-                <label>TRM (opcional)</label>
-                <input
-                  type="number"
-                  min="0"
-                  step="1"
+                <label>TRM</label>
+                <input type="number" min="0" step="1"
                   placeholder="Ej: 4200"
                   value={form.trm}
                   onChange={e => set('trm', e.target.value)}
                   className={styles.inputBase}
-                  style={{ width: '130px' }}
-                />
+                  style={{ width: '120px' }} />
               </div>
             )}
+
+            {/* Nota informativa según estado */}
             {form.moneda === 'USD' && (
               <div className={styles.trmNote}>
-                {Number(form.trm) > 0
-                  ? `★ TRM: $${Number(form.trm).toLocaleString('es-CO')} — Total en COP`
-                  : '★ Sin TRM — Total en USD'}
+                ★ Cotización en USD — precios del catálogo se usan directo
               </div>
             )}
+            {form.moneda === 'COP' && trmActiva && (
+              <div className={styles.trmNote}>
+                ★ TRM ${trmNum.toLocaleString('es-CO')} — catálogo convertido a COP
+              </div>
+            )}
+            {form.moneda === 'COP' && !trmActiva && (
+              <div className={styles.trmNote}>
+                ★ Cotización en COP — ingresa TRM para convertir catálogo automáticamente
+              </div>
+            )}
+
           </div>
         </div>
 
@@ -402,19 +395,13 @@ const Cotizaciones = () => {
 
         {searchParams.get('serial') && (
           <div style={{
-            padding: '10px 16px',
-            background: '#eff6ff',
-            border: '1px solid #93c5fd',
-            borderRadius: '6px',
-            fontSize: '0.85rem',
-            color: '#1e40af',
-            marginBottom: '16px',
-            fontWeight: 600,
+            padding: '10px 16px', background: '#eff6ff', border: '1px solid #93c5fd',
+            borderRadius: '6px', fontSize: '0.85rem', color: '#1e40af',
+            marginBottom: '16px', fontWeight: 600,
           }}>
             📎 Cotización vinculada al equipo {searchParams.get('serial')}
           </div>
         )}
-
 
         {/* ── GRID CLIENTE + CONDICIONES ── */}
         <div className={styles.mainGrid}>
@@ -423,23 +410,20 @@ const Cotizaciones = () => {
             <h2 className={styles.cardTitle}><span className={styles.cardNum}>01</span>Cliente</h2>
             <div className={styles.formGrid2}>
               {[
-                { label: 'Empresa *', campo: 'empresa', required: true },
-                { label: 'Contacto *', campo: 'contacto', required: true },
-                { label: 'Email', campo: 'email', type: 'email' },
-                { label: 'Teléfono', campo: 'telefono' },
-                { label: 'Ciudad', campo: 'ciudad' },
+                { label: 'Empresa *',           campo: 'empresa',      required: true },
+                { label: 'Contacto *',          campo: 'contacto',     required: true },
+                { label: 'Email',               campo: 'email',        type: 'email' },
+                { label: 'Teléfono',            campo: 'telefono' },
+                { label: 'Ciudad',              campo: 'ciudad' },
                 { label: 'Serial equipo (opt)', campo: 'serialEquipo', upper: true },
               ].map(({ label, campo, required, type, upper }) => (
                 <div key={campo} className={styles.group}>
                   <label>{label}</label>
-                  <input
-                    type={type || 'text'}
-                    required={!!required}
+                  <input type={type || 'text'} required={!!required}
                     value={form[campo]}
                     placeholder={campo === 'serialEquipo' ? 'Vincular a equipo registrado' : ''}
                     onChange={e => set(campo, upper ? e.target.value.toUpperCase() : e.target.value)}
-                    className={styles.inputBase}
-                  />
+                    className={styles.inputBase} />
                 </div>
               ))}
             </div>
@@ -449,11 +433,11 @@ const Cotizaciones = () => {
             <h2 className={styles.cardTitle}><span className={styles.cardNum}>02</span>Condiciones Comerciales</h2>
             <div className={styles.formGrid2}>
               {[
-                { label: 'Garantía', campo: 'garantia', opciones: CONDICIONES.garantia },
-                { label: 'Forma de pago', campo: 'formaPago', opciones: CONDICIONES.formaPago },
-                { label: 'Validez oferta', campo: 'validez', opciones: CONDICIONES.validez },
+                { label: 'Garantía',       campo: 'garantia',      opciones: CONDICIONES.garantia },
+                { label: 'Forma de pago',  campo: 'formaPago',     opciones: CONDICIONES.formaPago },
+                { label: 'Validez oferta', campo: 'validez',       opciones: CONDICIONES.validez },
                 { label: 'Tiempo entrega', campo: 'tiempoEntrega', opciones: CONDICIONES.tiempoEntrega },
-                { label: 'Impuestos', campo: 'impuestos', opciones: CONDICIONES.impuestos },
+                { label: 'Impuestos',      campo: 'impuestos',     opciones: CONDICIONES.impuestos },
               ].map(({ label, campo, opciones }) => (
                 <div key={campo} className={styles.group}>
                   <label>{label}</label>
@@ -478,9 +462,9 @@ const Cotizaciones = () => {
             <span className={styles.colCodigo}>Código</span>
             <span className={styles.colDesc}>Descripción</span>
             <span className={styles.colCant}>Cant.</span>
-            <span className={styles.colPrecio}>P. Unit.</span>
-            <span className={styles.colDesc2}>Desc.%</span>
-            <span className={styles.colTotal}>Total</span>
+            <span className={styles.colPrecio}>P. Unit. ({form.moneda})</span>
+            <span className={styles.colDesc2}>Desc. %</span>
+            <span className={styles.colTotal}>Total {form.moneda}</span>
             <span className={styles.colDel}></span>
           </div>
 
@@ -490,6 +474,7 @@ const Cotizaciones = () => {
                 key={item.id}
                 item={item}
                 moneda={form.moneda}
+                trm={form.trm}
                 onChange={nuevoItem => actualizarItem(item.id, nuevoItem)}
                 onEliminar={() => eliminarItem(item.id)}
               />
@@ -505,44 +490,55 @@ const Cotizaciones = () => {
 
           <section className={styles.card}>
             <h2 className={styles.cardTitle}><span className={styles.cardNum}>04</span>Observaciones</h2>
-            <textarea
-              value={form.observaciones}
+            <textarea value={form.observaciones}
               onChange={e => set('observaciones', e.target.value)}
               placeholder="Notas adicionales para el cliente..."
-              className={styles.textareaBase}
-              rows={5}
-            />
+              className={styles.textareaBase} rows={5} />
           </section>
 
           <section className={`${styles.card} ${styles.totalesCard}`}>
             <h2 className={styles.cardTitle}><span className={styles.cardNum}>05</span>Resumen</h2>
             <div className={styles.totalesRows}>
+
               <div className={styles.totalesRow}>
-                <span>Subtotal</span>
+                <span>Subtotal {form.moneda}</span>
                 <span>{fmt(subtotal, form.moneda)}</span>
               </div>
+
               <div className={styles.totalesRow}>
-                <span>Subtotal</span>
-                <span>{fmt(subtotal, form.moneda)}</span>
+                <span>Descuento global</span>
+                <div className={styles.descuentoInput}>
+                  <input type="number" min="0" max="100"
+                    value={form.descuentoGlobal}
+                    onChange={e => set('descuentoGlobal', Number(e.target.value))}
+                    className={styles.inputSmallTotal} />
+                  <span>%</span>
+                  {form.descuentoGlobal > 0 && (
+                    <span className={styles.descuentoMonto}>− {fmt(descuentoMonto, form.moneda)}</span>
+                  )}
+                </div>
               </div>
-              ...
-              {trmValida && (
+
+              {trmActiva && (
                 <div className={styles.totalesRow}>
-                  <span>TRM aplicada</span>
+                  <span>TRM usada</span>
                   <span style={{ fontFamily: 'Share Tech Mono', fontSize: '0.82rem' }}>
-                    ${Number(form.trm).toLocaleString('es-CO')}
+                    ${trmNum.toLocaleString('es-CO')}
                   </span>
                 </div>
               )}
+
               <div className={`${styles.totalesRow} ${styles.totalesFinal}`}>
-                <span>TOTAL {monedaFinal}</span>
-                <span className={styles.totalMonto}>{fmt(totalFinal, monedaFinal)}</span>
+                <span>TOTAL {form.moneda}</span>
+                <span className={styles.totalMonto}>{fmt(totalFinal, form.moneda)}</span>
               </div>
-              {form.moneda === 'USD' && !trmValida && (
+
+              {form.moneda === 'COP' && !trmActiva && (
                 <p className={styles.trmAviso}>
-                  Sin TRM — la cotización se guardará en USD. Ingresa la TRM para convertir a COP.
+                  Sin TRM — los precios del catálogo (USD) deben ingresarse manualmente en COP.
                 </p>
               )}
+
             </div>
 
             <button type="submit" className={styles.btnGuardar} disabled={enviando}>

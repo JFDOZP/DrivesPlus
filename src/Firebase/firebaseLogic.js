@@ -345,4 +345,28 @@ export const actualizarNroReporte = async (servicioId, nroReporte) => {
   }
 };
 
+//Logica Agenda
+const handleGuardar = async (e) => {
+  e.preventDefault();
+  
+  // Creamos los strings exactos que espera el índice
+  const mesPadded = String(mesActual + 1).padStart(2, '0');
+  const diaPadded = String(diaSeleccionado).padStart(2, '0');
+  
+  const datosEvento = {
+    ...formData,
+    dia: diaSeleccionado,
+    mesReferencia: `${anioActual}-${mesPadded}`, // Requerido para el índice
+    fecha: `${anioActual}-${mesPadded}-${diaPadded}`, // Requerido para el índice
+    hora: formData.hora // Requerido para el índice
+  };
 
+  try {
+    await guardarEvento(datosEvento);
+    setModalOpen(false);
+    setFormData({ titulo: '', cliente: '', hora: '08:00', descripcion: '' });
+    await cargarEventos(); // Refresca la vista
+  } catch (err) {
+    alert("Error al guardar: " + err.message);
+  }
+};
